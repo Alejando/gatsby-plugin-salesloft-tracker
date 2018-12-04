@@ -21,7 +21,7 @@ const Header = () => (
           [
             ['Who we are', '/who-we-are'],
             ['Why us', '/why-us'],
-            ['Use Cases', '/use-cases'],
+            ['Use Cases', '/work'],
             ['Blog', '/blog'],
             ['Careers', '/careers'],
             ['Contact Us', '/contact-us'],
