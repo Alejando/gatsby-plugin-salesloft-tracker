@@ -4,6 +4,12 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Footer from './footer'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+library.add(fas, fab)
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -45,6 +51,7 @@ const Layout = ({ children }) => (
         <main className="bg-light">
           {children}
         </main>
+				<Footer/>
       </>
     )}
   />

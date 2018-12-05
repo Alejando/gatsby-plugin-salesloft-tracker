@@ -1,0 +1,17 @@
+[
+	{
+		"icon": "twitter",
+		"url": "https://twitter.com/densitylabs",
+		"hoverBg": "#55acee"
+	},
+	{
+		"icon": "linkedin",
+		"url": "https://www.linkedin.com/company/densitylabs",
+		"hoverBg": "#0976b4"
+	},
+	{
+		"icon": "facebook",
+		"url": "https://www.facebook.com/densitylabs",
+		"hoverBg": "#3b5998"
+	}
+]

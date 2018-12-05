@@ -7,13 +7,9 @@ import {
 import * as R from 'ramda'
 
 import Layout from '../components/layout'
+import Skill from '../components/skill/skill'
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import Skill from '../components/skill/skill';
-import { css } from 'emotion';
-library.add(fas)
-
+import { css } from 'emotion'
 
 const nodeSkillMapper = ({
   frontmatter: {
