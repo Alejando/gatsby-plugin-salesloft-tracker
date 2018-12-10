@@ -5,12 +5,13 @@ import {
   Row,
   Jumbotron,
 } from 'reactstrap';
-import banner from '../images/work_densitylabs.png'
+import Banner from '../components/banner'
 import * as R from 'ramda';
 import Layout from '../components/layout'
 import { graphql } from 'gatsby';
 import MemberList from '../components/members/member-list';
 
+import bannerImage from '../images/work_densitylabs.png'
 
 const nodeMemberMapper = ({
   frontmatter: {
@@ -48,12 +49,7 @@ const WhoWeArePage = ({ data }) => {
 
   return (
     <Layout>
-      <div className="banner dark-translucent-bg" style={{
-        height: 200,
-        width: '100%',
-        backgroundImage: `url(${banner})`,
-        backgroundPosition: '50% 40%',
-      }} />
+      < Banner image={bannerImage} />
       <Container>
         <Row>
           <Col md="12" className="text-center mt-3">

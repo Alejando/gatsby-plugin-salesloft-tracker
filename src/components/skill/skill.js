@@ -12,7 +12,7 @@ const Skill = ({
 }) => (
   <Jumbotron className="p-4 bg-white">
     <div className="text-center">
-      <FeaturedIcon icon={icon}/>
+      <FeaturedIcon icon={icon} color="#ed1c24" size="60"/>
     </div>
     <h1 className="text-uppercase border-bottom pb-3 text-center mt-3 border-bottom mt-4">{title}</h1>
     <h2 className="text-center">{subTitle}</h2>

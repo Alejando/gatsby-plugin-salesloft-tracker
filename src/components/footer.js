@@ -23,7 +23,7 @@ const Footer = () => (
 			<ul className="list-inline">
 				{
 					SocialData.map((socialDetails) => (
-						<li className="list-inline-item" >
+						<li className="list-inline-item" key={socialDetails.icon} >
 							<a
 								href={socialDetails.url}
 								target="_blanK"

@@ -5,16 +5,18 @@ import { css } from "react-emotion"
 
 const FeaturedIcon = ({
   icon,
+  size,
+  color,
 }) => {
   return (
     <span
       css={css`
-        font-size: 1.5rem;
+        font-size: ${size/3}px;
         display: inline-block;
-        line-height: 4rem;
-        width: 4rem;
-        height: 4rem;
-        background-color: #ed1c24;
+        line-height: ${size}px;
+        width: ${size}px;
+        height: ${size}px;
+        background-color: ${color};
         color: white;
       `}
       className='rounded-circle'
