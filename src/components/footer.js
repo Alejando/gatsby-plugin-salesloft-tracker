@@ -10,8 +10,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { css } from 'emotion'
 
 const Footer = () => (
-	<Row 
-		className='pt-3' 
+	<Row
+		className='pt-3'
 		css={css`background: #f5f5f5; color: #999999; border-top: 1px solid #eaeaea;`}
 	>
 		<Col xs='12' className='mt-2 d-flex justify-content-center'>
@@ -24,11 +24,12 @@ const Footer = () => (
 				{
 					SocialData.map((socialDetails) => (
 						<li className="list-inline-item" >
-							<a 
-								href={socialDetails.url} 
-								target="_blanK" 
+							<a
+								href={socialDetails.url}
+								target="_blanK"
+								rel="noopener noreferrer"
 								className='btn border rounded-circle'
-								css={css`color: #cdcdcd; background: #fff; &:hover{color: #fff; background: ${socialDetails.hoverBg} }`} 
+								css={css`color: #cdcdcd; background: #fff; &:hover{color: #fff; background: ${socialDetails.hoverBg} }`}
 								>
 								<FontAwesomeIcon icon={["fab", socialDetails.icon]}  />
 							</a>

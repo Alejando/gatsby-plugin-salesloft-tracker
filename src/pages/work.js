@@ -12,8 +12,9 @@ const dataToUseCases = data => {
   const edges = data.allMarkdownRemark.edges;
   return edges.map(edge => {
     return {
+      id: edge.node.id,
       name: edge.node.frontmatter.name,
-      imageSrc: edge.node.frontmatter.image.childImageSharp.fixed.src,
+      imageSrc: edge.node.frontmatter.images[0].childImageSharp.fixed.src,
       imageFooter: edge.node.frontmatter.imageFooter,
       descriptionHtml: edge.node.html,
     }
@@ -50,7 +51,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             name
-            image {
+            images {
               childImageSharp {
                 fixed {
                   src
