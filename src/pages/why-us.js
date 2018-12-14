@@ -7,7 +7,9 @@ import {
 } from 'reactstrap';
 import Banner from '../components/banner'
 import Layout from '../components/layout'
-
+import { 
+  graphql
+ } from 'gatsby';
 import * as R from 'ramda'
 
 import bannerImage from '../images/work_densitylabs.png'

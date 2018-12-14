@@ -1,6 +1,6 @@
 root = true
 
-# 4 space indentation
-[*.js]
+# 2 space indentation
+[*.{js,md,json}]
 indent_style = space
 indent_size = 2

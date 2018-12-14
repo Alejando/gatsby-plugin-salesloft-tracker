@@ -9,6 +9,7 @@ import * as R from 'ramda'
 import Layout from '../components/layout'
 import Skill from '../components/skill/skill'
 
+import { graphql } from 'gatsby';
 import { css } from 'emotion'
 
 const nodeSkillMapper = ({
