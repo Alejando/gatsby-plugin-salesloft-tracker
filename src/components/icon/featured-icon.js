@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { css } from "react-emotion"
+import { css } from "@emotion/core"
 
 
 const FeaturedIcon = ({

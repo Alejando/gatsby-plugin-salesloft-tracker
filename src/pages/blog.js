@@ -2,8 +2,8 @@ import React from 'react'
 import {
   Container,
 } from 'reactstrap';
-import Layout from '../components/layout' 
-import { css } from "react-emotion"
+import Layout from '../components/layout'
+import { css } from "@emotion/core"
 import PostItem from '../components/post/post-item';
 
 const dataToPosts = data => {
@@ -27,9 +27,9 @@ const Blog = ({ data }) => {
   return (
     <Layout>
       <Container className="py-5">
-        <h1 
+        <h1
           className="border-bottom pb-3"
-          css={css`color: #333333;`}  
+          css={css`color: #333333;`}
         >
           BLOG POSTS
           </h1>
