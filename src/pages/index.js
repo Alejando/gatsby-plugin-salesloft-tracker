@@ -36,7 +36,7 @@ const dataToTechnologies = R.pipe(
   R.map(R.view(R.lensPath(['node', 'publicURL'])))
 )
 
-const IndexPage = ({ data }) => (
+const Index = ({ data }) => (
   <>
     {/* <HeroCarousel /> */}
     <Layout>
@@ -111,4 +111,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default IndexPage
+export default Index

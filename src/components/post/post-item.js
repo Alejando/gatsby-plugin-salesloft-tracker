@@ -17,28 +17,33 @@ const PostItem = ({
     <Col md="6" >
       <img alt={post.name} src={post.imageSrc} className="img-fluid" />
     </Col>
-    <Col md="6"
-      css={css`color: #aaa;`}
+    <Col md="6" 
+      css={css`
+        color: #aaa;
+        a{ color: #333333; }
+      `}
     >
       <h2
         css={css`color: #333333;`}
-      >
-        { post.name }
+      > 
+        <Link 
+          to={`/blog/${slugify(post.name)}`} 
+          css={css`&:hover{color: red`}
+          >
+          { post.name }
+        </Link>
       </h2>
       <div
         className="my-3"
         css={css`font-size: 12px;`}
       >
-        <span class="mr-3">
+        <span className="mr-3">
           <FontAwesomeIcon icon={["fas", "calendar-alt"]}  />
-          <span class="ml-2">{ post.date } </span>
+          <span className="ml-2">{ post.date } </span>
         </span>
-        <span class="">
+        <span className="">
           <FontAwesomeIcon icon={["fas", "user"]}  />
-          <span class="ml-2"> By
-            <Link to={`/people/${slugify(post.author)}`} className="ml-1 text-muted">
-              { post.author }
-            </Link>
+          <span className="ml-2"> By { post.author }
           </span>
         </span>
 

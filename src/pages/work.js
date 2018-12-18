@@ -21,7 +21,7 @@ const dataToUseCases = data => {
   });
 };
 
-const WhoWeArePage = ({ data }) => {
+const Work = ({ data }) => {
   const useCaseList = dataToUseCases(data)
 
   return (
@@ -67,4 +67,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default WhoWeArePage
+export default Work

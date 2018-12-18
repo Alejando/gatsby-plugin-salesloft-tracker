@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Container, Row, Col, Button } from 'reactstrap'
 import ImageGallery from '../components/media/image-gallery';
 
-export default ({ data }) => {
+const UseCaseDetail = ({ data }) => {
   const useCase = data.markdownRemark
   return (
     <Layout>
@@ -75,3 +75,5 @@ query($id: String!) {
   }
 }
 `
+
+export default UseCaseDetail;
