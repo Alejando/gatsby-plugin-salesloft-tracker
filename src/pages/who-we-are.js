@@ -49,7 +49,7 @@ const WhoWeArePage = ({ data }) => {
 
   return (
     <Layout>
-      < Banner image={bannerImage} />
+      <Banner image={bannerImage} />
       <Container>
         <Row>
           <Col md="12" className="text-center mt-3">
