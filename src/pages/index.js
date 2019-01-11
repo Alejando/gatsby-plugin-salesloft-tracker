@@ -8,6 +8,7 @@ import * as R from 'ramda'
 
 import Layout from '../components/layout'
 import Skill from '../components/skill/skill'
+import Slider from '../components/sliders/home-slider'
 
 import { graphql } from 'gatsby';
 import { css } from 'emotion'
@@ -40,6 +41,7 @@ const Index = ({ data }) => (
   <>
     {/* <HeroCarousel /> */}
     <Layout>
+      <Slider/>
       <Container>
         <h1 className="text-center pb-3 border-bottom mb-3">YOU'LL <strong>LOVE</strong> WORKING WITH US</h1>
         <Row>
@@ -60,7 +62,7 @@ const Index = ({ data }) => (
         <Row>
           {
             dataToTechnologies(data).map(src => (
-              <Col sm={2}>
+              <Col sm={2} key={src}>
                 <img key={src} src={src} alt={src} />
               </Col>
             ))
