@@ -9,6 +9,8 @@ import {
   CardText,
 } from 'reactstrap';
 
+import { css } from 'emotion'
+
 const Member = ({
   member: {
     name,
@@ -17,16 +19,27 @@ const Member = ({
     descriptionHtml,
   }
 }) => (
-  <Col md="6" lg="3" className="mb-3">
-    <Card>
-      <CardImg top width="100%" src={ imageSrc } alt={name} />
-      <CardBody>
-        <CardTitle className="text-center">{ name }</CardTitle>
-        <CardSubtitle className="text-center font-weight-light mb-3">{ title }</CardSubtitle>
-        <CardText dangerouslySetInnerHTML={{  __html: descriptionHtml }} />
-      </CardBody>
-    </Card>
-  </Col>
+  <Card 
+    css={css`
+    @media (min-width: 540px) {
+      flex: 0 0 44% !important;
+    }
+    @media (min-width: 720px) {
+      flex: 0 0 27% !important;
+    }
+    @media (min-width: 1200px) {
+      flex: 0 0 22% !important;
+    }
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    `} 
+    className="mb-5">
+    <CardImg top width="100%" src={ imageSrc } alt={name} />
+    <CardBody>
+      <CardTitle className="text-center">{ name }</CardTitle>
+      <CardSubtitle className="text-center font-weight-light mb-3">{ title }</CardSubtitle>
+      <CardText dangerouslySetInnerHTML={{  __html: descriptionHtml }} />
+    </CardBody>
+  </Card>
 )
 
 export default Member;

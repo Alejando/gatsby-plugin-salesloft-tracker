@@ -13,6 +13,9 @@ const Banner = ({
       background-image: ${image ? `url(${image})` : 'none'};
       background-position: center;
       background-size: cover;
+      filter: ${!title && !content ? 'brightness(0.5)' : ''};
+      -webkit-filter: ${!title && !content ? 'brightness(0.5)' : ''};
+
       `}
   >
     {

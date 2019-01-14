@@ -3,6 +3,7 @@ import {
   Container,
   Row,
   Col,
+  Button,
 } from 'reactstrap'
 import * as R from 'ramda'
 
@@ -12,6 +13,7 @@ import Slider from '../components/sliders/home-slider'
 
 import { graphql } from 'gatsby';
 import { css } from 'emotion'
+import { Link } from 'gatsby'
 
 const nodeSkillMapper = ({
   frontmatter: {
@@ -43,11 +45,13 @@ const Index = ({ data }) => (
     <Layout>
       <Slider/>
       <Container>
-        <h1 className="text-center pb-3 border-bottom mb-3">YOU'LL <strong>LOVE</strong> WORKING WITH US</h1>
-        <Row>
+        <h1 className="text-center pb-3 border-bottom mb-4 font-weight-light ">
+          YOU'LL <strong className="font-weight-bold">LOVE</strong> WORKING WITH US
+        </h1>
+        <Row >
           {
             dataToSkills(data).map(skill => (
-              <Col md="12" lg="4" key={skill.name}>
+              <Col md="12" lg="4" key={skill.name} className="mb-4">
                 <Skill
                   icon={skill.icon}
                   title={skill.name}
@@ -58,8 +62,10 @@ const Index = ({ data }) => (
             ))
           }
         </Row>
-        <h1 className="pb-3 mb-3 border-bottom">Our <strong>Technologies</strong></h1>
-        <Row>
+        <h1 className="text-center py-3 mb-3 border-top font-weight-light ">
+          Our <strong className="font-weight-bold">Technologies</strong> 
+        </h1>
+        <Row className="border-top py-3" >
           {
             dataToTechnologies(data).map(src => (
               <Col sm={2} key={src}>
@@ -70,7 +76,10 @@ const Index = ({ data }) => (
 
         </Row>
       </Container>
-      <div className="text-white bg-danger mt-4 p-5 text-center">
+      <div className="text-white mt-4 p-5 text-center" css={css`background-color: #ED1C24;`}>
+          <div className="col-6 mx-auto pb-2 mb-4">
+            <h1 className="text-white font-weight-bold">Ready to get started?</h1>
+          </div>
           <p
             css={css`
               font-size: 2rem;
@@ -78,6 +87,11 @@ const Index = ({ data }) => (
           >
             Get in touch with us today.<br/>We'd love to make you a happy customer!
           </p>
+          <Link to="/contact-us">
+            <Button color="warning" size="lg">
+              Contact us for a 30 minute free consultation
+            </Button>
+          </Link>
       </div>
     </Layout>
   </>

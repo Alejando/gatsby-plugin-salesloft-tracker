@@ -3,7 +3,6 @@ import {
   Container,
   Col,
   Row,
-  Jumbotron,
 } from 'reactstrap';
 import Banner from '../components/banner'
 import Layout from '../components/layout'
@@ -40,17 +39,15 @@ const WhyUs = ({ data }) => (
   <Layout>
     <Banner image={bannerImage} />
     <Container>
-        <Row>
-          <Col md="12" className="mt-5">
-            <Jumbotron className="p-4 bg-white">
-              <h1 className="border-bottom pb-3">WHY US</h1>
-              <p className="text-center lead text-muted">Density Labs is a technology product development company specializing in rapid development of mobile, and web, SaaS, and enterprise software applications. </p>
-              <br/>
-              <p className="text-center lead text-muted"> If you can dream it, we can code it.</p>
-            </Jumbotron>
+        <Row >
+          <Col md="12" className="mt-5 bg-white p-4 mb-4">
+            <h1 className="border-bottom pb-3">WHY US</h1>
+            <p className="text-center lead text-muted">Density Labs is a technology product development company specializing in rapid development of mobile, and web, SaaS, and enterprise software applications. </p>
+            <br/>
+            <p className="text-center lead text-muted"> If you can dream it, we can code it.</p>
           </Col>
           <Col md="12" className="m-auto">
-            <Row className="d-flex justify-content-between mb-5">
+            <Row className="mb-5">
               {
                 dataToCharacteristics(data).map(characteristic => (
                   <Characteristic 
@@ -63,8 +60,7 @@ const WhyUs = ({ data }) => (
                 ))
               }
             </Row>
-          </Col>
-          
+          </Col> 
         </Row>
       </Container>
   </Layout>
