@@ -18,7 +18,7 @@ const Banner = ({
     {
       (title || content) &&
       <div
-        className="text-center text-white py-5"
+        className="text-center text-white py-5 w-100"
         css={css`
           background-color: rgba(0, 0, 0, 0.5);
           padding-left: 20%;

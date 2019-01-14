@@ -6,7 +6,7 @@ import {
 	Container,
 } from 'reactstrap'
 import SocialData from '../../data/social_networks.json'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SocialDataIcon from './icon/social-data-icon.js';
 
 import { css } from 'emotion'
 
@@ -26,15 +26,7 @@ const Footer = () => (
 				{
 					SocialData.map((socialDetails) => (
 						<li className="list-inline-item" key={socialDetails.icon} >
-							<a
-								href={socialDetails.url}
-								target="_blanK"
-								rel="noopener noreferrer"
-								className='btn border rounded-circle'
-								css={css`color: #cdcdcd; background: #fff; &:hover{color: #fff; background: ${socialDetails.hoverBg} }`}
-								>
-								<FontAwesomeIcon icon={["fab", socialDetails.icon]}  />
-							</a>
+							<SocialDataIcon socialDetails={socialDetails} />
 						</li>
 					))
 				}

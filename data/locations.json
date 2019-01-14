@@ -1,0 +1,31 @@
+[
+  {
+    "address": "25 Taylor Street<br/>San Francisco, CA",
+    "phone": "+1 (415) 418 7725",
+    "email": "info@densitylabs.io",
+    "social": [
+      {
+        "icon": "twitter",
+        "url": "https://twitter.com/densitylabs",
+        "hoverBg": "#55acee"
+      },
+      {
+        "icon": "linkedin",
+        "url": "https://www.linkedin.com/company/densitylabs",
+        "hoverBg": "#0976b4"
+      }
+    ]
+  },
+  {
+    "address": "Calle Miguel Lerdo de Tejada 2186<br/>Lafayette 44160<br/>Guadalajara, Jal.",
+    "phone": "+1 (415) 418 7725",
+    "email": "info@densitylabs.io",
+    "social": [
+      {
+        "icon": "facebook",
+        "url": "https://www.facebook.com/densitylabs",
+        "hoverBg": "#3b5998"
+      }
+    ]
+  }
+]
