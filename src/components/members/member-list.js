@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  Row,
   CardDeck,
 } from 'reactstrap';
 import Member from './member';

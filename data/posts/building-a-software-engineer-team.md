@@ -8,6 +8,7 @@ tags:
   - software engineer team
   - startups
 author: Federico Ramallo
+social_summary: Usually people ask me about a technical co-founder and how to launch their MVP. Then the next question they ask me is how to grow their engineer team.
 ---
 Usually, people ask me about how to build an engineering team in order to build an MVP. Usually, they are looking to hire a technical co-founder.
 Given a general lack of available engineers in Silicon Valley, it's now the most competitive market to hire software engineers. Startups have to keep offering perks and high salaries in order to attract the very best. So, It is natural that founders struggle to grow an engineering team.

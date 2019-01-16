@@ -9,6 +9,7 @@ tags:
   - android
   - ios
 author: Tonatiuh Núñez
+social_summary: Building a Hacker News client with React Native
 ---
 Was some years ago [back in 2014](http://www.smartinsights.com/mobile-marketing/mobile-marketing-analytics/mobile-marketing-statistics/) when desktop internet usage was overtaken by mobile usage, since that time mobile usage has continued increasing. Given the amount of users using mobile devices to access the internet, it has become very important for a developer to dominate tools for developing mobile applications.
 

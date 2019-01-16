@@ -10,6 +10,7 @@ tags:
   - MVP
   - minimum viable product
 author: Federico Ramallo
+social_summary: Building a MVP mobile app is challenging. First, there is the approval process to publish and update the app on the stores. Second, you have to build two applications or build for one platform. And that's a tough call.
 ---
 Building a MVP mobile app is challenging. First, there is the approval process to publish and update the app on the stores.
 Second, you have to build two applications or build for one platform. And that's a tough call.

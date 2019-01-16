@@ -9,6 +9,7 @@ tags:
   - docker
   - blogging
 author: Federico Ramallo
+social_summary: Even though we are a Rails development team, we use WordPress for our blog. We love Rails, but WordPress provides a robust solution for our blogging needs. And lately, we have been experimenting with Docker + WordPress.
 ---
 Hello,
 

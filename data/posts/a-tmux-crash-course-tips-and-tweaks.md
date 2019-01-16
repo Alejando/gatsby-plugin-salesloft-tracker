@@ -8,6 +8,7 @@ tags:
   - vim
   - ruby
 author: Tonatiuh Núñez
+social_summary: If you are one of those devs who uses the terminal a lot and ends up with way too many tabs open, or practices pair programming, then this post is for you. During the last months, I’ve started using Tmux a lot.
 ---
 ### ~ Intro
 

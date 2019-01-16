@@ -9,6 +9,7 @@ tags:
   - pry
   - pry-rails
 author: Tonatiuh Núñez
+social_summary: Have you tried using the show-source command?
 ---
 If you haven't heard of the pry gem I would encourage you to take a look at it. It can certainly help you speed up the debugging process of your code. The gem's repo can be found here: [https://github.com/pry/pry](https://github.com/pry/pry).
 

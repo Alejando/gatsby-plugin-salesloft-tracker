@@ -4,13 +4,17 @@ import {
   Link,
   withPrefix
 } from 'gatsby'
+import {
+  Button
+} from 'reactstrap'
 import Layout from '../components/layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Container, Row, Col } from 'reactstrap'
+import ShareButtons from '../components/share-buttons'
 import { css } from '@emotion/core'
 import { slugify } from '../lib/url-utils';
 
-const PostDetail = ({ data }) => {
+const PostDetail = ({ data, location }) => {
   const post = data.markdownRemark
 
   const siteMeta = {
@@ -60,19 +64,39 @@ const PostDetail = ({ data }) => {
               font-size: 12px;
               color: #aaa;
             `}
-          >
-            <span >
-              <FontAwesomeIcon icon={["fas", "tags"]}  />
+          > 
+            <div>
               {
-              (post.frontmatter.tags || []).map((tag, i) =>(
-                <span key={i} className="mx-1">
-                <Link to="blog" className="text-danger">
-                  {tag}
-                </Link>
+                post.frontmatter.tags !== null  &&
+                <span  className=" mr-2">
+                  <FontAwesomeIcon icon={["fas", "tags"]}  />
+                  {
+                  post.frontmatter.tags.map((tag, i) =>(
+                    <span key={i} className="mx-1">
+                    <Link to="blog" className="text-danger">
+                      {tag}
+                    </Link>
+                    </span>
+                  ))
+                  }
                 </span>
-              ))
               }
-            </span>
+              
+              <Button 
+                outline 
+                color="dark" 
+                size="sm" 
+                href="https://github.com/densitylabs" 
+                data-count-href="/densitylabs/followers" 
+                data-count-api="/users/densitylabs#followers" 
+                data-count-aria-label="# followers on GitHub" 
+                aria-label="Follow @densitylabs on GitHub"
+              >
+                <FontAwesomeIcon icon={["fab", "github"]} />
+                <div className="m-0 ml-2 d-inline-block" css={css`font-size: 12px;`}>Follow @densitylabs</div>
+              </Button>
+            </div>
+            <ShareButtons url={location.href} title={post.frontmatter.name} summary={post.frontmatter.social_summary}/>
           </Col>
         </Row>
       </Container>
@@ -100,6 +124,7 @@ query($id: String!) {
       description
       tags
       author
+      social_summary
     }
     html
   }

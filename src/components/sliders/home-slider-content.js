@@ -40,7 +40,7 @@ const HomeSliderContent = ({
         </Button>
       </Link>
       <div className="m-2"> or </div>
-      <Link to={`/`}>
+      <Link to={`/contact-us  `}>
         <Button color="danger">
           <div className="m-0 mr-2 d-inline-block"> Contact Us </div>
           <FontAwesomeIcon icon={["fas", "envelope"]} />

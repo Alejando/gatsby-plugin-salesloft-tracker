@@ -9,6 +9,7 @@ tags:
   - testing
   - mocha
 author: Alfonso Alejandro Espinosa de los Monteros Andrade
+social_summary: I’d like to share my knowledge and personal approach to testing when building a Redux app. While there are many ways of doing this, if you are trying to figure out how to start testing your common Redux actions and reducers for your upcoming projects, this post is for you.
 ---
 Recipes for Testing Redux Actions and Reducers
 

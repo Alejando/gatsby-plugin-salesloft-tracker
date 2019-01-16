@@ -10,6 +10,7 @@ tags:
   - The Lean Startup
   - Eric Ries
 author: Adela Barreto
+social_summary: If you are an entrepreneur and you failed then you really need to read it... You are not alone.
 ---
 “I remember a moment from back then: the moment I realized my company was going to fail. My cofounder and I were at our wits’ end. We tried desperately to raise more capital, and we could not... The company limped along for months afterward, but our situation was hopeless. At the time, it had seemed we were doing everything right: we had a great product, a brilliant team, amazing technology, and the right idea at the right time.”
 

@@ -11,6 +11,7 @@ tags:
   - rails
   - ruby
 author: Tonatiuh Núñez
+social_summary: Have you checked Action Cable in Rails 5? It’s a nice addition that integrates WebSocket in Rails. In this post, we'll see how to implement Action Cable with Active Job. Active Job is a framework for declaring jobs.
 ---
 Have you checked Action Cable in Rails 5? It’s a nice addition that integrates WebSockets to Rails. In this post, we'll see how to implement Action Cable with Active Job. Active Job is a framework for declaring jobs.
 

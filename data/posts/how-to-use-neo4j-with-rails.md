@@ -8,6 +8,7 @@ tags:
   - rails
   - ruby
 author: Federico Ramallo
+social_summary: Let's review how neo4j and rails can work together.
 ---
 ## WHAT IS A GRAPHDB
 
