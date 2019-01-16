@@ -5,6 +5,7 @@ import {
 import Layout from '../components/layout'
 import { css } from "@emotion/core"
 import PostItem from '../components/post/post-item';
+import { withPrefix } from 'gatsby';
 
 const dataToPosts = data => {
   const edges = data.allMarkdownRemark.edges;
@@ -21,11 +22,20 @@ const dataToPosts = data => {
   });
 };
 
+const siteMeta = {
+  path: '/blog',
+  openGraphTitle: 'Densitylabs Blog Posts',
+  keywords: 'densitylabs, densitylabs Software Development Company, density labs, blogging, densitylabs blog post, ruby on rails development, software development for startups',
+  description: 'Density Labs shares with you the technicals knowledge, experiences and the latest news.',
+  image: withPrefix('/images/software-density-labs.jpg'),
+  type: 'Blog'
+}
+
 const Blog = ({ data }) => {
   const posts = dataToPosts(data)
 
   return (
-    <Layout>
+    <Layout siteMeta={siteMeta}>
       <Container className="py-5">
         <h1
           className="border-bottom pb-3"

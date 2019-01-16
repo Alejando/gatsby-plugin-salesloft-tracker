@@ -42,13 +42,18 @@ const dataToMembers = R.pipe(
   R.map(R.pipe(R.prop('node'), nodeMemberMapper))
 )
 
+const siteMeta = {
+  path: '/who-we-are',
+  openGraphTitle: 'Who we are'
+}
+
 const WhoWeArePage = ({ data }) => {
   const members = dataToMembers(data)
   const executiveTeam = members.filter(isExecutive);
   const teamMembers = members.filter(R.complement(isExecutive))
 
   return (
-    <Layout>
+    <Layout siteMeta={siteMeta}>
       <Banner image={bannerImage} />
       <Container>
         <Row>

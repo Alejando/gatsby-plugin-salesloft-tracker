@@ -2,8 +2,8 @@
 name: Integrating Zoom in my Rails Application
 date: "2019-01-11"
 image: ./rails_intergrate_zoom.png
-tags:
-  -
+keywords: densitylabs, densitylabs Software Development Company, density labs, blogging, densitylabs blog post, ruby on rails development, software development for startups
+description: Given all the features that Zoom provides we want to integrate it to our own Rails app to benefit from this amazing app
 author: Luis Fer Cuevas
 ---
 Zoom is a communication app that allows us to have meetings through the internet. It comes with a collection of tools such as video-conferencing, screen sharing, meeting management, and more, while being easy to use.
@@ -169,5 +169,5 @@ We can easily integrate Zoom using the Ruby gem Zoomus. We encourage you to use 
 You may want to learn how to manage recordings, and find how to upload the files to another third party app like AWS or so.
 
 We are planning to look into how to implement this functionality using APIv2 in the future. Maybe a Ruby gem for V2 would be great! You will find out in our next post on Zoom integration!
-                                                
+
 [Check us out!] (https://densitylabs.io/)

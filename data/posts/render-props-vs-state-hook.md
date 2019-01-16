@@ -2,6 +2,7 @@
 name: Render Props vs State Hook
 date: "2018-12-05"
 image: ./render-props-vs-state-hook-picture.png
+description: Render prop refers to a technique used for sharing code between React components using a prop whose value is a function.
 tags:
   - react
   - render-prop
@@ -26,19 +27,19 @@ class VisibilityHelper extends React.Component {
     this.hide = this.hide.bind(this);
     this.show = this.show.bind(this);
   }
-  
+
   hide() {
     this.setState({
       isDisplayed: false,
     });
   }
-  
+
   show() {
     this.setState({
       isDisplayed: true,
     });
   }
-  
+
   render() {
     return this.props.children({
       ...this.state,
@@ -115,7 +116,7 @@ Let’s rewrite the ConfirmationButton component replacing the VisibilityHelper 
 import { useState } from 'react';
 const ConfirmationButton = () => {
   const [isDisplayed, show] = useState(false);
-  
+
   return (
     <div>
       {

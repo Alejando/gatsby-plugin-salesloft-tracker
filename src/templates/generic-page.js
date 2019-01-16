@@ -7,8 +7,16 @@ import Banner from '../components/banner';
 
 const GenericPage = ({ data }) => {
   const page = data.markdownRemark
+
+  const siteMeta = {
+    path: `/${page.frontmatter.slug}`,
+    subtitle: page.frontmatter.name,
+    openGraphTitle: `DensityLabs | ${page.frontmatter.name}`,
+    description: page.excerpt,
+    type: 'Page'
+  }
   return (
-    <Layout>
+    <Layout siteMeta={siteMeta}>
       {
         page.frontmatter.bannerDescription &&
         <Banner
@@ -37,9 +45,11 @@ query($id: String!) {
   ) {
     id
     frontmatter {
+      slug
       name
       bannerDescription
     }
+    excerpt(pruneLength: 140)
     html
   }
 }

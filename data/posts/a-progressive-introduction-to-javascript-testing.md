@@ -2,6 +2,7 @@
 name: A Progressive Introduction to Javascript Testing
 date: "2017-09-29"
 image: ./Blog-JS-Testing1.jpg
+description: In this series we will learn how unit, integration, and end to end testing help us not only to improve the reliability of our code, but also, with the appropriate application of these techniques, we can improve the overall quality of our code, allowing us to simplify the overall complexity of our modules and the relationships between them.
 tags:
   - javascript
   - testing
@@ -26,7 +27,7 @@ No matter the platform or the language you are using, these elements must be alw
 
 ### Getting to Know the Application
 
-The source code that we'll use for these series can be found in the following URL: [https://github.com/densitylabs/pokemon-list](https://github.com/densitylabs/pokemon-list) 
+The source code that we'll use for these series can be found in the following URL: [https://github.com/densitylabs/pokemon-list](https://github.com/densitylabs/pokemon-list)
 
 The application we're going to work on is fairly simple, it was created using the [create-react-app](https://github.com/facebookincubator/create-react-app) generator. The frontend is built with several components, with most of the logic contained in two of them: PokemonSearch and PokemonList. The first component is represented by an input element, that will filter the results in PokemonList every time we update its value.
 

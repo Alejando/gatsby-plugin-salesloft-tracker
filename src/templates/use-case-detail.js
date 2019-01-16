@@ -1,14 +1,25 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, withPrefix } from 'gatsby'
 import Layout from '../components/layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Container, Row, Col, Button } from 'reactstrap'
 import ImageGallery from '../components/media/image-gallery';
+import { slugify } from '../lib/url-utils';
 
 const UseCaseDetail = ({ data }) => {
   const useCase = data.markdownRemark
+
+  const siteMeta = {
+    path: `work/${slugify(useCase.frontmatter.name)}`,
+    subtitle: useCase.frontmatter.name,
+    openGraphTitle: useCase.frontmatter.name,
+    keywords: `${useCase.frontmatter.name}, our work, work, densitylabs, developed in Ruby on Rails, densitylabs, density labs, densitylabs our work, Our Experience`,
+    description: useCase.frontmatter.description || useCase.excerpt,
+    image: withPrefix(useCase.frontmatter.images[0].childImageSharp.fluid.src),
+    type: 'Article'
+  }
   return (
-    <Layout>
+    <Layout siteMeta={siteMeta}>
       <Container className="pt-4">
         <Row>
           <Col md="8">
@@ -62,6 +73,7 @@ query($id: String!) {
       technology
       place
       external_link
+      description
       images {
         childImageSharp {
           fluid {
@@ -71,6 +83,7 @@ query($id: String!) {
       }
       imageFooter
     }
+    excerpt(pruneLength: 140)
     html
   }
 }

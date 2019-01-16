@@ -2,6 +2,7 @@
 name: How to take advantage of show source with pry
 date: "2016-05-13"
 image: ./how-to-take-advantage-of-show-source-with-pry-picture.jpg
+description: If you haven't heard of the pry gem I would encourage you to take a look at it. It can certainly help you speed up the debugging process of your code.
 tags:
   - ruby
   - ruby-on-rails

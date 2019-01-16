@@ -2,6 +2,7 @@
 name: How to build a Minimum Viable Product for iOS and android
 date: "2016-07-12"
 image: ./how-to-build-a-minimum-viable-product-for-ios-and-android-full.png
+description: Building a MVP mobile app is challenging. First, there is the approval process to publish and update the app on the stores. Second, you have to build two applications or build for one platform. And that's a tough call.
 tags:
   - ios
   - android
@@ -23,7 +24,7 @@ The budget to build them can grow significantly.
 Choosing one platform means loosing potential users. Many top mobile apps seem to come to iOS before they come to Android.
 
 wouldn't be great to build only one app or prototype that could work on both platforms?
- 
+
 There are a couple of solutions out there. Most, involve building a web application and package it inside a mobile app. The experience is inferior. Users notice that the UX is not exactly the same, and fixing it requires a lot of effort. So it's not a good option.
 
 Enter React native. It allows you to build an application sharing more than 80% of the code with the user experience of a native app. By native I mean that it uses the native components that come with Android and Ios.
@@ -54,6 +55,6 @@ Are you thinking on building a MVP for iOS or Android? Don't settle for less, bu
 You can read the source code. I will share the links to the store once the apps are published.
 
 And that's how we did it. If you are planning on building a mobile app and want to discuss about it send me an email federico at densitylabs.io
- 
+
 
 

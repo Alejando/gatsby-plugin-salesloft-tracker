@@ -2,6 +2,7 @@
 name: Benefits of WordPress + Docker in a production environment + troubleshooting guide.
 date: "2016-05-13"
 image: ./dockers.png
+description: We love Rails, but WordPress provides a robust solution for our blogging needs. And lately, we have been experimenting with Docker + WordPress.
 tags:
   - ruby
   - wordpress
@@ -73,7 +74,7 @@ The base image php-fpm has an index.php file that allows you to test it out. I r
         && echo "$wordpress_SHA1 *wordpress.tar.gz" | sha1sum -c - \
         && tar -xzf wordpress.tar.gz -C /var/ \
         && rm wordpress.tar.gz
-        
+
 This actually installs WordPress. It’s designed to be in one line so that Docker can cache it completely
 
 

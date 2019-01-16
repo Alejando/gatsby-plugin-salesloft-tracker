@@ -21,11 +21,18 @@ const dataToUseCases = data => {
   });
 };
 
+const siteMeta = {
+  path: '/work',
+  openGraphTitle: 'Work',
+  keywords: 'densitylabs, density labs, our work, densitylabs our work, Modcloth, Headline Shirts ERP, Developed, Ruby on Rails, Our Experience, Developed in Ruby on Rails',
+  description: 'This is the work we have done and the amazing people we had the privilege to work with.',
+}
+
 const Work = ({ data }) => {
   const useCaseList = dataToUseCases(data)
 
   return (
-    <Layout>
+    <Layout siteMeta={siteMeta}>
       <Container className="pt-4">
         <h1 className="border-bottom pb-3">USE CASES</h1>
         <p className="lead text-muted">We are a full stack software engineering services company specializing in rapid development of mobile, web, SaaS and enterprise applications. </p>

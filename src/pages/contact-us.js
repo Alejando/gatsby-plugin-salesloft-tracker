@@ -12,11 +12,20 @@ import ContactUsForm from '../components/forms/contact-us-form'
 import LocationList from '../components/location/location-list'
 
 import locations from '../../data/locations.json'
+import { withPrefix } from 'gatsby';
+
+const siteMeta = {
+  path: '/contact-us',
+  openGraphTitle: 'Contact us',
+  keywords: 'densitylabs, contact us, densitylabs phone number, telephone number of densitylabs, densitylabs address, contact us densitylabs',
+  description: 'Do you want to talk about an idea that you have?  Just want to say hi? We are here for you!',
+  image: withPrefix('/images/density-labs-contact-us.jpg'),
+}
 
 const ContactUs = () => {
 
   return (
-    <Layout>
+    <Layout siteMeta={siteMeta}>
       <Banner
         image={bannerImage}
         title='Contact Us'

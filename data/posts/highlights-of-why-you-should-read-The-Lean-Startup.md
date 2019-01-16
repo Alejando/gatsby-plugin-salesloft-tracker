@@ -2,13 +2,14 @@
 name: These are the highlights of why you should read The Lean Startup
 date: "2016-10-17"
 image: ./the-lean-startup.png
+description: If you are an entrepreneur and you failed then you really need to read it... You are not alone.
 tags:
   - Businesses
   - Startups
   - Entrepreneurs
   - The Lean Startup
   - Eric Ries
-author: Adela Barreto 
+author: Adela Barreto
 ---
 “I remember a moment from back then: the moment I realized my company was going to fail. My cofounder and I were at our wits’ end. We tried desperately to raise more capital, and we could not... The company limped along for months afterward, but our situation was hopeless. At the time, it had seemed we were doing everything right: we had a great product, a brilliant team, amazing technology, and the right idea at the right time.”
 
@@ -20,10 +21,10 @@ Those could be my words, but is an excerpt From Eric Ries. “The Lean Startup: 
 When I started to read the book 'The Lean Startup' I actually thought something like 'oh, my god, this guy is talking to me, he knows what happened to me and my companies'. I'm an entrepreneur and co-founder of three companies that does not exist today, well this isn't a post about my failures. Today, I just want to recommend this book, if you are an entrepreneur and you failed, then you really need to read it. You are not alone.
 
 
-Throughout my life, I had the idea that of working incredibly hard for a company, doing the right things, to have a good plan, a solid strategy, and thorough market research, the success comes to me, but that never happened, the companies ultimately failed in the marketplace. At first, largely because of my background, I viewed these problems that required a better process, better planning, discipline, focus, or vision, but I was still failing. 
+Throughout my life, I had the idea that of working incredibly hard for a company, doing the right things, to have a good plan, a solid strategy, and thorough market research, the success comes to me, but that never happened, the companies ultimately failed in the marketplace. At first, largely because of my background, I viewed these problems that required a better process, better planning, discipline, focus, or vision, but I was still failing.
 
 
-This book isn't just about another story of entrepreneurs who fail, the book goes beyond, describes why the Startups fail so badly everywhere, and how the old management methods are not up to the task. I think the idea is you’ll learn how to build a minimum viable product from your vision, and then test those assumptions, evaluating your progress and deciding if changing course or persevere. 
+This book isn't just about another story of entrepreneurs who fail, the book goes beyond, describes why the Startups fail so badly everywhere, and how the old management methods are not up to the task. I think the idea is you’ll learn how to build a minimum viable product from your vision, and then test those assumptions, evaluating your progress and deciding if changing course or persevere.
 
 So, I'm sharing below a list of the points that seemed most important to me in the book:
 
@@ -38,7 +39,7 @@ So how learning is validated? Well, you need do is experiments, even in the book
 If you're thinking of launching a Startup or building a new product or services, if you have a business and not giving the results you expected or if you want to make changes to any of the departments of your company, you really need to read this book. I just started to read it and I have a long road ahead, but the book seems quite promising.
 
 
-What do you think about the post - or the book? Do you have any suggestion? All comments are welcome. 
+What do you think about the post - or the book? Do you have any suggestion? All comments are welcome.
 
 
 

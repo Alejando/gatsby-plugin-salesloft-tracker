@@ -17,7 +17,7 @@ const PostItem = ({
     <Col md="6" >
       <img alt={post.name} src={post.imageSrc} className="img-fluid" />
     </Col>
-    <Col md="6" 
+    <Col md="6"
       css={css`
         color: #aaa;
         a{ color: #333333; }
@@ -25,9 +25,9 @@ const PostItem = ({
     >
       <h2
         css={css`color: #333333;`}
-      > 
-        <Link 
-          to={`/blog/${slugify(post.name)}`} 
+      >
+        <Link
+          to={`/blog/${slugify(post.name)}`}
           css={css`&:hover{color: red`}
           >
           { post.name }
@@ -62,7 +62,7 @@ const PostItem = ({
         <span >
           <FontAwesomeIcon icon={["fas", "tags"]}  />
           {
-          post.tags.map((tag,i) =>(
+          (post.tags || []).map((tag,i) =>(
             <span key={i} className="mx-1">
             <Link to="blog" className="text-danger">
               {tag}

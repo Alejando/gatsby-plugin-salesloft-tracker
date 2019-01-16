@@ -2,6 +2,7 @@
 name: How To Use Neo4j With Rails
 date: "2017-09-12"
 image: ./how-to-use-neo4j-with-rails-picture.png
+description: This data model allows you to avoid performance issues when you need to join multiple tables. Instead of rows you can use a more expressive and natural data model. Also the queries are faster to execute and easier to build on complex data relationships
 tags:
   - neo4j
   - rails
@@ -10,7 +11,7 @@ author: Federico Ramallo
 ---
 ## WHAT IS A GRAPHDB
 
-Graph databases are a new type of databases where relationships are first-class citizens in this data model. In this databases you store nodes and relations instead of records. Also you can store a label (or type) and attributes. Attributes are keys and values. Worth to mention that the relations have a direction, however you can chose to use or ignore it. 
+Graph databases are a new type of databases where relationships are first-class citizens in this data model. In this databases you store nodes and relations instead of records. Also you can store a label (or type) and attributes. Attributes are keys and values. Worth to mention that the relations have a direction, however you can chose to use or ignore it.
 
 For instance you can have nodes with the label Person and Movie. and you can create a relationship from one person into a movie. The relationship type would be the wether if the person acted on the movie or directed the movie
 
@@ -47,7 +48,7 @@ Neo4j::Session.query(%{
 
 Or
 
-```ruby 
+```ruby
 Movie.all(:p)
  .movies(:m)
  .pluck('p.uuid', 'count(m)')
@@ -57,7 +58,7 @@ NEO4J.RB IN DETAIL
 
 You can create a movie model
 
-```ruby 
+```ruby
 class Movie
   include Neo4j::ActiveNode
   property :title
@@ -73,7 +74,7 @@ class Movie
   scope :search, -> (query) { where(title: Regexp.new("(?i).*#{query}.*")) }
 end
 ```
-    
+
 You declare all attributes of the node type Movie with property and the relationships with has_many. Notice that we declare the direction of the relationship with :in and the type of relationship.
 
 ## PROBLEMS WITH N+1 QUERIES
@@ -130,10 +131,10 @@ But the log was showing tons of queries
       Rendered movies/_movies.haml (519.5ms)
       Rendered movies/index.haml within layouts/application (524.1ms)
     Completed 200 OK in 967ms (Views: 955.3ms)
-    
+
 This happens because when you count the people that worked on each movie it runs one query for every movie record.
 
-```ruby 
+```ruby
 @movies = Movie.all
 movies.each do |m|
   m.people.count
@@ -142,7 +143,7 @@ end
 
 On ActiveRecord this problem could be solved with include but that feature is not implemented in neo4j. However, you can use another query:
 
-```ruby 
+```ruby
 @movies = Movie.all
 p = Movie.people_in_movies
 movies.each do |m|
@@ -152,14 +153,14 @@ end
 
 and you add this file in the model
 
-```ruby 
+```ruby
 class Movie
   def self.people_in_movies
     all(:m).people(:p).pluck('m.uuid', 'count(p)').to_h
   end
 end
 ```
-    
+
 The class method Movie.people_in_movies will return a hash where the key is the movie id and the value is the number of people related to that movie
 
 Now the log looks more interesting
@@ -171,7 +172,7 @@ Now the log looks more interesting
       Rendered movies/_movies.haml (22.4ms)
       Rendered movies/index.haml within layouts/application (24.9ms)
     Completed 200 OK in 200ms (Views: 190.0ms)
-    
+
 Also, notice the performance improvement. Now the response takes 190ms instead of 955.3ms.
 
 On my next post I would like to prove that Keving Bacon is the center of the universe using neo4j

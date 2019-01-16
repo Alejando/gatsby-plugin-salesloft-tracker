@@ -1,16 +1,30 @@
 import React from 'react'
 import {
   graphql,
-  Link } from 'gatsby'
+  Link,
+  withPrefix
+} from 'gatsby'
 import Layout from '../components/layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Container, Row, Col } from 'reactstrap'
 import { css } from '@emotion/core'
+import { slugify } from '../lib/url-utils';
 
 const PostDetail = ({ data }) => {
   const post = data.markdownRemark
+
+  const siteMeta = {
+    path: `blog/${slugify(post.frontmatter.name)}`,
+    subtitle: post.frontmatter.name,
+    openGraphTitle: post.frontmatter.name,
+    keywords: post.frontmatter.keywords || (post.frontmatter.tags || []).join(', '),
+    description: post.frontmatter.description,
+    image: withPrefix(post.frontmatter.image.childImageSharp.original.src),
+    type: 'Article'
+  }
+
   return (
-    <Layout>
+    <Layout siteMeta={siteMeta}>
       <Container className="pt-4">
         <Row>
           <Col md="12">
@@ -50,7 +64,7 @@ const PostDetail = ({ data }) => {
             <span >
               <FontAwesomeIcon icon={["fas", "tags"]}  />
               {
-              post.frontmatter.tags.map((tag, i) =>(
+              (post.frontmatter.tags || []).map((tag, i) =>(
                 <span key={i} className="mx-1">
                 <Link to="blog" className="text-danger">
                   {tag}
@@ -82,6 +96,8 @@ query($id: String!) {
           }
         }
       }
+      keywords
+      description
       tags
       author
     }

@@ -2,6 +2,7 @@
 name: A Tmux crash course tips and tweaks
 date: "2016-05-13"
 image: ./a-tmux-crash-course-tips-and-tweaks.png
+description: If you are one of those devs who uses the terminal a lot and ends up with way too many tabs open, or practices pair programming, then this post is for you. During the last months, I’ve started using Tmux a lot. Since I’ve found it to be very useful, I thought I would write a post where I share a few recommendations and pro-tips.
 tags:
   - tmux
   - vim
@@ -353,7 +354,7 @@ There you have it. Now, in order to start coding for project A just run the Tmux
 #### Pimp your Tmux bar
 
 By default, the Tmux bar looks like the following (green bar at the bottom of the image):
-      
+
 ![Tmux default bar](http://densitylabs.io/system/comfy/cms/files/files/000/000/135/original/tmux-image9.png)
 
 You can change its appearance if you want. In my case I like something cleaner as in:

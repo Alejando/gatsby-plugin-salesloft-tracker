@@ -2,6 +2,7 @@
 name: Implementing Action Cable and Active Job in Rails 5
 date: "2016-06-09"
 image: ./Implementing_Action_Cable.jpg
+description: Have you checked Action Cable in Rails 5? It’s a nice addition that integrates WebSockets to Rails. In this post, we'll see how to implement Action Cable with Active Job. Active Job is a framework for declaring jobs.
 tags:
   - rails-5
   - action-cable
@@ -60,7 +61,7 @@ TheJob.perform_later
 
 Let's define the job in charge of sending a request to the Twitter API to get the information of a group of users based on a group of ids. Create the file app/jobs/find_users_info_job.rb with the following content:
 
-```ruby 
+```ruby
 class FindUsersInfoJob < ActiveJob::Base
   queue_as :default
 
@@ -125,7 +126,7 @@ There is some configuration our Rails 5 app needs to define in order to start se
 Set the following code in an initializer,  "config/initializers/action_cable.rb":
 
 
-```ruby 
+```ruby
 if Rails.env.development?
   Rails.application.config.action_cable.allowed_request_origins =  ['http://localhost:3000', 'http://127.0.0.1:3000']
 end
@@ -135,7 +136,7 @@ The code above tells Action Cable to permit messages coming from localhost. In o
 
 Action Cable by default only permits messages coming from the app's process itself (by using the "async" adapter). Active Job jobs run in separate processes than the Rails server process, so we need to update Action Cable's configuration to allow messages coming from other processes. Update the file config/cable.yml to:
 
-```yaml 
+```yaml
 redis: &redis
   adapter: redis
   url: redis://localhost:6379/1
@@ -148,19 +149,19 @@ test:
 
 Next, let's enable Action Cable. Uncomment the following line in the config/routes.rb file:
 
-```ruby 
+```ruby
 mount ActionCable.server => '/cable'
 ```
 
 Last, let's add the Action Cable meta tag in our app/views/layouts/application.html.haml. Add the following line in the HTML header:
 
-```haml 
+```haml
 = action_cable_meta_tag
 ```
 
 Which will be converted to the following
 
-```html 
+```html
 <meta name="action-cable-url" content="/cable">
 ```
 
@@ -172,7 +173,7 @@ Action Cable can authenticate or reject a connection based on the sender's data.
 
 The class ApplicationCable::Connection located at "app/channels/application_cable/connection.rb" is the place where we need to add the logic to authenticate connections. Open the file, it should have the following content:
 
-```ruby 
+```ruby
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
   end
@@ -181,7 +182,7 @@ end
 
 Change it to the following and restart the server (we  need to restart the server every time we modify something in app/channels):
 
-```ruby 
+```ruby
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
     identified_by :current_user
@@ -218,7 +219,7 @@ The command above generates the following files:
 
 In the file app/channels/user_info_channel.rb we can set the code to be executed when a client makes a connection to the channel. The file initially has the following content:
 
-```ruby 
+```ruby
 class UserInfoChannel < ApplicationCable::Channel
   def subscribed
   end
@@ -231,7 +232,7 @@ In the code above the "subscribed" method is executed when a client makes a conn
 
 We need to create a stream when the client subscribes to the channel. The stream will allow data to travel through the connection. Let's modify the "subscribed" method to set the stream:
 
-```ruby 
+```ruby
 def subscribed
   stream_from "user_info_channel_#{current_user.id}"
 end
@@ -246,7 +247,7 @@ In the code we can access the "current_user" variable, that's because we set tha
 A connection consumer is required to create subscriptions in the client side. Let's enable the code that creates the connection consumer. Go to the file
 app/assets/javascripts/cable.coffee and set the following content:
 
-``` 
+```
 #= require action_cable
 #= require_self
 
@@ -265,7 +266,7 @@ If you recall, when we generated the channel files with the command
 
 The file app/assets/javascripts/channels/user_info.coffee was generated, that file has the code to initialize the subscription in the frontend. Let's see its content:
 
-```coffeescript 
+```coffeescript
 App.cable.subscriptions.create "UserInfoChannel",
   connected: ->
     # Called when the subscription is ready for use on the server

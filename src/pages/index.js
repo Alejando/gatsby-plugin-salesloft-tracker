@@ -39,10 +39,14 @@ const dataToTechnologies = R.pipe(
   R.map(R.view(R.lensPath(['node', 'publicURL'])))
 )
 
+const siteMeta = {
+  type: 'Home'
+}
+
 const Index = ({ data }) => (
   <>
     {/* <HeroCarousel /> */}
-    <Layout>
+    <Layout siteMeta={siteMeta}>
       <Slider/>
       <Container>
         <h1 className="text-center pb-3 border-bottom mb-4 font-weight-light ">
@@ -63,7 +67,7 @@ const Index = ({ data }) => (
           }
         </Row>
         <h1 className="text-center py-3 mb-3 border-top font-weight-light ">
-          Our <strong className="font-weight-bold">Technologies</strong> 
+          Our <strong className="font-weight-bold">Technologies</strong>
         </h1>
         <Row className="border-top py-3" >
           {

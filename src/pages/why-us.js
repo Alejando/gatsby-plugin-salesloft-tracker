@@ -6,7 +6,7 @@ import {
 } from 'reactstrap';
 import Banner from '../components/banner'
 import Layout from '../components/layout'
-import { 
+import {
   graphql
  } from 'gatsby';
 import * as R from 'ramda'
@@ -35,8 +35,13 @@ const dataToCharacteristics = R.pipe(
   R.map(R.pipe(R.prop('node'), nodeCharacteristicMapper))
 )
 
+const siteMeta = {
+  path: '/why-us',
+  openGraphTitle: 'Why Us'
+}
+
 const WhyUs = ({ data }) => (
-  <Layout>
+  <Layout siteMeta={siteMeta}>
     <Banner image={bannerImage} />
     <Container>
         <Row >
@@ -50,7 +55,7 @@ const WhyUs = ({ data }) => (
             <Row className="mb-5">
               {
                 dataToCharacteristics(data).map(characteristic => (
-                  <Characteristic 
+                  <Characteristic
                     key = { characteristic.order }
                     title = { characteristic.title }
                     icon = { characteristic.icon }
@@ -60,7 +65,7 @@ const WhyUs = ({ data }) => (
                 ))
               }
             </Row>
-          </Col> 
+          </Col>
         </Row>
       </Container>
   </Layout>
@@ -89,4 +94,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default WhyUs 
+export default WhyUs

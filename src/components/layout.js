@@ -10,9 +10,10 @@ import Footer from './footer'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import SiteMeta from './site-meta';
 library.add(fas, fab)
 
-const Layout = ({ children }) => (
+const Layout = ({ children, siteMeta }) => (
   <StaticQuery
     query={graphql`
       query LayoutQuery {
@@ -38,16 +39,11 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
+        <Helmet>
           <html lang="en" className="bg-light"/>
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossOrigin="anonymous" />
         </Helmet>
+        <SiteMeta title={data.site.siteMetadata.title} siteMeta={siteMeta} />
         <FontFace />
         <Header />
         <main className="bg-light">

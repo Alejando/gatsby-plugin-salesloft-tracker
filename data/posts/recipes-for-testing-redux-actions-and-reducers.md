@@ -2,6 +2,7 @@
 name: Recipes for Testing Redux Actions and Reducers
 date: "2017-11-14"
 image: ./Blog-Redux-Testing-Actions-Reducers.jpg
+description: I’d like to share my knowledge and personal approach to testing when building a Redux app. While there are many ways of doing this, if you are trying to figure out how to start testing your common Redux actions and reducers for your upcoming projects, this post is for you.
 tags:
   - react
   - redux
@@ -17,7 +18,7 @@ TOOLING
 
 First things first, our tooling consists of the following packages:
 * redux-thunk
-* chai 
+* chai
 * axios
 * redux-mock-store
 * axios-mock-adapter
@@ -69,7 +70,7 @@ export function createUser(attribute, value) {
   return {
     type: CREATE_USER,
     payload: {
-      [attribute]: value 
+      [attribute]: value
     }
   };
 }
@@ -185,7 +186,7 @@ Finally, we make sure that the response and the action type dispatched matches t
 
 RECIPE FOR REDUCERS
 
-Testing reducers is really straightforward  because they are pure functions. It should calculate the next state and return it. No side effects. No API calls. No mutations. 
+Testing reducers is really straightforward  because they are pure functions. It should calculate the next state and return it. No side effects. No API calls. No mutations.
 
 ```javascript
 import {
@@ -228,9 +229,9 @@ export default (state = initial_state, action) => {
   }
 };
 ```
-	
 
-Our reducer boilerplate just calculates the next piece of state. Back in our `closeModal` example we switch the property showModal to false. 
+
+Our reducer boilerplate just calculates the next piece of state. Back in our `closeModal` example we switch the property showModal to false.
 We could be testing every case scenario, but that would involve too much code for this short blogpost and we know you need to hurry because you have some tests to add to your project, so let’s go ahead and test CLOSE_MODAL and CREATE_USER.
 
 ```javascript
@@ -267,7 +268,7 @@ As you can see above, it is pretty simple to test reducers. Given certain action
 CONCLUSIONS
 
 When it comes to building apps, testing is getting more and more common in our development life. Testing assures that we have the correct values and the code is working as expected. For my coworkers and I, it is really important to test every possible scenario.
-	
+
 A great practice when working with someone else’s code is to run the test suite before every tweak or change. Here at Density Labs, testing is a major step in our development process. If you have any questions or you want to contact us to work on your project, feel free to reach us at: www.densitylabs.io/contact-us.
 
 
