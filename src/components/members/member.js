@@ -18,7 +18,7 @@ const Member = ({
     descriptionHtml,
   }
 }) => (
-  <Card 
+  <Card
     css={css`
     @media (min-width: 540px) {
       flex: 0 0 44% !important;
@@ -30,13 +30,13 @@ const Member = ({
       flex: 0 0 22% !important;
     }
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-    `} 
+    `}
     className="mb-5">
     <CardImg top width="100%" src={ imageSrc } alt={name} />
     <CardBody>
       <CardTitle className="text-center">{ name }</CardTitle>
       <CardSubtitle className="text-center font-weight-light mb-3">{ title }</CardSubtitle>
-      <CardText dangerouslySetInnerHTML={{  __html: descriptionHtml }} />
+      <CardText tag="div" dangerouslySetInnerHTML={{  __html: descriptionHtml }} />
     </CardBody>
   </Card>
 )
