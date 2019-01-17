@@ -10,7 +10,7 @@ const LocationList = ({
   return (
     <div>
       {locations.map(location => (
-        <ul
+        <ul key={location.address}
           className="border-bottom pb-3 pl-0"
           css={css`
             list-style: none;
@@ -40,7 +40,7 @@ const LocationList = ({
           <li>
             {
               location.social.map((socialDetails) => (
-                <span>
+                <span key={socialDetails.icon}>
                   <SocialDataIcon key={socialDetails.icon} socialDetails={socialDetails} />
                   &nbsp;
                 </span>

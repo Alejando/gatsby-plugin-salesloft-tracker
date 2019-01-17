@@ -33,14 +33,14 @@ const HomeSliderContent = ({
     <h1 className="mb-2 font-weight-bold">{title}</h1>
     <h4 className="mb-4 font-weight-light">{subTitle}</h4>
     <div className="mb-3 d-inline-flex">
-      <Link to={`/work`}>
+      <Link to="/work">
         <Button color="secondary">
           <div className="m-0 mr-2 d-inline-block"> Check our work </div>
           <FontAwesomeIcon icon={["fas", "bolt"]} />
         </Button>
       </Link>
       <div className="m-2"> or </div>
-      <Link to={`/contact-us  `}>
+      <Link to="/contact-us">
         <Button color="danger">
           <div className="m-0 mr-2 d-inline-block"> Contact Us </div>
           <FontAwesomeIcon icon={["fas", "envelope"]} />
@@ -48,7 +48,7 @@ const HomeSliderContent = ({
       </Link>
     </div>
     <div>
-      <Link to={`/`}>
+      <Link to="/">
         <Button outline color="light">
           <div className="m-0 mr-2 d-inline-block"> Insiders </div>
           <FontAwesomeIcon icon={["fas", "user"]} />
