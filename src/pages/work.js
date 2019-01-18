@@ -2,11 +2,12 @@ import React from 'react'
 import {
   Container,
   Col,
-  Row,
+  Row
 } from 'reactstrap';
-import Layout from '../components/layout'
 import { graphql } from 'gatsby';
+import Layout from '../components/layout';
 import UseCaseList from '../components/use-cases/use-case-list';
+import ContactUsSection from '../components/use-cases/contact-us-section';
 
 const dataToUseCases = data => {
   const edges = data.allMarkdownRemark.edges;
@@ -42,6 +43,11 @@ const Work = ({ data }) => {
             <UseCaseList list={useCaseList} />
             </div>
           </Col>
+        </Row>
+      </Container>
+      <Container fluid>
+        <Row>
+          <ContactUsSection/>
         </Row>
       </Container>
     </Layout>
