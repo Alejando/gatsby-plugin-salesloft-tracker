@@ -6,6 +6,8 @@ import { StaticQuery, graphql } from 'gatsby'
 import FontFace from './font-face';
 import Header from './header'
 import Footer from './footer'
+import { Global, css } from '@emotion/core'
+
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -47,6 +49,20 @@ const Layout = ({ children, siteMeta }) => (
         <FontFace />
         <Header />
         <main className="bg-light">
+          <Global
+            styles={css`
+              :root{
+                font-size   : 100%;
+              
+                @media (max-width: 575.98px) { 
+                  font-size : 80%;
+                }
+                @media (min-width: 576px) and (max-width: 767.98px) { 
+                  font-size : 90%;
+                }
+              }
+            `}
+          />
           {children}
         </main>
 				<Footer/>

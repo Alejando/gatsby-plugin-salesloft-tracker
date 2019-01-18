@@ -35,7 +35,7 @@ const PostDetail = ({ data, location }) => {
             <h1 className="pb-2 mb-3">{post.frontmatter.name}</h1>
             <div
               className="my-3"
-              css={css`font-size: 12px; color: #aaa;`}
+              css={css`color: #6c757d;`}
             >
               <span className="mr-3">
                 <FontAwesomeIcon icon={["fas", "calendar-alt"]}  />
@@ -53,8 +53,8 @@ const PostDetail = ({ data, location }) => {
             <div
               dangerouslySetInnerHTML={{ __html: post.html }}
               css={css`
-                p{ color: #aaa; }
-                a{ color: red;  }
+                p{ color: #6c757d; }
+                a{ color: #c15050; &:hover{ color: #c15050};  }
               `}
             />
           </Col>
@@ -62,7 +62,7 @@ const PostDetail = ({ data, location }) => {
             className="d-flex justify-content-between mt-2 mb-5"
             css={css`
               font-size: 12px;
-              color: #aaa;
+              color: #6c757d;
             `}
           > 
             <div>

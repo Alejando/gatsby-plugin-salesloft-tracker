@@ -33,7 +33,7 @@ const ContactUs = () => {
       />
       <Container className="py-5">
         <Row>
-          <Col md="8">
+          <Col md="8" className="mb-5">
             <legend className="mb-3">Let's build something amazing!</legend>
             <ContactUsForm />
           </Col>

@@ -95,7 +95,7 @@ const ContactUsForm = () => {
               />
               <ErrorMessage name="message" component={FormFeedback} />
             </FormGroup>
-            <Button color="primary" type="submit" disabled={isSubmitting}>
+            <Button color="danger" type="submit" disabled={isSubmitting}>
               Submit
             </Button>
           </Form>

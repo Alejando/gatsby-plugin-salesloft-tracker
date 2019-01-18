@@ -36,7 +36,7 @@ const Work = ({ data }) => {
     <Layout siteMeta={siteMeta}>
       <Container className="pt-4">
         <h1 className="border-bottom pb-3">USE CASES</h1>
-        <p className="lead text-muted">We are a full stack software engineering services company specializing in rapid development of mobile, web, SaaS and enterprise applications. </p>
+        <p className="lead text-muted">This is the work we have done and the amazing people we had the privilege to work with.</p>
         <Row>
           <Col md="12" className="mt-3">
             <div className="use-case-list">

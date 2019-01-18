@@ -11,11 +11,11 @@ const FeaturedIcon = ({
   return (
     <span
       css={css`
-        font-size: ${size/3}px;
+        font-size: ${size}rem;
         display: inline-block;
-        line-height: ${size}px;
-        width: ${size}px;
-        height: ${size}px;
+        line-height: ${size*2}rem;
+        width: ${size*2}rem;
+        height: ${size*2}rem;
         background-color: ${color};
         color: white;
       `}

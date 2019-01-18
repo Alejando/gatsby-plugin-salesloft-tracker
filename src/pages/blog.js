@@ -3,7 +3,7 @@ import {
   Container,
 } from 'reactstrap';
 import Layout from '../components/layout'
-import { css } from "@emotion/core"
+import { graphql } from 'gatsby';
 import PostItem from '../components/post/post-item';
 import { withPrefix } from 'gatsby';
 
@@ -39,10 +39,9 @@ const Blog = ({ data }) => {
       <Container className="py-5">
         <h1
           className="border-bottom pb-3"
-          css={css`color: #333333;`}
         >
           BLOG POSTS
-          </h1>
+        </h1>
         {
         posts.map((post, i) => (
           <PostItem post={post} key={i}/>

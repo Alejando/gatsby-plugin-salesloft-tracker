@@ -52,7 +52,7 @@ const Index = ({ data }) => (
         <h1 className="text-center pb-3 border-bottom mb-4 font-weight-light ">
           YOU'LL <strong className="font-weight-bold">LOVE</strong> WORKING WITH US
         </h1>
-        <Row >
+        <Row  className="my-5">
           {
             dataToSkills(data).map(skill => (
               <Col md="12" lg="4" key={skill.name} className="mb-4">
@@ -66,13 +66,13 @@ const Index = ({ data }) => (
             ))
           }
         </Row>
-        <h1 className="text-center py-3 mb-3 border-top font-weight-light ">
+        <h2 className="text-center py-4  border-top font-weight-light ">
           Our <strong className="font-weight-bold">Technologies</strong>
-        </h1>
-        <Row className="border-top py-3" >
+        </h2>
+        <Row className="border-top py-4" >
           {
             dataToTechnologies(data).map(src => (
-              <Col sm={2} key={src}>
+              <Col md={2} xs={4} key={src}>
                 <img key={src} src={src} alt={src} />
               </Col>
             ))
@@ -81,16 +81,10 @@ const Index = ({ data }) => (
         </Row>
       </Container>
       <div className="text-white mt-4 p-5 text-center" css={css`background-color: #ED1C24;`}>
-          <div className="col-6 mx-auto pb-2 mb-4">
-            <h1 className="text-white font-weight-bold">Ready to get started?</h1>
-          </div>
-          <p
-            css={css`
-              font-size: 2rem;
-            `}
-          >
+          <h1 className="text-white font-weight-bold mb-4">Ready to get started?</h1>
+          <h3>
             Get in touch with us today.<br/>We'd love to make you a happy customer!
-          </p>
+          </h3>
           <Link to="/contact-us">
             <Button color="warning" size="lg">
               Contact us for a 30 minute free consultation

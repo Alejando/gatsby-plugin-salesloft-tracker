@@ -14,13 +14,13 @@ const PostItem = ({
   post
 }) => (
   <Row className='my-5'>
-    <Col md="6" >
+    <Col md="6" className="mb-3" >
       <img alt={post.name} src={post.imageSrc} className="img-fluid" />
     </Col>
     <Col md="6"
       css={css`
-        color: #aaa;
-        a{ color: #333333; }
+        color: #6c757d;
+        a{ color: initial; &:hover{ color: #c15050} }
       `}
     >
       <h2
@@ -28,7 +28,7 @@ const PostItem = ({
       >
         <Link
           to={`/blog/${slugify(post.name)}`}
-          css={css`&:hover{color: red`}
+          css={css` color: black; &:hover{ color: #c15050}`}
           >
           { post.name }
         </Link>
