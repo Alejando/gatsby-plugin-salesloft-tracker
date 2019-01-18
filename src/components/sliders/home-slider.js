@@ -27,11 +27,22 @@ class HomeSlider extends React.Component {
       autoplaySpeed: 5000,
       prevArrow: <SliderArrow to="prev" />,
       nextArrow: <SliderArrow to="next" />,
+      dots:true,
       fade:true,
-      afterChange: (index) => this.setState({index})
+      afterChange: (index) => this.setState({index}),
     };
     return (
-      <Slider {...settings}>
+      <Slider 
+        {...settings} 
+        css={css`
+        .slick-dots{
+          bottom: 25px;
+        }
+        .slick-dots li button:before{
+          color: #ed1c24;
+        }
+        `}
+      >
         <div css={css`position: relative;`}>
           <SliderBackground
             isVideo={true}

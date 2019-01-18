@@ -28,10 +28,22 @@ const HomeSliderContent = ({
         top: 50%;
         opacity: 1;
       }
-      `}
+      @media (max-width: 540px) {
+        top: 35%;
+        &.is-active{
+          top: 40%;
+        }
+      }
+      @media (max-width: 720px) {
+        top: 40%;
+        &.is-active{
+          top: 45%;
+        }
+      }
+    `}
   >
-    <h1 className="mb-2 font-weight-bold">{title}</h1>
-    <h4 className="mb-4 font-weight-light">{subTitle}</h4>
+    <h1 className="mb-2 mx-2 font-weight-bold">{title}</h1>
+    <h4 className="mb-4 mx-2 font-weight-light">{subTitle}</h4>
     <div className="mb-3 d-inline-flex">
       <Link to="/work">
         <Button color="secondary">
