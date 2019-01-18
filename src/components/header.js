@@ -12,8 +12,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Toggler from './toggler/toggler'
 import { css } from 'emotion'
 
+
 const Header = () => (
-  <Navbar color="light" light expand="md" className="bg-white">
+  <Navbar color="light" light expand="md" className="bg-white" css={css`
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    border-top: 1px solid #ffffff;
+    border-bottom: 2px solid #f1f1f1;
+  `}>
     <Link className="navbar-brand" to="/">
       <img className="mb-0 p-0" style={{ width: 200 }} src={logo} alt="Logo" />
     </Link>
