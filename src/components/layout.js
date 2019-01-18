@@ -43,7 +43,6 @@ const Layout = ({ children, siteMeta }) => (
       <>
         <Helmet>
           <html lang="en" className="bg-light"/>
-          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossOrigin="anonymous" />
         </Helmet>
         <SiteMeta title={data.site.siteMetadata.title} siteMeta={siteMeta} />
         <FontFace />
