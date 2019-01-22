@@ -44,16 +44,16 @@ const UseCaseDetail = ({ data }) => {
                 <dd>{useCase.frontmatter.technology}</dd>
                 <dt>Place</dt>
                 <dd>{useCase.frontmatter.place}</dd>
-                <a
+              </dl>
+              <a
                   href={useCase.frontmatter.external_link}
                   target="_blank"
 								  rel="noopener noreferrer"
                 >
-                  <Button color="primary">
+                  <Button color="danger">
                     External Link <FontAwesomeIcon className="ml-2" icon="external-link-alt" />
                   </Button>
                 </a>
-              </dl>
             </aside>
           </Col>
         </Row>

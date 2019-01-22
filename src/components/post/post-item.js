@@ -19,7 +19,7 @@ const PostItem = ({
     </Col>
     <Col md="6"
       css={css`
-        color: #6c757d;
+        color: #51565C;
         a{ color: initial; &:hover{ color: #c15050} }
       `}
     >
@@ -64,7 +64,7 @@ const PostItem = ({
           {
           (post.tags || []).map((tag,i) =>(
             <span key={i} className="mx-1">
-            <Link to="blog" className="text-danger">
+            <Link to="blog"  css={css`color: #A31929; &:hover{ color: #A31929; }`}>
               {tag}
             </Link>
             </span>
@@ -73,7 +73,7 @@ const PostItem = ({
         </span>
         <span>
           <FontAwesomeIcon icon={["fas", "link"]} className="mx-1" />
-          <Link to={`/blog/${slugify(post.name)}`} className="text-danger">
+          <Link to={`/blog/${slugify(post.name)}`}  css={css`color: #A31929; &:hover{ color: #A31929; }`}>
             Read more
           </Link>
         </span>

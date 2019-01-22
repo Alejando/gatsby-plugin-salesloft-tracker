@@ -39,7 +39,7 @@ const ContactUs = () => {
           </Col>
           <Col md="4">
             <h3 css={css`font-family:'Sansation', sans-serif;`} className="border-bottom pb-3">
-              Density<span css={css`color: #ed1c24;`}>Labs</span>
+              Density<span css={css`color: #D92635;`}>Labs</span>
             </h3>
             <LocationList locations={locations} />
           </Col>

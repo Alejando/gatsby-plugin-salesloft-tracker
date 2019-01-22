@@ -67,7 +67,7 @@ const WhoWeArePage = ({ data }) => {
           </Col>
           <Col md="12" className="border-top mt-3 pt-2">
             <h2>OUR <strong>PEOPLE</strong></h2>
-            <p className="text-muted">The backbone to Density Labs’ success is a shared passion for software engineering, new product development, emerging technologies and a commitment to building personal and trusting relationships with our clients. We pride ourselves on open communication, connecting deeply, the love of coding and passion for life.</p>
+            <p>The backbone to Density Labs’ success is a shared passion for software engineering, new product development, emerging technologies and a commitment to building personal and trusting relationships with our clients. We pride ourselves on open communication, connecting deeply, the love of coding and passion for life.</p>
           </Col>
           <Col md="12" className="mt-3">
             <MemberList title="Executive Team" members={executiveTeam} />

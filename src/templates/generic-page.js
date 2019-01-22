@@ -28,7 +28,6 @@ const GenericPage = ({ data }) => {
         <div
           dangerouslySetInnerHTML={{ __html: page.html }}
           css={css`
-            color: #777;
             h1, h2, h3, h4, h5 { color: black; }
             a { color: red;  }
           `}

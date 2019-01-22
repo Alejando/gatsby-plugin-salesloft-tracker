@@ -31,11 +31,11 @@ const LocationList = ({
           </li>
           <li>
             <FontAwesomeIcon icon={["fas", "phone"]} />
-            <a className="text-muted" href={`tel:${location.phone}`}>{ location.phone }</a>
+            <a css={css`color: #51565C; &:hover{ color: #51565C;}`} href={`tel:${location.phone}`}>{ location.phone }</a>
           </li>
           <li>
             <FontAwesomeIcon icon={["fas", "envelope"]} />
-            <a css={css`color: #ed1c24;`} href={`malto:${location.email}`}>{ location.email }</a>
+            <a css={css`color: #A31929; &:hover{ color: #A31929;}`} href={`malto:${location.email}`}>{ location.email }</a>
           </li>
           <li>
             {

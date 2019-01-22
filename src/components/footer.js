@@ -14,7 +14,7 @@ const Footer = () => (
 	<Container fluid>
 	<Row
 		className='pt-3'
-		css={css`background: #f5f5f5; color: #999999; border-top: 1px solid #eaeaea;`}
+		css={css`background: #f5f5f5; color: #4F4F4F; border-top: 1px solid #eaeaea;`}
 	>
 		<Col xs='12' className='mt-2 d-flex justify-content-center'>
 			<p className="mb-0" >

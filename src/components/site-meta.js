@@ -35,6 +35,7 @@ const SiteMeta = ({
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
       <meta name="keywords" content={m.keywords} />
+      <meta name="description" content={m.description} />
       <meta property="og:url" content={m.path ? `${m.baseUrl}${m.path}` : m.url } />
       <meta property="og:title" content={m.openGraphTitle} />
       <meta property="og:description" content={m.description} />

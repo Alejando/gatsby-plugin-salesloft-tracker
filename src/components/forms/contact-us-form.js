@@ -54,8 +54,9 @@ const ContactUsForm = () => {
             <FormGroup>
               <Label for="name">Name *</Label>
               <Input
-                type="name"
+                type="text"
                 name="name"
+                id="name"
                 tag={Field}
                 invalid={!!errors.name}
                 aria-required
@@ -67,6 +68,7 @@ const ContactUsForm = () => {
               <Input
                 type="email"
                 name="email"
+                id="email"
                 tag={Field}
                 invalid={!!errors.email}
                 aria-required
@@ -78,6 +80,7 @@ const ContactUsForm = () => {
               <Input
                 type="text"
                 name="company"
+                id="company"
                 tag={Field}
                 invalid={!!errors.company}
               />
@@ -89,6 +92,7 @@ const ContactUsForm = () => {
                 type="textarea"
                 component="textarea"
                 name="message"
+                id="message"
                 tag={Field}
                 invalid={!!errors.message}
                 aria-required

@@ -11,6 +11,7 @@ const SocialDataIcon = ({
       target="_blanK"
       rel="noopener noreferrer"
       className='btn border rounded-circle'
+      aria-hidden={true}
       css={css`
         color: #cdcdcd !important;
         background: #fff;

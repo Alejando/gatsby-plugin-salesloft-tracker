@@ -80,7 +80,7 @@ const Index = ({ data }) => (
 
         </Row>
       </Container>
-      <div className="text-white mt-4 p-5 text-center" css={css`background-color: #ED1C24;`}>
+      <div className="text-white mt-4 p-5 text-center" css={css`background-color: #AB1212;`}>
           <h1 className="text-white font-weight-bold mb-4">Ready to get started?</h1>
           <h3>
             Get in touch with us today.<br/>We'd love to make you a happy customer!

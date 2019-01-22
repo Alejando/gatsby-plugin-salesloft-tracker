@@ -31,7 +31,7 @@ const Header = () => (
         isOn,
       }) => (
         <>
-          <NavbarToggler onClick={toggle} />
+          <NavbarToggler onClick={toggle}  aria-label="Toggle Menu"/>
           <Collapse isOpen={isOn} navbar>
             <Nav
               className="ml-auto pr-3 d-md-flex flex-md-row"
