@@ -23,6 +23,7 @@ const dataToUseCases = data => {
 };
 
 const siteMeta = {
+  subtitle: 'Work',
   path: '/work',
   openGraphTitle: 'Work',
   keywords: 'densitylabs, density labs, our work, densitylabs our work, Modcloth, Headline Shirts ERP, Developed, Ruby on Rails, Our Experience, Developed in Ruby on Rails',

@@ -27,6 +27,7 @@ const dataToJobs = data => {
 };
 
 const siteMeta = {
+  subtitle: 'Careers',
   path: '/careers',
   openGraphTitle: 'Join Our Team',
   keywords: 'densitylabs, densitylabs we are hiring, work with us, work with us from home, jobs available, careers, join our team, we are looking for talent people, job opportunities, density labs Join us',

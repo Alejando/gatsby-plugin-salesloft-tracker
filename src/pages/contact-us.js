@@ -15,6 +15,7 @@ import locations from '../../data/locations.json'
 import { withPrefix } from 'gatsby';
 
 const siteMeta = {
+  subtitle: 'Contact Us',
   path: '/contact-us',
   openGraphTitle: 'Contact us',
   keywords: 'densitylabs, contact us, densitylabs phone number, telephone number of densitylabs, densitylabs address, contact us densitylabs',

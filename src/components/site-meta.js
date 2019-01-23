@@ -10,7 +10,6 @@ const favicon = withPrefix('/images/favicon.png')
 const msIcon = withPrefix('/images/ms-icon.png')
 
 export const defaultMeta = {
-  subtitle: 'home',
   keywords: 'Densitylabs, density labs, development web apps, development mobile apps, software development companies in mexico, Software Development Company, web development company, mobile app development, startup project management, software development for startups, ruby on rails development, ruby on rails development company, ROR development services, ruby on rails web development company, Ruby on Rails Development Services, Ruby on Rails Software Development, software product development, software development company Mexico',
   url: 'https://densitylabs.io',
   openGraphTitle: 'Software Engineering Company | DensityLabs',

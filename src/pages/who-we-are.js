@@ -43,6 +43,7 @@ const dataToMembers = R.pipe(
 )
 
 const siteMeta = {
+  subtitle: 'Who we are',
   path: '/who-we-are',
   openGraphTitle: 'Who we are'
 }

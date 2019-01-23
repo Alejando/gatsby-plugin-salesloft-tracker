@@ -36,6 +36,7 @@ const dataToCharacteristics = R.pipe(
 )
 
 const siteMeta = {
+  subtitle: 'Why Us',
   path: '/why-us',
   openGraphTitle: 'Why Us'
 }

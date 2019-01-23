@@ -23,6 +23,7 @@ const dataToPosts = data => {
 };
 
 const siteMeta = {
+  subtitle: 'Blog',
   path: '/blog',
   openGraphTitle: 'Densitylabs Blog Posts',
   keywords: 'densitylabs, densitylabs Software Development Company, density labs, blogging, densitylabs blog post, ruby on rails development, software development for startups',

@@ -40,6 +40,7 @@ const dataToTechnologies = R.pipe(
 )
 
 const siteMeta = {
+  subtitle: 'Home',
   type: 'Home'
 }
 
