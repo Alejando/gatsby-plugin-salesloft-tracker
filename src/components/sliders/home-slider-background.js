@@ -14,7 +14,6 @@ const HomeSliderBackground = ({
       autoPlay
       muted
       loop
-      autoBuffer
       poster= {videoPoster}
       css={css`
         height: 100%;

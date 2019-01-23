@@ -23,7 +23,7 @@ const Banner = ({
       <div
         className="text-center text-white py-5 w-100"
         css={css`
-          background-color: #525252;
+          background-color: ${(image ? 'rgba(0, 0, 0, 0.5)' : '#525252') };
           padding-left: 20%;
           padding-right: 20%;
         `}
