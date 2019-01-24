@@ -22,6 +22,7 @@ const Layout = ({ children, siteMeta }) => (
         site {
           siteMetadata {
             title
+            siteUrl
           }
         }
         gatsbyIcon: file(relativePath: { eq: "gatsby-icon.png" }) {
@@ -44,7 +45,7 @@ const Layout = ({ children, siteMeta }) => (
         <Helmet>
           <html lang="en" className="bg-light"/>
         </Helmet>
-        <SiteMeta title={data.site.siteMetadata.title} siteMeta={siteMeta} />
+        <SiteMeta title={data.site.siteMetadata.title} baseUrl={data.site.siteMetadata.siteUrl} siteMeta={siteMeta} />
         <FontFace />
         <Header />
         <main className="bg-light">
@@ -52,11 +53,11 @@ const Layout = ({ children, siteMeta }) => (
             styles={css`
               :root{
                 font-size   : 100%;
-              
-                @media (max-width: 575.98px) { 
+
+                @media (max-width: 575.98px) {
                   font-size : 80%;
                 }
-                @media (min-width: 576px) and (max-width: 767.98px) { 
+                @media (min-width: 576px) and (max-width: 767.98px) {
                   font-size : 90%;
                 }
               }

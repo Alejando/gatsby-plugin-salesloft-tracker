@@ -10,7 +10,7 @@ const UseCaseDetail = ({ data }) => {
   const useCase = data.markdownRemark
 
   const siteMeta = {
-    path: `work/${slugify(useCase.frontmatter.name)}`,
+    path: `/work/${slugify(useCase.frontmatter.name)}`,
     subtitle: useCase.frontmatter.name,
     openGraphTitle: useCase.frontmatter.name,
     keywords: `${useCase.frontmatter.name}, our work, work, densitylabs, developed in Ruby on Rails, densitylabs, density labs, densitylabs our work, Our Experience`,

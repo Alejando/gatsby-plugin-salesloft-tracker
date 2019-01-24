@@ -18,7 +18,7 @@ const PostDetail = ({ data, location }) => {
   const post = data.markdownRemark
 
   const siteMeta = {
-    path: `blog/${slugify(post.frontmatter.name)}`,
+    path: `/blog/${slugify(post.frontmatter.name)}`,
     subtitle: post.frontmatter.name,
     openGraphTitle: post.frontmatter.name,
     keywords: post.frontmatter.keywords || (post.frontmatter.tags || []).join(', '),
@@ -64,7 +64,7 @@ const PostDetail = ({ data, location }) => {
               font-size: 12px;
               color: #51565C;
             `}
-          > 
+          >
             <div>
               {
                 post.frontmatter.tags !== null  &&
@@ -81,15 +81,15 @@ const PostDetail = ({ data, location }) => {
                   }
                 </span>
               }
-              
-              <Button 
-                outline 
-                color="dark" 
-                size="sm" 
-                href="https://github.com/densitylabs" 
-                data-count-href="/densitylabs/followers" 
-                data-count-api="/users/densitylabs#followers" 
-                data-count-aria-label="# followers on GitHub" 
+
+              <Button
+                outline
+                color="dark"
+                size="sm"
+                href="https://github.com/densitylabs"
+                data-count-href="/densitylabs/followers"
+                data-count-api="/users/densitylabs#followers"
+                data-count-aria-label="# followers on GitHub"
                 aria-label="Follow @densitylabs on GitHub"
               >
                 <FontAwesomeIcon icon={["fab", "github"]} />
