@@ -11,7 +11,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Density Labs',
-    siteUrl: 'https://densitylabs.io/',
+    siteUrl: process.env.SITE_URL,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -86,5 +86,6 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-emotion',
     'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sitemap',
   ],
 }
