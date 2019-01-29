@@ -51,7 +51,7 @@ We use several parameters to define:
  - geom_bar is the type of graph
  - And labs for friendlier user labels
            
-![](https://densitylabs.io/system/comfy/cms/files/files/000/000/166/original/Device_Use_by_Continent.png)
+![](./Device_Use_by_Continent.png)
 
 #### Timeline with Continents and Devices
 
@@ -65,7 +65,7 @@ ga_data_devices <- google_analytics_4(viewId = "*********",date_range = c(Sys.Da
 ggplot(data=ga_data_devices,aes(x=date,y=continent,fill=devicecategory)) + geom_line(size=3, aes(colour=devicecategory))  + labs(colour="Devices") + xlab("Date") + ylab("Continent")
 ```
 
-![](https://densitylabs.io/system/comfy/cms/files/files/000/000/167/original/Timeline_Device_by_Continent.png)
+![](./Timeline_Device_by_Continent.png)
 
 
 #### Relationships between Continents and Sessions
@@ -75,7 +75,7 @@ We used  `ga_data` again to show the relationship between continents and session
 ```
 qplot(date,sessions,data=ga_data,color=continent,main="Histograma")+ theme_bw() + ggtitle("Sessions by Continent") + labs(x="Date", y="Sessions", colour = "Continent") 
 ```
-![](https://densitylabs.io/system/comfy/cms/files/files/000/000/168/original/Sessions_by_Continent.png)
+![](./Sessions_by_Continent.png)
 
 
 #### Sessions and Users
@@ -89,7 +89,7 @@ Here are the daily sessions during August 2017. Color indicates the density of u
 ```
 ggplot(ga_data_small, aes(date, sessions, color=users)) + geom_line( size=2) + xlab("Date") + ylab("Daily Sessions") + theme_bw() + ggtitle("Density Labs Sessions and Users") + labs(colour= "Users")  
 ```
-![](https://densitylabs.io/system/comfy/cms/files/files/000/000/169/original/Sessions_and_users.png)
+![](./Sessions_and_users.png)
 
 #### Time series Sessions by Countries
 
@@ -106,7 +106,7 @@ ga_data_countries_subset <- subset(ga_data_countries, sessions > 3)
 ```
 ggplot(data=ga_data_countries_subset,aes(x=date,y=sessions, color=country)) + geom_line(size=1) + theme_bw() + theme(legend.position = "bottom", legend.direction="horizontal", legend.title = element_blank()) + ggtitle("Time series Sessions by Country") + labs(x="Date", y="Sessions")  + scale_colour_discrete()
 ```
-![](https://densitylabs.io/system/comfy/cms/files/files/000/000/170/original/Sessions_by_country.png
+![](./Sessions_by_country.png
 )
 
 

@@ -34,7 +34,7 @@ The application we're going to work on is fairly simple, it was created using th
 
 A very simple backend in Node.js was added as well, it can be found in the server folder. This service will provide JSON information about all the Pokemon from the first generation. The service also includes an endpoint that serves all the types of Pokemon, which we'll use in the future.
 
-![App Demo](https://densitylabs.io/system/comfy/cms/files/files/000/000/190/original/app-demo.gif "Demo")
+![App Demo](/images/app-demo.gif "Demo")
 
 As shown above, the application couldn't really be made simpler, but it has enough components and business logic for us to test it from different angles.
 
@@ -218,7 +218,7 @@ This is basically the same test that we had before, but now Enzyme will handle t
 
 If we take a quick look at the application, we can divide it by the components that are inside AppWrapper:
 
-![AppWrapper Layout](https://densitylabs.io/system/comfy/cms/files/files/000/000/191/original/appwrapper.png "App Wrapper Layout")
+![AppWrapper Layout](./appwrapper.png "App Wrapper Layout")
 
 According to the image we can, for example, verify that the app logo and the title are rendered correctly when mounting the AppWrapper
 

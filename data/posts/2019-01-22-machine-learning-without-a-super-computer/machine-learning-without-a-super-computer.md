@@ -19,7 +19,7 @@ I will briefly describe some of the available options and provide my feedback on
 
 ### Option 1: Google Colab
 
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_9BE909297BA76294A15ECC4ECECF671C0C90AF98EA10B1C27E3DD08D4DED7F92_1542647297498_image.png)
+![](./google_colab.png)
 
 
 Google’s Colaboratory (Colab) provides an enhanced Jupyter notebook that saves your work automatically in Google Drive. It provides either just a display of the notebook or interaction with it (modifying and running code).
@@ -48,7 +48,7 @@ Colab was the platform I had the best experience with. Although the file managem
 
 ### Option 2: Azure Notebooks
 
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_9BE909297BA76294A15ECC4ECECF671C0C90AF98EA10B1C27E3DD08D4DED7F92_1542647334483_image.png)
+![](./azure_notebooks.png)
 
 
 Microsoft’s option to provide Jupyter notebooks on top of their Azure’s platform. You can use it either with the free tier or on your own Azure’s cloud computing environment. There is no need to sign up with your credit card.
@@ -72,7 +72,7 @@ When I used the Azure’s notebooks I felt it was sluggish compared to Kaggle or
 
 ### Option 3: Kaggle Kernels
 
-![](https://cdn-images-1.medium.com/max/1600/1*DmQ_eaZK0ZVwuthX4MQyBQ.png)
+![](./kaggle.png)
 
 Kaggle Kernels is the way Data Scientists or Machine Learning enthusiasts share their work to the Kaggle community, usually participating in competitions and making public their work-in-progress in order to receive feedback or to provide support to other competition peers.
 
@@ -96,7 +96,7 @@ This is my second-best platform. If you do Kaggle competitions, then it’s a mu
 
 ### Option 4: CoCalc
 
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_9BE909297BA76294A15ECC4ECECF671C0C90AF98EA10B1C27E3DD08D4DED7F92_1543959618925_image.png)
+![](./cocalc.png)
 
 
 CoCalc is a paid service which includes a free tier that provides very basic functionality, including the creation of Jupyter notebooks and Markdown or LaTeX documents.

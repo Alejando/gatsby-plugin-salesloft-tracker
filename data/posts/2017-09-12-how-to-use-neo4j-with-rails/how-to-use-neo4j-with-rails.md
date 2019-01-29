@@ -82,7 +82,7 @@ You declare all attributes of the node type Movie with property and the relation
 
 So I wanted to show the list of movies and how many people worked on it.
 
-![list of movies](http://staging.densitylabs.io/system/comfy/cms/files/files/000/000/149/original/neo-list_of_movies.png)
+![list of movies](./neo-list_of_movies.png)
 
 But the log was showing tons of queries
 

@@ -48,7 +48,7 @@ Tmux is a tool that allows running multiple terminal sessions through a single t
 
 Here’s a screenshot of a Tmux session:
 
-![Tmux session](http://densitylabs.io/system/comfy/cms/files/files/000/000/127/original/tmux-image1.png)
+![Tmux session](./tmux-image1.png)
 
 What you see in the image:
 
@@ -118,7 +118,7 @@ Quick note: the screenshot shown here may differ slightly from what you see by d
 
 I like the idea of dividing the screen vertically, so that on one side of the screen I have Vim and on the other side I have the output of my code. I could even have another console if I wanted to. Here’s how Tmux makes it happen:
 
-![Tmux panes](http://densitylabs.io/system/comfy/cms/files/files/000/000/128/original/tmux-image2.png)
+![Tmux panes](./tmux-image2.png)
 
 What you see in the image:
 
@@ -134,7 +134,7 @@ In Tmux, a window is a container for one or more panes. Tmux windows allow you t
 
 The list of existent windows in a Tmux session displays at the bottom of the screen. Here is an example of how Tmux displays (by default) the list of windows created. In this case, there are three windows: “server”, “editor” and “shell”):
 
-![Tmux windows](http://densitylabs.io/system/comfy/cms/files/files/000/000/129/original/tmux-image3.png)
+![Tmux windows](./tmux-image3.png)
 
 In order to create a new window you need to press “Ctrl-b c”. To navigate through windows press `Ctrl-b` followed by the index number of the window you want to go. The index number displays next to the name.
 
@@ -150,7 +150,7 @@ Tmux sessions remain alive until you restart your machine or you explicitly kill
 
 To get a list of the existing sessions, press `Ctrl-b s`. Here is an example of what Tmux will show you:
 
-![Tmux sessions list](http://densitylabs.io/system/comfy/cms/files/files/000/000/130/original/tmux-image4.png)
+![Tmux sessions list](./tmux-image4.png)
 
 Each session listed has an ID number, starting from zero. In order to go to that session type the session’s ID number in your keyboard. In the case that you are not in Tmux but you have one or more sessions running just use:
 
@@ -192,7 +192,7 @@ Now that the *vi* mode is set and *rettach-to-user-namespace* installed, let’s
 
 1.  Enter copy mode: `ctrl-b [`. You’ll see a short highlighted text appear at the top right of the screen as in the following image (“*[0/0]*”).
 
-![Tmux copy mode](http://densitylabs.io/system/comfy/cms/files/files/000/000/131/original/tmux-image5.png)
+![Tmux copy mode](./tmux-image5.png)
 
 1.  Start moving across the text as you would do in Vim: with j, k, l, h, etc..
 2.  Once you get to the text you want to copy press the spacebar and start selecting text (exactly as you would do it in Vim).
@@ -235,7 +235,7 @@ You can share the address of a Tmux session with someone else, and that person c
 
 1.  Copy the SSH URL given by Tmate on the Tmux session. An example is showed in the following image (message at the bottom: “*[tmate] Remote session: ssh …*”):
 
-![Tmate with Tmux](http://densitylabs.io/system/comfy/cms/files/files/000/000/132/original/tmux-image6.png)
+![Tmate with Tmux](./tmux-image6.png)
 
 1.  Ask the other person to access via *SSH* using the URL you just copied.
 
@@ -247,7 +247,7 @@ Now that you know how to make good use of Tmux’s pair programming feature, you
 
 When I first opened Vim through Tmux I found the colors weren’t being correctly applied. The background color was being displayed only where characters appeared. Here is an example:
 
-![Vim color scheme broken](http://densitylabs.io/system/comfy/cms/files/files/000/000/133/original/tmux-image7.png)
+![Vim color scheme broken](./tmux-image7.png)
 
 This issue is due to Vim’s need of setting a different `term` parameter when ran through Tmux. To set the right `term` parameter just add the following lines to your *~/.vimrc* file:
 
@@ -257,7 +257,7 @@ This issue is due to Vim’s need of setting a different `term` parameter when r
 
 After updating the ~/.vimrc file, the color scheme is displayed correctly:
 
-![Vim color scheme fixed](http://densitylabs.io/system/comfy/cms/files/files/000/000/134/original/tmux-image8.png)
+![Vim color scheme fixed](./tmux-image8.png)
 
 #### Static cursor shape
 
@@ -356,11 +356,11 @@ There you have it. Now, in order to start coding for project A just run the Tmux
 
 By default, the Tmux bar looks like the following (green bar at the bottom of the image):
 
-![Tmux default bar](http://densitylabs.io/system/comfy/cms/files/files/000/000/135/original/tmux-image9.png)
+![Tmux default bar](./tmux-image9.png)
 
 You can change its appearance if you want. In my case I like something cleaner as in:
 
-![Tmux pimped bar](http://densitylabs.io/system/comfy/cms/files/files/000/000/136/original/tmux-image10.png)
+![Tmux pimped bar](./tmux-image10.png)
 
 In order to accomplish it, I use the following settings in my ~/.tmux.conf file:
 
