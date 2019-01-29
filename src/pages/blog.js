@@ -6,10 +6,11 @@ import Layout from '../components/layout'
 import { graphql } from 'gatsby';
 import PostItem from '../components/post/post-item';
 import { withPrefix } from 'gatsby';
+import { uniqElementsBy } from '../lib/md-utils';
 
 const dataToPosts = data => {
   const edges = data.allMarkdownRemark.edges;
-  return edges.map(edge => {
+  return uniqElementsBy(edges.map(edge => {
     return {
       id: edge.node.id,
       name: edge.node.frontmatter.name,
@@ -19,7 +20,7 @@ const dataToPosts = data => {
       author: edge.node.frontmatter.author,
       summaryHtml: edge.node.excerpt,
     }
-  });
+  }), ['name', 'date']);
 };
 
 const siteMeta = {
