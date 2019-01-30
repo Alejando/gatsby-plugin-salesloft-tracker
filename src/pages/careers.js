@@ -98,7 +98,7 @@ const Careers = ({ data }) => {
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(jobs)/.*.md$/"}}
+      filter: {fileAbsolutePath: {regex: "//(jobs)/.*.md$/"}}
       sort: {fields: [frontmatter___date], order: DESC}
     ) {
       edges {

@@ -99,7 +99,7 @@ const Index = ({ data }) => (
 export const pageQuery = graphql`
   query IndexQuery {
     skills: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(skills)/.*.md$/"}},
+      filter: {fileAbsolutePath: {regex: "//(skills)/.*.md$/"}},
       sort: { fields: frontmatter___name  }
     ) {
       edges {

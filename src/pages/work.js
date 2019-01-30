@@ -58,7 +58,7 @@ const Work = ({ data }) => {
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(cases)/.*.md$/"}}
+      filter: {fileAbsolutePath: {regex: "//(cases)/.*.md$/"}}
     ) {
       edges {
         node {

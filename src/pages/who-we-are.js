@@ -85,7 +85,7 @@ const WhoWeArePage = ({ data }) => {
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(team)/.*.md$/"}},
+      filter: {fileAbsolutePath: {regex: "//(team)/.*.md$/"}},
       sort: { fields: frontmatter___name  }
     ) {
       edges {

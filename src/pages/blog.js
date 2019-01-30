@@ -57,7 +57,7 @@ const Blog = ({ data }) => {
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(posts)/.*.md$/"}}
+      filter: {fileAbsolutePath: {regex: "//(posts)/.+/.*.md$/"}}
       sort: {fields: [frontmatter___date], order: DESC}
     ) {
       edges {

@@ -76,7 +76,7 @@ const WhyUs = ({ data }) => (
 export const pageQuery = graphql`
   query WhyUsQuery {
     characteristics: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(characteristics)/.*.md$/"}}
+      filter: {fileAbsolutePath: {regex: "//(characteristics)/.*.md$/"}}
       sort: { fields: frontmatter___order  }
     ) {
       edges {

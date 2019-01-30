@@ -20,7 +20,7 @@ const createUseCasePages = async ({ graphql, actions }) => {
   const result = await graphql(`
     query {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/(cases)/.*.md$/" } }
+        filter: { fileAbsolutePath: { regex: "//(cases)/.*.md$/" } }
       ) {
         edges {
           node {
@@ -52,7 +52,7 @@ const createPostPages = async ({ graphql, actions })  => {
   const result = await graphql(`
     query {
       allMarkdownRemark(
-        filter: {fileAbsolutePath: {regex: "/(posts)/.*.md$/"}}
+        filter: {fileAbsolutePath: {regex: "//(posts)/.+/.*.md$/"}}
       ) {
         edges {
           node {
@@ -83,7 +83,7 @@ const createGenericPages = async ({ graphql, actions })  => {
   const result = await graphql(`
     query {
       allMarkdownRemark(
-        filter: {fileAbsolutePath: {regex: "/(pages)/.*.md$/"}}
+        filter: {fileAbsolutePath: {regex: "//(pages)/.*.md$/"}}
       ) {
         edges {
           node {
