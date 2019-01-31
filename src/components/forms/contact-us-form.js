@@ -49,7 +49,7 @@ const ContactUsForm = () => {
             )
         }}
       >
-        {({ errors, isSubmitting }) => (
+        {({ errors, isSubmitting, touched }) => (
           <Form>
             <FormGroup>
               <Label for="name">Name *</Label>
@@ -58,7 +58,7 @@ const ContactUsForm = () => {
                 name="name"
                 id="name"
                 tag={Field}
-                invalid={!!errors.name}
+                invalid={Boolean(touched.name && errors.name)}
                 aria-required
               />
               <ErrorMessage name="name" component={FormFeedback} />
@@ -70,7 +70,7 @@ const ContactUsForm = () => {
                 name="email"
                 id="email"
                 tag={Field}
-                invalid={!!errors.email}
+                invalid={Boolean(touched.email && errors.email)}
                 aria-required
               />
               <ErrorMessage name="email" component={FormFeedback} />
@@ -82,7 +82,7 @@ const ContactUsForm = () => {
                 name="company"
                 id="company"
                 tag={Field}
-                invalid={!!errors.company}
+                invalid={Boolean(touched.company && errors.company)}
               />
               <ErrorMessage name="company" component={FormFeedback} />
             </FormGroup>
@@ -94,7 +94,7 @@ const ContactUsForm = () => {
                 name="message"
                 id="message"
                 tag={Field}
-                invalid={!!errors.message}
+                invalid={Boolean(touched.message && errors.message)}
                 aria-required
               />
               <ErrorMessage name="message" component={FormFeedback} />
