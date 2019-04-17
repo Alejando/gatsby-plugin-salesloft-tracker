@@ -30,7 +30,7 @@ const SiteMeta = ({
     <Helmet>
       <title>{`${m.title}${m.subtitle ? ` | ${m.subtitle}` : ''}`}</title>
       <meta name="msapplication-TileImage" content={m.msIcon} />
-      <link rel="shortcut" href={m.favicon} />
+      <link rel="shortcut icon" href={m.favicon} />
       <link rel="canonical" href={fullUrl} />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
