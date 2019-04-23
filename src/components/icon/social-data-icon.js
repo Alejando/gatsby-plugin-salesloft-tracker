@@ -15,6 +15,12 @@ const SocialDataIcon = ({
       css={css`
         color: #cdcdcd !important;
         background: #fff;
+        width: 40px;
+        height: 38px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &:hover{
           color: #fff !important;
           background: ${hoverBg} }
