@@ -6,20 +6,22 @@ import Layout from '../components/layout'
 import { graphql } from 'gatsby';
 import PostItem from '../components/post/post-item';
 import { withPrefix } from 'gatsby';
-import { dataToPosts } from '../lib/md-utils';
+import { postsTags, dataToPosts  } from '../lib/md-utils';
 
-const siteMeta = {
-  subtitle: 'Blog',
-  path: '/blog',
-  openGraphTitle: 'Densitylabs Blog Posts',
-  keywords: 'densitylabs, densitylabs Software Development Company, density labs, blogging, densitylabs blog post, ruby on rails development, software development for startups',
-  description: 'Density Labs shares with you the technicals knowledge, experiences and the latest news.',
-  image: withPrefix('/images/software-density-labs.jpg'),
-  type: 'Blog'
-}
 
-const Blog = ({ data }) => {
+const BlogAuthor = ({ data, location }) => {
+  
   const posts = dataToPosts(data)
+
+  const siteMeta = {
+    subtitle: 'Blog',
+    path: location.pathname,
+    openGraphTitle: 'Densitylabs Blog Posts',
+    keywords: postsTags(posts),
+    description: 'Density Labs shares with you the technicals knowledge, experiences and the latest news.',
+    image: withPrefix('/images/software-density-labs.jpg'),
+    type: 'Blog'
+  }
 
   return (
     <Layout siteMeta={siteMeta}>
@@ -40,9 +42,16 @@ const Blog = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query {
+  query($author: String!) {
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "//(posts)/.+/.*.md$/"}}
+      filter: {
+        fileAbsolutePath: {regex: "//(posts)/.+/.*.md$/"}
+        frontmatter: {
+          author: {
+            eq: $author
+          }
+        }
+      }
       sort: {fields: [frontmatter___date], order: DESC}
     ) {
       edges {
@@ -68,4 +77,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default Blog
+export default BlogAuthor

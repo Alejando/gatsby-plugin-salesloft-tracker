@@ -5,6 +5,7 @@
  */
 const path = require('path')
 const { slugify } = require('./src/lib/url-utils')
+const { _ } = require('lodash')
 
 exports.createPages = ({ graphql, actions }) => {
   return Promise.all([
@@ -59,6 +60,8 @@ const createPostPages = async ({ graphql, actions })  => {
             id
             frontmatter {
               name
+              tags
+              author
             }
           }
         }
@@ -66,16 +69,51 @@ const createPostPages = async ({ graphql, actions })  => {
     }
   `)
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  posts = result.data.allMarkdownRemark.edges
+
+  let tags = []
+  let authors = []
+  
+  _.each(posts, edge => {
     createPage({
-      path: `blog/${slugify(node.frontmatter.name)}`,
+      path: `blog/${slugify(edge.node.frontmatter.name)}`,
       component: path.resolve(`./src/templates/post-detail.js`),
       context: {
-        id: node.id,
+        id: edge.node.id,
+      },
+    })
+    if (_.get(edge, 'node.frontmatter.tags')) {
+      tags = tags.concat(edge.node.frontmatter.tags)
+    }
+    if (_.get(edge, 'node.frontmatter.author')) {
+      authors = authors.concat(edge.node.frontmatter.author)
+    }
+  })
+  
+  tags = _.uniq(tags)
+  authors = _.uniq(authors)
+
+  tags.forEach(tag => {
+    createPage({
+      path: `blog/tags/${slugify(tag)}`,
+      component: path.resolve(`./src/templates/blog-tags.js`),
+      context: {
+        tag
+      },
+    })
+  })
+
+  authors.forEach(author => {
+    createPage({
+      path: `blog/author/${slugify(author)}`,
+      component: path.resolve(`./src/templates/blog-author.js`),
+      context: {
+        author
       },
     })
   })
 }
+
 
 const createGenericPages = async ({ graphql, actions })  => {
   const { createPage } = actions
