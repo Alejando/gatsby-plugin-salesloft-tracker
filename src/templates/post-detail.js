@@ -73,7 +73,7 @@ const PostDetail = ({ data, location }) => {
                   {
                   post.frontmatter.tags.map((tag, i) =>(
                     <span key={i} className="mx-1">
-                    <Link to="blog" className="text-danger">
+                    <Link to={`/blog/tags/${slugify(tag)}`} className="text-danger">
                       {tag}
                     </Link>
                     </span>
