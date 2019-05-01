@@ -13,6 +13,7 @@ import { Container, Row, Col } from 'reactstrap'
 import ShareButtons from '../components/share-buttons'
 import { css } from '@emotion/core'
 import { slugify } from '../lib/url-utils';
+import { DiscussionEmbed } from 'disqus-react'
 
 const PostDetail = ({ data, location }) => {
   const post = data.markdownRemark
@@ -25,6 +26,11 @@ const PostDetail = ({ data, location }) => {
     description: post.frontmatter.description,
     image: withPrefix(post.frontmatter.image.childImageSharp.original.src),
     type: 'Article'
+  }
+
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier: slugify(post.frontmatter.name) },
   }
 
   return (
@@ -97,6 +103,11 @@ const PostDetail = ({ data, location }) => {
               </Button>
             </div>
             <ShareButtons url={location.href} title={post.frontmatter.name} summary={post.frontmatter.social_summary}/>
+          </Col>
+        </Row>
+        <Row>
+          <Col md="12">
+            <DiscussionEmbed {...disqusConfig} />
           </Col>
         </Row>
       </Container>
