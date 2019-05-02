@@ -67,8 +67,6 @@ const HomeSliderContent = ({
         </Button>
       </Link>
     </div>
-
-
   </div>
 )
 

@@ -32,8 +32,8 @@ const Member = ({
       box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
       &:hover{ box-shadow: 0 0 !important; }
     `}
-    className="mb-5">
-    <CardImg top width="100%" src={ imageSrc } alt={name} />
+    className="mb-5 d-block">
+     <CardImg top width="100%" src={ imageSrc } alt={name} />
     <CardBody>
       <CardTitle className="text-center">{ name }</CardTitle>
       <CardSubtitle className="text-center font-weight-light mb-3">{ title }</CardSubtitle>

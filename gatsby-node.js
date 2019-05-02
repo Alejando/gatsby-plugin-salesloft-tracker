@@ -3,9 +3,33 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+require ('babel-polyfill')
+
 const path = require('path')
 const { slugify } = require('./src/lib/url-utils')
 const { _ } = require('lodash')
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  getConfig,
+  actions: { replaceWebpackConfig }
+}) => {
+  switch (stage) {
+    case 'build-javascript':
+      // We want to include the babel polyfills before any application code,
+      // so we're inserting it as an additional entry point.  Gatsby does not allow
+      // this in "setWebpackConfig", so we have to use "replaceWebpackConfig"
+      const config = getConfig();
+
+      const app =
+        typeof config.entry.app === 'string'
+          ? [config.entry.app]
+          : config.entry.app;
+
+      config.entry.app = ['@babel/polyfill', ...app];
+      replaceWebpackConfig(config);
+  }
+};
 
 exports.createPages = ({ graphql, actions }) => {
   return Promise.all([
