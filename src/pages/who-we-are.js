@@ -5,12 +5,13 @@ import {
   Row,
   Jumbotron,
 } from 'reactstrap';
-import banner from '../images/work_densitylabs.png'
+import Banner from '../components/banner'
 import * as R from 'ramda';
 import Layout from '../components/layout'
 import { graphql } from 'gatsby';
 import MemberList from '../components/members/member-list';
 
+import bannerImage from '../images/work_densitylabs.png'
 
 const nodeMemberMapper = ({
   frontmatter: {
@@ -41,19 +42,20 @@ const dataToMembers = R.pipe(
   R.map(R.pipe(R.prop('node'), nodeMemberMapper))
 )
 
+const siteMeta = {
+  subtitle: 'Who we are',
+  path: '/who-we-are',
+  openGraphTitle: 'Who we are'
+}
+
 const WhoWeArePage = ({ data }) => {
   const members = dataToMembers(data)
   const executiveTeam = members.filter(isExecutive);
   const teamMembers = members.filter(R.complement(isExecutive))
 
   return (
-    <Layout>
-      <div className="banner dark-translucent-bg" style={{
-        height: 200,
-        width: '100%',
-        backgroundImage: `url(${banner})`,
-        backgroundPosition: '50% 40%',
-      }} />
+    <Layout siteMeta={siteMeta}>
+      <Banner image={bannerImage} />
       <Container>
         <Row>
           <Col md="12" className="text-center mt-3">
@@ -66,7 +68,7 @@ const WhoWeArePage = ({ data }) => {
           </Col>
           <Col md="12" className="border-top mt-3 pt-2">
             <h2>OUR <strong>PEOPLE</strong></h2>
-            <p className="text-muted">The backbone to Density Labs’ success is a shared passion for software engineering, new product development, emerging technologies and a commitment to building personal and trusting relationships with our clients. We pride ourselves on open communication, connecting deeply, the love of coding and passion for life.</p>
+            <p>The backbone to Density Labs’ success is a shared passion for software engineering, new product development, emerging technologies and a commitment to building personal and trusting relationships with our clients. We pride ourselves on open communication, connecting deeply, the love of coding and passion for life.</p>
           </Col>
           <Col md="12" className="mt-3">
             <MemberList title="Executive Team" members={executiveTeam} />
@@ -81,9 +83,9 @@ const WhoWeArePage = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query TeamQuery {
+  query {
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(team)/.*.md$/"}},
+      filter: {fileAbsolutePath: {regex: "//(team)/.*.md$/"}},
       sort: { fields: frontmatter___name  }
     ) {
       edges {

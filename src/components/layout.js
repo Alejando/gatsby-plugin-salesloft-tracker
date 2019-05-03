@@ -3,15 +3,26 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
+import FontFace from './font-face';
 import Header from './header'
+import Footer from './footer'
+import { Global, css } from '@emotion/core'
 
-const Layout = ({ children }) => (
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import SiteMeta from './site-meta';
+library.add(fas, fab)
+
+const Layout = ({ children, siteMeta }) => (
   <StaticQuery
     query={graphql`
       query LayoutQuery {
         site {
           siteMetadata {
             title
+            siteUrl
           }
         }
         gatsbyIcon: file(relativePath: { eq: "gatsby-icon.png" }) {
@@ -31,20 +42,30 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
+        <Helmet>
           <html lang="en" className="bg-light"/>
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous" />
         </Helmet>
+        <SiteMeta title={data.site.siteMetadata.title} baseUrl={data.site.siteMetadata.siteUrl} siteMeta={siteMeta} />
+        <FontFace />
         <Header />
         <main className="bg-light">
+          <Global
+            styles={css`
+              :root{
+                font-size   : 100%;
+
+                @media (max-width: 575.98px) {
+                  font-size : 80%;
+                }
+                @media (min-width: 576px) and (max-width: 767.98px) {
+                  font-size : 90%;
+                }
+              }
+            `}
+          />
           {children}
         </main>
+				<Footer/>
       </>
     )}
   />

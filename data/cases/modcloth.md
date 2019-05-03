@@ -1,7 +1,14 @@
 ---
 name: ModCloth
-image: ./project-high-modcloth-browse.png
+images:
+  - ./project-high-modcloth-browse.png
+  - ./project-high-modcloth-cart.png
+  - ./project-high-modcloth-checkout.png
+  - ./project-high-modcloth-product.png
 imageFooter: Modcloth is an online retailer with a revenue of more than $100 million
+technology: Ruby on Rails Development
+place: Pittsburgh, PA, United States
+external_link: http://www.modcloth.com/
 ---
 Modcloth is an online retailer with a revenue of more than $100 million.
 

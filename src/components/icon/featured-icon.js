@@ -1,20 +1,22 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { css } from "react-emotion"
+import { css } from "@emotion/core"
 
 
 const FeaturedIcon = ({
   icon,
+  size,
+  color,
 }) => {
   return (
     <span
       css={css`
-        font-size: 1.5rem;
+        font-size: ${size}rem;
         display: inline-block;
-        line-height: 4rem;
-        width: 4rem;
-        height: 4rem;
-        background-color: #ed1c24;
+        line-height: ${size*2}rem;
+        width: ${size*2}rem;
+        height: ${size*2}rem;
+        background-color: ${color};
         color: white;
       `}
       className='rounded-circle'

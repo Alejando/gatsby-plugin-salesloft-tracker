@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Row,
+  CardDeck,
 } from 'reactstrap';
 import Member from './member';
 
@@ -10,11 +10,11 @@ const MemberList = ({
 }) => (
   <>
     <h3>{ title }</h3>
-    <Row>
+    <CardDeck>
       {
         members.map((member, i) => <Member key={i} member={member} />)
       }
-    </Row>
+    </CardDeck>
   </>
 )
 

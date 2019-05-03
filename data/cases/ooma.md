@@ -1,7 +1,11 @@
 ---
 name: Ooma
-image: ./logo_ooma.jpg
+images:
+  - ./logo_ooma.jpg
 imageFooter: Ooma offers voice over IP (VoIP) calling using an Internet connection to support a range of communication solutions for small business, home and mobile users
+technology: Ruby on Rails Development, React, Redux
+place: Palo Alto, California, United States
+external_link: http://www.ooma.com/
 ---
 Density Labs is part of the web team building the APIs and customer portal for both consumer and business users of Ooma's VoIP service.
 We have the responsibility of building and managing a team of engineers off-site in Mexico.
