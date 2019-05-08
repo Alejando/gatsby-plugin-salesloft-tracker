@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { defaults } from 'lodash'
 import { withPrefix } from 'gatsby'
 
-import image from '../images/kid-build-density-840b16a36986a010aa844b39b4d63897032ca2092715aecce9cf06fbb23ce3fa.jpg'
+import image from '../images/background-picture-banner.jpg'
 
 
 const favicon = withPrefix('/images/favicon.png')

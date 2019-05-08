@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { css } from 'emotion'
 
 import bgBanner1 from '../../images/background-video-banner.mp4'
-import bgBanner2 from '../../images/kid-build-density-840b16a36986a010aa844b39b4d63897032ca2092715aecce9cf06fbb23ce3fa.jpg'
+import bgBanner2 from '../../images/background-picture-banner.jpg'
 import SliderContent from '../sliders/home-slider-content'
 import SliderBackground from '../sliders/home-slider-background'
 import SliderArrow from '../sliders/slider-arrow'
