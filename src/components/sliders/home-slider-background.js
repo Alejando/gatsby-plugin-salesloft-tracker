@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from 'emotion'
-import videoPoster from '../../../static/images/software-density-labs.jpg'
+import videoPoster from '../../images/software-density-labs.jpg'
 import VideoCover from 'react-video-cover'
 const HomeSliderBackground = ({
   isVideo = false,
