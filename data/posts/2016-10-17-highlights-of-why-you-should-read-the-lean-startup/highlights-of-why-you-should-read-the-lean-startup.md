@@ -4,11 +4,11 @@ date: "2016-10-17"
 image: ./the-lean-startup.png
 description: If you are an entrepreneur and you failed then you really need to read it... You are not alone.
 tags:
-  - Businesses
-  - Startups
-  - Entrepreneurs
-  - The Lean Startup
-  - Eric Ries
+  - businesses
+  - startups
+  - entrepreneurs
+  - the lean startup
+  - eric ries
 author: Adela Barreto
 social_summary: If you are an entrepreneur and you failed then you really need to read it... You are not alone.
 ---

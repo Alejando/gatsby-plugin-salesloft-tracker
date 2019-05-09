@@ -7,6 +7,7 @@ tags:
   - neo4j
   - rails
   - ruby
+  - ruby-on-rails
 author: Federico Ramallo
 social_summary: Let's review how neo4j and rails can work together.
 ---
