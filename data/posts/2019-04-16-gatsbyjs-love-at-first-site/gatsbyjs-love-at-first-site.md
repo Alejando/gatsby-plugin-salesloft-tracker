@@ -7,10 +7,10 @@ description: GatsbyJS is a powerful creator of static websites that implements i
 author: Alejandro Prado
 social_summary: GatsbyJS is a powerful creator of static websites that implements innovative technologies. It's more than just a new creator of static websites, it gives the opportunity to get information from different sources through the power of GraphQL and use the data with ReactJS to build amazing websites.
 tags:
-  - GatsbyJS
-  - Gatsby 
-  - Javascript 
-  - ReactJS
+  - gatsbyjs
+  - gatsby 
+  - javascript 
+  - react
 ---
 Some time ago at Density Labs, we decided to remodel our website. As we started discussing the technology we should use to rebuild it many were mentioned. [ReactJS](https://reactjs.org/) is one of our favorite technologies so it would be a great choice to build a new website based on it. Some developers asked us why should we use [ReactJS](https://reactjs.org/) when we could use a CMS to build it in less time. After analyzing the options, we found that the best option for our case was [GatsbyJS](https://www.gatsbyjs.org/) due to it using [ReactJS](https://reactjs.org/), having cool tools that facilitate development, and the community having a lot of interest in this technology, but...
 

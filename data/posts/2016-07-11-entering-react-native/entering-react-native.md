@@ -4,7 +4,7 @@ date: "2016-07-11"
 image: ./entering_react_native.png
 tags:
   - react
-  - react native
+  - react-native
   - product development
   - android
   - ios

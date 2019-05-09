@@ -7,9 +7,9 @@ description: The programming and software development world is ever evolving, an
 author: Adela Barreto
 social_summary: The programming and software development world is ever evolving, and when it comes to developing a new innovation, your toolbox is large. There’s a multitude of languages and frameworks at your disposal, and although many of them are flexible enough that they can be used to tackle many of the same projects, every project is unique, and requires the right tools for the job.
 tags:
-  - Ruby on Rails
-  - Programming
-  - Software Development
+  - ruby-on-rails
+  - programming
+  - software Development
 ---
 The programming and software development world is ever evolving, and when it comes to developing a new innovation, your toolbox is large. There’s a multitude of [languages](https://www.computerscience.org/resources/computer-programming-languages/) and [frameworks](https://magora-systems.com/app-development-framework/) at your disposal, and although many of them are flexible enough that they can be used to tackle many of the same projects, every project is unique, and requires the right tools for the job.
 
