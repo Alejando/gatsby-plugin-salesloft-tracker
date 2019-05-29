@@ -1,5 +1,5 @@
 ---
-name: "How Ruby-On-Rails Is Transforming The Web Development World By Innovating Programming And Software Development."
+name: "How Ruby-On-Rails Is Transforming The Web Development World By Innovating Programming And Software Development"
 date: "2019-05-01"
 image: ./ruby-on-rails.png
 keywords: ruby-on-rails, PROGRAMMING AND SOFTWARE DEVELOPMENT PROCESS, programming and software development, software development., programming, softwaredevelopment
