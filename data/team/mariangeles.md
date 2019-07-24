@@ -1,7 +1,9 @@
 ---
 name: Mariangeles
-image: ./mariangel_round.jpg
+image: ./Mariangeles.jpg
 title: Administrative
 type: Superstar
 ---
-I am a business administrator with 5 years of experience in customer service, finances and administration. My objective is to make the most of my organizational, planning and creative skills to achieve enterprise development and growth.
+I am a business administrator with 7 years of experience in customer service, finance and administration. My objective is to make the most of my organizational planning, and creative skills to achieve enterprise development and growth. 
+ 
+I truly believe that exercise or yoga in the morning is one of the best and most productive ways to start the day!

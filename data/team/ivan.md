@@ -1,7 +1,7 @@
 ---
-name: Iván V
-image: ./ivan_round.png
+name: Iván
+image: ./Ivan.jpg
 title: Software Engineer
 type: Superstar
 ---
-Software engineer with 4 years of industry experience. My experience includes technologies like Ruby on Rails and JavaScript. I have an interest in designing efficient modern software, learning new technologies and tools and contributing to open source.
+Software Engineer with 5 years of experience, I've worked with small/medium/large companies helping them launch, maintain and improve their web apps. Open source enthusiast & Yu-Gi-Oh! player.

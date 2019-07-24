@@ -1,6 +1,6 @@
 ---
 name: Federico
-image: ./Federico_round.jpg
+image: ./Federico.jpg
 title: Co-Founder and CEO
 type: Executive
 ---
