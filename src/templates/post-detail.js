@@ -23,7 +23,7 @@ const PostDetail = ({ data, location }) => {
     subtitle: post.frontmatter.name,
     openGraphTitle: post.frontmatter.name,
     keywords: post.frontmatter.keywords || (post.frontmatter.tags || []).join(', '),
-    description: post.frontmatter.description,
+    description: post.frontmatter.social_summary || post.frontmatter.description ,
     image: withPrefix(post.frontmatter.image.childImageSharp.original.src),
     type: 'Article'
   }

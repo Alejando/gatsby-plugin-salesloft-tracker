@@ -1,6 +1,6 @@
 ---
 name: Alejandro E
-image: ./alejandro_espinosa_round.png
+image: ./AlejandroE.jpg
 title: Software Engineer
 type: Superstar
 ---

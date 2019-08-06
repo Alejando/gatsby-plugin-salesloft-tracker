@@ -3,29 +3,18 @@
     "address": "25 Taylor Street<br/>San Francisco, CA",
     "phone": "+1 (415) 900-6806",
     "email": "info@densitylabs.io",
-    "social": [
-      {
-        "icon": "twitter",
-        "url": "https://twitter.com/densitylabs",
-        "hoverBg": "#55acee"
-      },
-      {
-        "icon": "linkedin",
-        "url": "https://www.linkedin.com/company/densitylabs",
-        "hoverBg": "#0976b4"
-      }
-    ]
+    "social": []
   },
   {
-    "address": "Calle Claveles #566<br/>Las Bóvedas, Los Girasoles , 45136<br/>Zapopan, Jal.",
-    "phone": "+1 (415) 900-6806",
+    "address": "Claveles # 566 Col. Los Girasoles<br/> CP 45136. Zapopan, Jalisco. México",
+    "phone": "+52 (312) 550-1431",
     "email": "info@densitylabs.io",
-    "social": [
-      {
-        "icon": "facebook",
-        "url": "https://www.facebook.com/densitylabs",
-        "hoverBg": "#3b5998"
-      }
-    ]
+    "social": []
+  },
+  {
+    "address": "Ruiseñor #132 Col. Santa Bárbara<br/> CP 28017. Colima, Colima. México",
+    "phone": "+52 (312) 688-2395",
+    "email": "info@densitylabs.io",
+    "social": []
   }
 ]
