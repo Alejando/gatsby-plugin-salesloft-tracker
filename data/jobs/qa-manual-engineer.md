@@ -3,7 +3,7 @@ name: QA Manual Engineer
 date: "2019-08-15"
 job_benefits:
   - Competitive remuneration
-  - Major medical expenses insurance
+  - Major medical insurance
   - Life insurance
   - Annual budget for conference attendance
   - Learning and professional development opportunities
