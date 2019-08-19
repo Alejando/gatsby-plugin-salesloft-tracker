@@ -16,6 +16,7 @@ job_requirements:
   - 2+ years of professional experience in a QA role.
   - 2+ years of QA experience on web applications.
   - Deep knowledge of QA theories and processes.
+  - 3+ mos testing RESTful APIs.
   - 1+ years of experience defining test strategies and writing test cases.
   - Experience with GitHub or similar source control systems.
   - Experience with Agile software development processes.
@@ -25,5 +26,5 @@ job_requirements:
 
 job_referral_bonus: 500
 ---
-We are looking for a talented professional to join our team as QA MANUAL ENGINEER. This professional will design and implement tests, debug and define corrective actions, as well as review system requirements and track quality assurance metrics. You love manual testing and have been successful applying your knowledge of QA to deliver the highest possible quality software.
+We are looking for a talented professional to join our team as QA MANUAL ENGINEER. This professional will design and implement tests, debug and define corrective actions, as well as review system requirements and track quality assurance metrics.You love manual testing and have been successful applying your knowledge of QA to deliver the highest possible quality software.
 
