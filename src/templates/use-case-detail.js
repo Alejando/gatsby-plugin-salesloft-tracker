@@ -16,7 +16,7 @@ const UseCaseDetail = ({ data }) => {
     keywords: `${useCase.frontmatter.name}, our work, work, densitylabs, developed in Ruby on Rails, densitylabs, density labs, densitylabs our work, Our Experience`,
     description: useCase.frontmatter.description || useCase.excerpt,
     image: withPrefix(useCase.frontmatter.images[0].childImageSharp.fluid.src),
-    type: 'Article'
+    type: 'article'
   }
   return (
     <Layout siteMeta={siteMeta}>

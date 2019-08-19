@@ -16,7 +16,8 @@ export const defaultMeta = {
   image,
   msIcon,
   favicon,
-  type: 'Page',
+  type: 'website',
+  twitterAccount: '@densitylabs'
 }
 
 const SiteMeta = ({
@@ -29,18 +30,30 @@ const SiteMeta = ({
   return (
     <Helmet>
       <title>{`${m.title}${m.subtitle ? ` | ${m.subtitle}` : ''}`}</title>
+      <meta name="description" content={m.description}/>
+      <meta property="image" content={`${m.baseUrl}${m.image}`}/>
       <meta name="msapplication-TileImage" content={m.msIcon} />
-      <link rel="shortcut icon" href={m.favicon} />
-      <link rel="canonical" href={fullUrl} />
-      <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="theme-color" content="#ffffff" />
-      <meta name="keywords" content={m.keywords} />
-      <meta name="description" content={m.description} />
-      <meta property="og:url" content={fullUrl} />
-      <meta property="og:title" content={m.openGraphTitle} />
+      <link rel="shortcut icon" href={m.favicon}/>
+      <link rel="canonical" href={fullUrl}/>
+      <meta name="msapplication-TileColor" content="#ffffff"/>
+      <meta name="theme-color" content="#ffffff"/>
+      <meta name="keywords" content={m.keywords}/>
+     
+      <meta property="og:url" content={fullUrl}/>
+      <meta property="og:title" content={m.openGraphTitle}/>
       <meta property="og:description" content={m.description} />
-      <meta property="og:image" content={m.image} />
       <meta property="og:type" content={m.type}/>
+      <meta property="og:image" content={`${m.baseUrl}${m.image}`}/>
+      <meta property="og:image:secure_url" content={`${m.baseUrl}${m.image}`}/>
+      <meta property="og:image:type" content={`image/${m.image.substr(m.image.indexOf('.') + 1)}`}/>
+      <meta property="og:image:width" content="1000"/>
+      <meta property="og:image:height" content="402"/>
+
+      <meta name="twitter:card" content="summary_large_image"></meta>
+      <meta name="twitter:title" content={m.openGraphTitle}/>
+      <meta name="twitter:description" content={m.description} />
+      <meta name="twitter:image" content={`${m.baseUrl}${m.image}`}/>
+      <meta name="twitter:creator" content={m.twitterAccount}/>
     </Helmet>
   )
 }

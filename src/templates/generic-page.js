@@ -13,7 +13,7 @@ const GenericPage = ({ data }) => {
     subtitle: page.frontmatter.name,
     openGraphTitle: `DensityLabs | ${page.frontmatter.name}`,
     description: page.excerpt,
-    type: 'Page'
+    type: 'website'
   }
   return (
     <Layout siteMeta={siteMeta}>
