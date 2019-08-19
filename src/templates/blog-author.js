@@ -20,7 +20,7 @@ const BlogAuthor = ({ data, location }) => {
     keywords: postsTags(posts),
     description: 'Density Labs shares with you the technicals knowledge, experiences and the latest news.',
     image: withPrefix('/images/software-density-labs.jpg'),
-    type: 'Blog'
+    type: 'website'
   }
 
   return (

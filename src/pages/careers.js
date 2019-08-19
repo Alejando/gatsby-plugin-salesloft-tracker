@@ -33,7 +33,7 @@ const siteMeta = {
   keywords: 'densitylabs, densitylabs we are hiring, work with us, work with us from home, jobs available, careers, join our team, we are looking for talent people, job opportunities, density labs Join us',
   description: 'We are looking for talent people like you.',
   image: withPrefix('/images/Software_engineer.png'),
-  type: 'Blog'
+  type: 'website'
 }
 
 const Careers = ({ data }) => {

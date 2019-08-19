@@ -25,7 +25,7 @@ const PostDetail = ({ data, location }) => {
     keywords: post.frontmatter.keywords || (post.frontmatter.tags || []).join(', '),
     description: post.frontmatter.social_summary || post.frontmatter.description ,
     image: withPrefix(post.frontmatter.image.childImageSharp.original.src),
-    type: 'Article'
+    type: 'article'
   }
 
   const disqusConfig = {
