@@ -5208,6 +5208,11 @@ gatsby-plugin-manifest@^2.0.12:
     "@babel/runtime" "^7.0.0"
     sharp "^0.21.3"
 
+gatsby-plugin-metricool@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-metricool/-/gatsby-plugin-metricool-1.0.6.tgz#e06d5463a0005f5d6beb1644c435cf211f323161"
+  integrity sha512-SYQFuRF/METRirCcogCg3j037HxiUzmsG0BnewOg0+S7UM/EFtfRPI46P15qLqzhoygCbD4XzNyAQ2o668Ulsg==
+
 gatsby-plugin-offline@^2.0.5:
   version "2.0.25"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.0.25.tgz#44839cd3ddb90c7478445c3a3c38fc8467b510a2"
