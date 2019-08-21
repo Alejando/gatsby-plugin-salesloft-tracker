@@ -89,6 +89,12 @@ module.exports = {
         defer: true, // Optional. Sets the Crisp loading script to defer instead of async. Defaults to false.
       },
     },
+    {
+      resolve: 'gatsby-plugin-metricool',
+      options: {
+        metricoolId: process.env.METRICOOL_ID,
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-offline',
