@@ -35,7 +35,7 @@ const LocationList = ({
           </li>
           <li>
             <FontAwesomeIcon icon={["fas", "envelope"]} />
-            <a css={css`color: #A31929; &:hover{ color: #A31929;}`} href={`malto:${location.email}`}>{ location.email }</a>
+            <a css={css`color: #A31929; &:hover{ color: #A31929;}`} href={`mailto:${location.email}`}>{ location.email }</a>
           </li>
           <li>
             {
