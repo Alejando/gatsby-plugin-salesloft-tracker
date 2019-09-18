@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Container,
   Row,
@@ -12,7 +12,8 @@ import ContactUsForm from '../components/forms/contact-us-form'
 import LocationList from '../components/location/location-list'
 
 import locations from '../../data/locations.json'
-import { withPrefix } from 'gatsby';
+import { withPrefix, Link } from 'gatsby';
+import Modal from '../components/success-modal'
 
 const siteMeta = {
   subtitle: 'Contact Us',
@@ -22,8 +23,17 @@ const siteMeta = {
   description: 'Do you want to talk about an idea that you have?  Just want to say hi? We are here for you!',
   image: withPrefix('/images/density-labs-contact-us.jpg'),
 }
+const successMessage = () => {
+  return(
+    <div>
+      Your form has been sent successfully! We’ll be in touch shortly. 
+      In the meantime check out <Link to='/blog'>our blog page </Link> to see what we’ve been up to.
+    </div>
+  );
+}
 
 const ContactUs = () => {
+const [modal, setModal] = useState(false);
 
   return (
     <Layout siteMeta={siteMeta}>
@@ -36,7 +46,13 @@ const ContactUs = () => {
         <Row>
           <Col md="8" className="mb-5">
             <legend className="mb-3">Let's build something amazing!</legend>
-            <ContactUsForm />
+            <ContactUsForm success={() => setModal(true)} />
+            <Modal 
+              show={ modal }
+              toggle={ (value) => setModal(!value) }
+              title='Success'
+              body={ successMessage() }
+            />
           </Col>
           <Col md="4">
             <h3 css={css`font-family:'Sansation', sans-serif;`} className="border-bottom pb-3">
