@@ -6,7 +6,6 @@ import {
   Input,
   Button,
 } from 'reactstrap'
-import { navigate } from 'gatsby'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as ContactUsService from '../../services/contact-us-service'
 import * as Yup from 'yup'
@@ -23,24 +22,26 @@ const ContactUsSchema = Yup.object().shape({
     .min(10, 'Your message must be longer than 10 characters')
     .required('Please enter a message'),
 })
+const initialValues={
+  name: '',
+  email: '',
+  company: '',
+  message: '',
+}
 
-const ContactUsForm = () => {
+const ContactUsForm = ({ success }) => {
   return (
     <div>
       <Formik
-        initialValues={{
-          name: '',
-          email: '',
-          company: '',
-          message: '',
-        }}
+        initialValues={initialValues}
         validationSchema={ContactUsSchema}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
           ContactUsService.sendForm(values)
             .then(
               () => {
-                setSubmitting(false)
-                navigate('/contact-us-success')
+                setSubmitting(false);
+                success();
+                resetForm(initialValues);
               },
               err => {
                 setSubmitting(false)

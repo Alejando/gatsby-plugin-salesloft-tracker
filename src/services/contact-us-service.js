@@ -3,7 +3,7 @@ import { sendEvent, sendPageView } from './analytics-service'
 
 export function sendForm(values) {
   return axios.post(
-    'https://formspree.io/contact@densitylabs.io',
+    `https://formspree.io/${process.env.FORMSPREE_ID}`,
     {
       _subject: values.company || values.name,
       name: values.name,
@@ -12,7 +12,7 @@ export function sendForm(values) {
       message: values.message
     }
   ).then(response => {
-    if (response.data && response.data.success) {
+    if (response.data && response.data.ok) {
       sendPageView({
         'page' : '/contact-us-success'
       })
