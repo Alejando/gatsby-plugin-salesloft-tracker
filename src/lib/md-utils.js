@@ -32,7 +32,7 @@ function postsTags(posts) {
 }
 
 function trimString(text) {
-   if(text === null)
+   if(text === null || text === undefined)
     return false
   
   return text.length > 250 ? text.substring(0, 250) + "..." : text;
