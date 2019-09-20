@@ -60,6 +60,8 @@ export const pageQuery = graphql`
             }
             tags
             author
+            description
+            social_summary
           }
           excerpt(pruneLength:250,format:HTML)
         }
