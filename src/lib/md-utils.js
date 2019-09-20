@@ -18,7 +18,7 @@ function dataToPosts(data) {
       imageSrc: edge.node.frontmatter.image.childImageSharp.original.src,
       tags: edge.node.frontmatter.tags,
       author: edge.node.frontmatter.author,
-      summaryHtml: edge.node.excerpt,
+      summaryHtml: trimString(edge.node.frontmatter.description) || trimString(edge.node.frontmatter.social_summary) || edge.node.excerpt
     }
   }), ['name', 'date']);
 }
@@ -31,6 +31,12 @@ function postsTags(posts) {
   return tags;
 }
 
+function trimString(text) {
+   if(text === null)
+    return false
+  
+  return text.length > 250 ? text.substring(0, 250) + "..." : text;
+}
 export {
  uniqElementsBy,
  dataToPosts,
