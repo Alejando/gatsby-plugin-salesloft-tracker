@@ -45,11 +45,11 @@ const SimpleLayout = ({ children, siteMeta }) => (
     render={data => (
       <>
         <Helmet>
-          <html lang="en" className="bg-light"/>
+          <html lang="en"/>
         </Helmet>
         <SiteMeta title={data.site.siteMetadata.title} baseUrl={data.site.siteMetadata.siteUrl} siteMeta={siteMeta} />
         <FontFace />
-        <main className="bg-light">
+        <main >
           <Global
             styles={css`
               :root{
