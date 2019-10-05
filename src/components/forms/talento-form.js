@@ -11,26 +11,29 @@ import {
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as TalentoService from '../../services/talento-form-service'
 import { TalentoSchema } from './helpers/validator'
+import Select from 'react-select';
+
+import { css } from 'emotion'
 
 const workAsOptions = [
-  'JavaScript and Ruby Full Stack Developer',
-  'JavaScript Full Stack Developer',
-  'Marketing & Content',
-  'Project Manager',
-  'QA Automation Engineer',
-  'QA Manual Engineer',
-  'React Developer',
-  'RH ',
-  'Ruby Developer',
-  'Trainee Fullstack Developer',
-  'UI/ UX Engineer'
+  { value: 'JavaScript and Ruby Full Stack Developer', label: 'JavaScript and Ruby Full Stack Developer' },
+  { value: 'JavaScript Full Stack Developer', label: 'JavaScript Full Stack Developer' },
+  { value: 'Marketing & Content', label: 'Marketing & Content' },
+  { value: 'Project Manager', label: 'Project Manager' },
+  { value: 'QA Automation Engineer', label: 'QA Automation Engineer' },
+  { value: 'QA Manual Engineer', label: 'QA Manual Engineer' },
+  { value: 'React Developer', label: 'React Developer' },
+  { value: 'RH ', label: 'RH ' },
+  { value: 'Ruby Developer', label: 'Ruby Developer' },
+  { value: 'Trainee Fullstack Developer', label: 'Trainee Fullstack Developer' },
+  { value: 'UI/ UX Engineer', label: 'UI/ UX Engineer' },
 ]
 
 const initialValues={
   first_name: '',
   last_name: '',
   email: '',
-  work_as: '',
+  work_as: [],
 }
 
 const TalentoForm = ({ success }) => {
@@ -55,7 +58,7 @@ const TalentoForm = ({ success }) => {
             )
         }}
       >
-        {({ values, handleChange, errors, isSubmitting, touched }) => (
+        {({ values, errors, isSubmitting, touched, setFieldValue, setFieldTouched }) => (
           <Form className="px-3 py-4">
             <Row>
               <Col md={6}>
@@ -101,23 +104,33 @@ const TalentoForm = ({ success }) => {
             </FormGroup>
             <FormGroup>
               <Label for="work_as" className="font-weight-bold">Me gustaría trabajar como: *</Label>
-              <Input
-                type="select"
+              <Select
+                classNamePrefix='talento'
+                placeholder="Elige una opción (Máximo 3)"
                 name="work_as"
                 id="work_as"
-                invalid={Boolean(touched.work_as && errors.work_as)}
-                aria-required
+                options={workAsOptions}
                 value={values.work_as}
-                onChange={handleChange}
-              > 
-                <option key="" value="">Elige una opción</option>
-                {
-                  workAsOptions.map(value => (
-                    <option key={value} value={value}> {value} </option>
-                  ))
-                }
-              </Input>
-              <ErrorMessage name="work_as" component={FormFeedback} />
+                onChange={(selected) => setFieldValue('work_as', selected? selected : [])} 
+                onBlur={(value) => setFieldTouched('work_as',value)}
+                isMulti
+                menuPlacement="auto"
+                closeMenuOnSelect={false}
+                css={css`
+                  border-radius: 4px;
+                  border: 1px solid;
+                  ${Boolean(touched.work_as && errors.work_as)? 'border-color: #dc3545;' : 'border-color: #ced4da;'}
+                  & > div {
+                    border: none;
+                  }
+                `}
+              />
+              {
+                Boolean(touched.work_as && errors.work_as) &&
+                <div className="invalid-feedback d-block">
+                  {errors.work_as}
+                </div>
+              }
             </FormGroup>
             <Button color="danger" type="submit" className="mt-4 px-5" disabled={isSubmitting}>
               Enviar

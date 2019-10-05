@@ -3,6 +3,8 @@ import {formDataFrom}  from '../helpers/form-data-helper'
 
 export function sendForm(values) {
   values._subject = `${values.first_name} ${values.last_name}`
+  values.work_as = values.work_as.map((item) => item.label).join(', ')
+  
   return axios({
     method: 'post',
     url: process.env.TALENTO_FORM_URL,
