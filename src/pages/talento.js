@@ -8,7 +8,6 @@ import TalentoForm from '../components/forms/talento-form';
 import Modal from '../components/success-modal'
 import { Link } from 'gatsby';
 import logo from '../images/logo.svg'
-
 import { css } from '@emotion/core'
 
 const successMessage = () => {
