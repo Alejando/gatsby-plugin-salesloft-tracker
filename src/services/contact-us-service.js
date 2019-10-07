@@ -1,18 +1,25 @@
 import axios from 'axios'
 import { sendEvent, sendPageView } from './analytics-service'
+import { formDataFrom }  from '../helpers/form-data-helper'
 
 export function sendForm(values) {
-  return axios.post(
-    `https://formspree.io/${process.env.FORMSPREE_ID}`,
-    {
-      _subject: values.company || values.name,
-      name: values.name,
-      email: values.email,
-      subject: values.company,
-      message: values.message
-    }
-  ).then(response => {
-    if (response.data && response.data.ok) {
+  values = {
+    _subject: values.company || values.name,
+    name: values.name,
+    email: values.email,
+    subject: values.company,
+    message: values.message
+  }
+  return axios({
+      method: 'post',
+      url: process.env.CONTACT_US_FORM_URL,
+      data: formDataFrom(values),
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      }
+    })
+    .then(response => {
+    if (response.status === 200) {
       sendPageView({
         'page' : '/contact-us-success'
       })
