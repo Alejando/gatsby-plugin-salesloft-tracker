@@ -6,16 +6,16 @@ import {
   ModalFooter, 
   Button } from 'reactstrap';
 
-const SuccessModal = ({toggle, title, body, show}) => {
+const SuccessModal = ({toggle, title, body, show, centered=false, closeButtonText}) => {
   return (
     <div>
-      <Modal isOpen={show} toggle={toggle} centered>
+      <Modal isOpen={show} toggle={toggle} centered={centered}>
         <ModalHeader toggle={toggle}>{title} </ModalHeader>
         <ModalBody>
           {body}
         </ModalBody>
         <ModalFooter>
-          <Button color="danger" onClick={toggle}>Close</Button>
+          <Button color="danger" onClick={toggle}>{closeButtonText}</Button>
         </ModalFooter>
       </Modal>
     </div>

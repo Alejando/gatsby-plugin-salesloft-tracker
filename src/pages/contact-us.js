@@ -52,6 +52,8 @@ const [modal, setModal] = useState(false);
               toggle={ (value) => setModal(!value) }
               title='Success'
               body={ successMessage() }
+              centered
+              closeButtonText='Close'
             />
           </Col>
           <Col md="4">
