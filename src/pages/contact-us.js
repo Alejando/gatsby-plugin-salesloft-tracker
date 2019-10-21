@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Container,
   Row,
@@ -8,12 +8,11 @@ import Layout from '../components/layout'
 import Banner from '../components/banner'
 import { css } from 'emotion'
 import bannerImage from '../images/work_densitylabs.png'
-import ContactUsForm from '../components/forms/contact-us-form'
 import LocationList from '../components/location/location-list'
 
 import locations from '../../data/locations.json'
 import { withPrefix, Link } from 'gatsby';
-import Modal from '../components/success-modal'
+import DynamicForms from 'dynamic-forms-react'
 
 const siteMeta = {
   subtitle: 'Contact Us',
@@ -33,8 +32,6 @@ const successMessage = () => {
 }
 
 const ContactUs = () => {
-const [modal, setModal] = useState(false);
-
   return (
     <Layout siteMeta={siteMeta}>
       <Banner
@@ -46,14 +43,10 @@ const [modal, setModal] = useState(false);
         <Row>
           <Col md="8" className="mb-5">
             <legend className="mb-3">Let's build something amazing!</legend>
-            <ContactUsForm success={() => setModal(true)} />
-            <Modal 
-              show={ modal }
-              toggle={ (value) => setModal(!value) }
-              title='Success'
-              body={ successMessage() }
-              centered
-              closeButtonText='Close'
+            <DynamicForms 
+              endPoint={process.env.CONTACT_US_FORM_URL}
+              onSuccess={{'title': 'Success', 'body': successMessage() }}
+              onError={{'title': 'Error', 'body': 'An error has ocurred.'}}
             />
           </Col>
           <Col md="4">
