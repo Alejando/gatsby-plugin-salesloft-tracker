@@ -4053,8 +4053,8 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     stream-shift "^1.0.0"
 
 "dynamic-forms-react@https://github.com/densitylabs/dynamic-forms-react":
-  version "1.0.0"
-  resolved "https://github.com/densitylabs/dynamic-forms-react#d098b81b7d5c1a23070a920108fcfca6bb79bbe8"
+  version "1.0.1"
+  resolved "https://github.com/densitylabs/dynamic-forms-react#68d1869dc8d67d9c97f29576572ce21fbdc341a7"
   dependencies:
     bootstrap "^4.3.1"
     formik "^1.5.8"

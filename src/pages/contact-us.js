@@ -12,7 +12,7 @@ import LocationList from '../components/location/location-list'
 
 import locations from '../../data/locations.json'
 import { withPrefix, Link } from 'gatsby';
-import DynamicForms from 'dynamic-forms-react'
+import { ContactUsForm } from 'dynamic-forms-react'
 
 const siteMeta = {
   subtitle: 'Contact Us',
@@ -43,7 +43,7 @@ const ContactUs = () => {
         <Row>
           <Col md="8" className="mb-5">
             <legend className="mb-3">Let's build something amazing!</legend>
-            <DynamicForms 
+            <ContactUsForm 
               endPoint={process.env.CONTACT_US_FORM_URL}
               onSuccess={{'title': 'Success', 'body': successMessage() }}
               onError={{'title': 'Error', 'body': 'An error has ocurred.'}}
