@@ -17,6 +17,8 @@ description: "A quick intro to Redux to simplify 4 core concepts: Actions, Reduc
 The first time I approached Redux I was overwhelmed by the concepts around it. Because of that, I didn't continue studying more about Redux, until months later when the project I worked on required it.
 I want to share a quick intro to Redux with you, trying to simplify the concepts around it for an easy understanding.
 
+</br>
+
 The "problem" that Redux solves
 -------------------------------
 
@@ -25,21 +27,22 @@ Redux is "a predictable state container for JavaScript apps" - in other words, i
 This example - which might not be the best - can help to illustrate that managing the state with React alone can become messy sometimes vs managing the state with Redux:
 
 1. Let's say you're building a React component "(a)" that lists movies and their info
-2. A user can click on one of the movies and another component "(b)" will pop up with the movie info:
 
-  * Actors
-  * Reviews
+2. A user can click on one of the movies and another component "(b)" will pop up with the movie info:
+      
+    *  Actors
+    *  Reviews
 
 3. On component "(b)" you can click on "Add actor" and another component "(c)" will be shown to enter the actor info
-
-  * Once you entered the actor's info
-  * The actor's info needs to be updated in the React state - the state that was defined on component "(a)"
-
+    * Once you entered the actor's info
+    * The actor's info needs to be updated in the React state - the state that was defined on component "(a)"
 4. The same can apply for a new review on a component "(d)"
 
 In the example above you can see the high dependency between those components. They're arranged on a "pyramid structure" where the components at the higher levels depend heavily on the components at the lower levels. Components "c" and "d" will not only depend on their parent to receive the necessary data, but they will also be updating the state each on their own / and probably their own way. That can likely lead to inconsistency and make it harder to track down where the state changed (in case of bugs).
 
 Redux cuts off the dependency between components on that "pyramid structure", and also provides a consistent way to update the state on one single place.
+
+</br>
 
 The core concepts of Redux
 --------------------------
@@ -53,16 +56,26 @@ Redux is composed of four concepts:
 
 Those four things interact in a consistent / "one way only" flow:
 
-![Redux flow](https://cl.ly/64aac0bf290b/Image%2525202019-10-14%252520at%2525209.57.04%252520AM.png "Redux flow")
+</br>
+
+![Redux flow](./redux-flow.png "Redux flow")
+
+</br>
 
 Let's see what is each of those concepts is about and a quick implementation with them.
+
+</br>
 
 Actions (concept #1)
 --------------------
 
 Actions are plain JS functions that will be triggered by the React components. Let's say for example that in your React component the following field and button are being exposed:
 
-![Field and button](https://cl.ly/c4ec0ed06b10/Image%2525202019-10-14%252520at%2525209.48.16%252520AM.png "Field and button")
+</br>
+
+![Field and button](./field-and-button.png "Field and button")
+
+</br>
 
 Assuming the user filled the field, when the user clicks on the "Add" button you'll call your Action. In the Action you can perform any extra operation you need to perform, and then pass the data you want the Reducer to read (so that it updates the state). In this case, the data you'll pass to the Reducer is the todo itself.
 
@@ -84,6 +97,8 @@ Let's see what's this Action's code about. As stated before, the Action is nothi
 * A `payload` attribute: this attribute should contain the data we want to add to the state (in this case, is the todo we want to add)
 
 The field names ("type" and "payload") don't strictly need to be those as you'll find when you see the Reducer, but I highly recommend using those since it's super common to see those being used in general.
+
+</br>
 
 Reducers (concept #2)
 ---------------------
@@ -131,6 +146,8 @@ Tying up what we saw before about the Action and what we have here about the Red
 
 That's pretty much the flow in a Reducer, what happens next is that Redux takes whatever data the Reducer returns and updates the Store with that data.
 
+</br>
+
 Store (concept #3)
 ------------------
 
@@ -143,6 +160,8 @@ The Store holds the Redux app state, which will feed the React components. In th
 * Finally, a component will re-render showing the updated data from the Store
 
 It's worth to mention that the Store can be composed of one or more Reducers.
+
+</br>
 
 Components - the wiring (concept #4)
 -----------------------
@@ -253,7 +272,9 @@ export default class TodoRedux extends React.Component {
 }
 ```
 
-You can find a working example based on these code snippets [here](https://github.com/densitylabs/blog-reference-examples/tree/master/quick_intro_redux).
+You can find a working example based on these code snippets [here](https://github.com/densitylabs/blog-reference-examples/tree/master/quick_intro_redux). 
+
+</br>
 
 Conclusion
 ----------
