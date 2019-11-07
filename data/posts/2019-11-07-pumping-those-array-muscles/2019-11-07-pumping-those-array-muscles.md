@@ -1,17 +1,17 @@
 ---
-name: "Pumping those array muscles"
+name: "Pumping Those Array Muscles"
 date: "2019-11-07"
 image: ./pumping-those-array-muscles.jpg
 keywords: "Javascript, Array, Methods, ES6, array, methods, functional programming, map, filter"
 author: Alfonso Alejandro Espinosa de los Monteros Andrade
-social_summary: "Over this series, we are going to explore some of the most common array methods that javascript brings to the table, without react, angular or any other framework on the market. In this episode, we are going to explore map, filter and find."
+social_summary: "Over this series, we are going to explore some of the most common array methods that JavaScript brings to the table, without React, Angular or any other framework on the market. In this episode, we are going to explore map, filter and find."
 tags:
   - javascript
   - map
   - filter
   - functional-programming
   - array
-description: "Over this series, we are going to explore some of the most common array methods that javascript brings to the table, without react, angular or any other framework on the market. In this episode, we are going to explore map, filter and find."
+description: "Over this series, we are going to explore some of the most common array methods that JavaScript brings to the table, without React, Angular or any other framework on the market. In this episode, we are going to explore map, filter and find."
 ---
 
 Hi everyone! I’m Alejandro from Density Labs, and I would like to share through this blog series, some of the most popular array methods, I'll also share some pro tips and caveats we could encounter while using them.
