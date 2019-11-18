@@ -119,7 +119,7 @@ const RubyconfForm = ({ success }) => {
               <ErrorMessage name="my_main_job_description" component={FormFeedback} />
             </FormGroup>
             <Button color="danger" type="submit" className="mt-4 px-5" disabled={isSubmitting}>
-              Enviar
+              Send
             </Button>
           </Form>
         )}
