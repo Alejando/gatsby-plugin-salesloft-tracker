@@ -16,7 +16,7 @@ const SocialDataIcon = ({
         color: #cdcdcd !important;
         background: #fff;
         width: 40px;
-        height: 38px;
+        height: 40px;
         padding: 0;
         display: flex;
         justify-content: center;
