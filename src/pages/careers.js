@@ -75,6 +75,16 @@ class Careers extends Component {
               <ul>
                 { career.must_have.map((requirement, i) => (<li key={i}>{requirement}</li>))}
               </ul>
+              { career.nice_to_have.length > 0 &&
+                <h3>
+                  <FontAwesomeIcon icon={["fas", "thumbs-up"]} /> &nbsp;
+                  Nice to have
+                </h3>
+              }
+              <ul>
+                {  career.nice_to_have.map((requirement, i) => (<li key={i}>{requirement}</li>))
+                }
+              </ul>
               <Button  color="danger" href={`mailto:${careersEmailAddress}`}>
                 <FontAwesomeIcon icon={["fas", "envelope"]} />
                 <span className="ml-2">Apply Now</span>
