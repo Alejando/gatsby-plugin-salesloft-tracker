@@ -5,7 +5,8 @@ const Banner = ({
   image,
   title = null,
   content = null,
-  textAlign = 'center'
+  textAlign = 'center',
+  children = null
 }) => (
   <div className="banner dark-translucent-bg d-flex flex-row"
     css={css`
@@ -30,7 +31,10 @@ const Banner = ({
         `}
       >
         <h2 className="border-bottom pb-2 mb-2 text-uppercase">{ title }</h2>
-        <div dangerouslySetInnerHTML={{ __html:content }} className={`text-${textAlign}`}/>
+        <div className={`text-${textAlign}`}>
+          <span dangerouslySetInnerHTML={{ __html: content }}></span>
+          {children}
+        </div>
       </div>
     }
   </div>

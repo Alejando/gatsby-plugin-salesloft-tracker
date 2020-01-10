@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'gatsby'
 import hotFlame from '../images/hot-flame.png'
 import CareerOpportunity from '../services/career-opportunity'
+import { css } from 'emotion'
 
 import bannerImage from '../images/work_densitylabs.png'
 const careersEmailAddress = 'careers@densitylabs.io'
@@ -46,14 +47,25 @@ class Careers extends Component {
         <Banner
           image={bannerImage}
           title='Join Our Team'
-          content='Density Labs has a workplace where you can grow, learn and get professional development opportunities. We have a highly collaborative environment and we are focused on delivering the best products possible for our clients </br></br> We like to keep our people happy and to maintain a relaxed work environment. We are in constant growth, always in search of more collaborators. Be part of our team!'
+          content='Density Labs has a workplace where you can grow, learn and get professional development opportunities. We have a highly collaborative environment and we are focused on delivering the best products possible for our clients. We like to keep our people happy and to maintain a relaxed work environment. We are in constant growth, always in search of more collaborators.<br/><br/>Be part of our team!'
           textAlign= 'left'
-        />
+        >
+          <Link to="/benefits">
+            <span className="ml-2" css={ css`
+              font-size: 1.1rem; 
+              color: #fff;
+              font-weight: bold;
+              text-decoration: underline;
+            `}>
+              See the benefits we offer.
+            </span>
+          </Link>
+        </Banner>
         <Container className="py-5">
           <h1
             className="border-bottom pb-5 text-uppercase m-0 text-center"
           >
-            Careers opportunities
+            Career opportunities
           </h1>
           {
             

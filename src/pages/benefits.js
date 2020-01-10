@@ -28,18 +28,20 @@ const Benefits = () => {
     <Layout siteMeta={siteMeta}>
       <Banner
         image={bannerImage}
-        title='Join Our Team'
-        content='See the great benefits that come with being a part of the team at Density Labs.'
-        textAlign= 'center'
       />
       <Container className="py-5">
         <h1
-          className="border-bottom pb-5 text-uppercase m-0 text-center mb-5"
+          className="pb-0 text-uppercase m-0 text-center mb-0"
         >
-          Benefits
+          Company Benefits
         </h1>
+          <div className="mt-3 pt-3 text-center mb-5">
+            <h4 className="border-top d-block pt-3" css={css`font-weight: 300;`}>
+              See the great benefits that come with being a part of the team at Density Labs.
+            </h4>
+          </div>
         <Container css={css`
-          background-color: #eaeaea; 
+          background-color: white; 
           padding: 30px; 
           padding-bottom: 15px;
         `}>
@@ -47,51 +49,42 @@ const Benefits = () => {
             <Benefit 
               text="Competitive Salary" 
               icon="wallet"
-              iconOpacity="0.85"
             />
             <Benefit 
               text="Major Medical Expense Insurance" 
               icon="hospital"
-              iconOpacity="0.95"
             />
             <Benefit 
               text="Life Insurance" 
               icon="hand-holding-heart"
-              iconOpacity="0.90"
             />
           </Row>
           <Row className="mb-3">
             <Benefit 
               text="Annual Attendance Conference Budget" 
               icon="id-badge"
-              iconOpacity="0.90"
             />
             <Benefit 
               text="Productivity Bonus" 
               icon="chart-line"
-              iconOpacity="0.80"
             />
             <Benefit 
               text="Development Opportunities" 
               icon="seedling"
-              iconOpacity="0.90"
             />
           </Row>
           <Row>
             <Benefit 
               text="Paid Time Off" 
               icon="suitcase-rolling"
-              iconOpacity="0.90"
             />
             <Benefit 
               text="Work From Monday to Friday"
               icon="balance-scale"
-              iconOpacity="0.95"
             />
             <Benefit 
               text="Flexible Hours"
               icon="business-time"
-              iconOpacity="0.85"
             />
           </Row>
         </Container>
@@ -103,7 +96,7 @@ const Benefits = () => {
             <Col>
               <Link to="/careers">
                 <Button color="danger" >
-                  <span className="ml-2" css={ css`font-size: 1.1rem;`}>View Careers Opportunities</span>
+                  <span className="ml-2" css={ css`font-size: 1.1rem;`}>View Career Opportunities</span>
                 </Button>
               </Link>
             </Col>
