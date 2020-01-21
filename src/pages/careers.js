@@ -11,9 +11,9 @@ import { Link } from 'gatsby'
 import hotFlame from '../images/hot-flame.png'
 import CareerOpportunity from '../services/career-opportunity'
 import { css } from 'emotion'
+import ApplyToCareer from '../components/careers/apply'
 
 import bannerImage from '../images/work_densitylabs.png'
-const careersEmailAddress = 'careers@densitylabs.io'
 
 const siteMeta = {
   subtitle: 'Careers',
@@ -31,7 +31,10 @@ class Careers extends Component {
 
     this.state = {
       careers: [],
+      careerSlug: null,
+      showApplyModal: false
     }
+
   }
 
   componentWillMount() {
@@ -40,10 +43,21 @@ class Careers extends Component {
     });
   }
 
+  handleApplyNow(careerSlug) {
+    this.setState({
+      showApplyModal: true,
+      careerSlug: careerSlug
+    })
+  }
+
   render(){
     return(
-
       <Layout siteMeta={siteMeta}>
+        <ApplyToCareer 
+          show={this.state.showApplyModal}
+          toggle={ (value) => this.setState({showApplyModal: !value}) }
+          careerSlug={this.state.careerSlug}
+        />
         <Banner
           image={bannerImage}
           title='Join Our Team'
@@ -97,7 +111,7 @@ class Careers extends Component {
                 {  career.nice_to_have.map((requirement, i) => (<li key={i}>{requirement}</li>))
                 }
               </ul>
-              <Button  color="danger" href={`mailto:${careersEmailAddress}`}>
+              <Button  color="danger" onClick={() => this.handleApplyNow(career.slug)}>
                 <FontAwesomeIcon icon={["fas", "envelope"]} />
                 <span className="ml-2">Apply Now</span>
               </Button>

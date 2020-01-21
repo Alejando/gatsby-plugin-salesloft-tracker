@@ -1,0 +1,235 @@
+import React, { useState } from 'react';
+import { css, keyframes } from 'emotion'
+import {
+  FormFeedback,
+  FormGroup,
+  Label,
+  Input,
+  Col,
+  Row,
+  Modal, 
+  ModalHeader, 
+  ModalBody, 
+  Button } from 'reactstrap';
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { CareerSchema } from './helpers/validator'
+import * as ApplyService from '../../services/apply-to-career-service'
+import ModalMessage from '../../components/success-modal'
+
+const initialValues= {
+  first_name: '',
+  last_name: '',
+  email: '',
+  phone: '',
+  cv: '',
+  linkedin_url: '',
+  url: '',
+  lead_source: 'Website'
+}
+
+const spinner = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`
+
+const ApplyToCareer = ({
+  toggle,  
+  show,
+  careerSlug,
+  success 
+}) => {
+
+  const [modal, setModal] = useState(false);
+  const [resultMessage, setResultMessage] = useState('');
+  const [resultTitle, setResultTitle] = useState('');
+
+  return (
+    <div>
+      <ModalMessage 
+        show={ modal }
+        toggle={ (value) => setModal(!value) }
+        title={resultTitle}
+        body={resultMessage}
+        centered
+        closeButtonText='Acept'
+      />
+      <Modal isOpen={show} toggle={toggle} centered={true} size="lg">
+        <ModalHeader toggle={toggle}>JOIN OUR TALENT COMMUNITY</ModalHeader>
+        <ModalBody>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={CareerSchema}
+            onSubmit={(values, { setSubmitting, resetForm }) => {
+              ApplyService.apply(values, careerSlug)
+                .then(
+                  () => {
+                    setSubmitting(false);
+                    setResultMessage('Your data has been registered successfully. ')
+                    setResultTitle('Success!')
+                    setModal(true)
+                    resetForm(initialValues);
+                  },
+                  err => {
+                    setResultMessage(err.message)
+                    setResultTitle('Something is wrong!')
+                    setModal(true)
+                    setSubmitting(false)
+                  }
+                )
+            }}
+          >
+            {({ values, errors, isSubmitting, touched, setFieldValue, setFieldTouched }) => (
+              <Form className="px-3 py-4">
+                <Row>
+                  <Col md={6}>
+                    <FormGroup>
+                      <Label for="first_name" className="font-weight-bold">First Name: *</Label>
+                      <Input
+                        type="text"
+                        name="first_name"
+                        id="first_name"
+                        tag={Field}
+                        invalid={Boolean(touched.first_name && errors.first_name)}
+                        aria-required
+                      />
+                      <ErrorMessage name="first_name" component={FormFeedback} />
+                    </FormGroup>
+                  </Col>
+                  <input type="hidden" value="testing" name="lead_source" />
+                  <Col md={6}>
+                    <FormGroup>
+                      <Label for="last_name" className="font-weight-bold">Last name: *</Label>
+                      <Input
+                        type="text"
+                        name="last_name"
+                        id="last_name"
+                        tag={Field}
+                        invalid={Boolean(touched.last_name && errors.last_name)}
+                        aria-required
+                      />
+                      <ErrorMessage name="last_name" component={FormFeedback} />
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={6}>
+                    <FormGroup>
+                      <Label for="email" className="font-weight-bold"> Email: *</Label>
+                      <Input
+                        type="email"
+                        name="email"
+                        id="email"
+                        tag={Field}
+                        invalid={Boolean(touched.email && errors.email)}
+                        aria-required
+                      />
+                      <ErrorMessage name="email" component={FormFeedback} />
+                    </FormGroup>
+                  </Col>
+                  <Col md={6}>
+                    <FormGroup>
+                      <Label for="phone" className="font-weight-bold"> Phone: *</Label>
+                      <Input
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        tag={Field}
+                        invalid={Boolean(touched.phone && errors.phone)}
+                        aria-required
+                      />
+                      <ErrorMessage name="phone" component={FormFeedback} />
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <br/>
+                <FormGroup>
+                  <Label className="font-weight-bold"> Resume/CV: *</Label>
+                  <Label 
+                    for="cv"
+                    css={ css`
+                      margin-left: 10px;
+                      color: #dc3445;
+                      cursor: pointer;
+                    `}
+                  >Attach you CV</Label>
+                  <Label
+                    css={ css`
+                      color: #7d7d7d;
+                      font-size: 14px;
+                      margin-left: 10px;
+                    `}
+                  >(pdf, zip, word, docx)</Label>
+                  <br/>
+                  <Label
+                    css={ css`
+                      color: #7d7d7d;
+                    `}
+                  >{values.cv['name']}</Label>
+                  <Input 
+                    id="cv" 
+                    name="cv" 
+                    type="file"
+                    invalid={Boolean(touched.cv && errors.cv)}
+                    onChange={(event) => {
+                        setFieldValue("cv", event.currentTarget.files[0]);
+                      }
+                    }
+                    hidden
+                  />
+                  <ErrorMessage name="cv" component={FormFeedback} />
+                </FormGroup>
+                <hr/>
+                <br/>
+                <FormGroup>
+                  <Label for="linkedin_url" className="font-weight-bold">Linkedin url</Label>
+                  <Input
+                    type="text"
+                    name="linkedin_url"
+                    id="linkedin_url"
+                    tag={Field}
+                    invalid={Boolean(touched.linkedin_url && errors.linkedin_url)}
+                    aria-required
+                  />
+                  <ErrorMessage name="linkedin_url" component={FormFeedback} />
+                </FormGroup>
+                <FormGroup>
+                  <Label for="url" className="font-weight-bold">Website url</Label>
+                  <Input
+                    type="text"
+                    name="url"
+                    id="url"
+                    tag={Field}
+                    invalid={Boolean(touched.url && errors.url)}
+                    aria-required
+                  />
+                  <ErrorMessage name="url" component={FormFeedback} />
+                </FormGroup>
+                <FormGroup className="text-right">
+                  <Button color="danger" type="submit" className="mt-4 px-5" disabled={isSubmitting}>
+                    {
+                      isSubmitting ?
+                        (<div 
+                          className="loader"
+                          css={ css`
+                            border: 3px solid #dcdcdc;
+                            border-top: 3px solid #ffffff;
+                            border-radius: 50%;
+                            width: 20px;
+                            height: 20px;
+                            animation: ${spinner} 2s linear infinite;
+                            margin-left: 5px;
+                          `}
+                        ></div>) : ('Submit application')
+                    }
+                  </Button>
+                </FormGroup>
+              </Form>
+            )}
+          </Formik>
+        </ModalBody>
+      </Modal>
+    </div>
+  );
+}
+
+export default ApplyToCareer;
