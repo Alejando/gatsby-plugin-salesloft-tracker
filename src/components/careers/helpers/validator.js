@@ -8,6 +8,8 @@ const SUPPORTED_FORMATS = [
   "application/docx"
 ]
 
+const MAX_FILE_SIZE = 10000000;
+
 export const CareerSchema = Yup.object().shape({
   first_name: Yup.string()
     .min(2, 'Your name must be longer than 2 characters')
@@ -27,5 +29,6 @@ export const CareerSchema = Yup.object().shape({
     .url("That doesn't look like a url"),
   cv: Yup.mixed()
     .required('The CV is required')
-    .test('fileType', "Unsupported File Format", value => (typeof value === 'undefined' ? true : SUPPORTED_FORMATS.includes(value.type)) )
+    .test('fileType', "Unsupported file format", value => (typeof value === 'undefined' ? true : SUPPORTED_FORMATS.includes(value.type)) )
+    .test('fileSize', "File size is too large (Max 10MB)", value => value.size <= MAX_FILE_SIZE)
 })
