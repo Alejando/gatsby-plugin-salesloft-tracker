@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { css, keyframes } from 'emotion'
+import { css } from 'emotion'
 import {
   FormFeedback,
   FormGroup,
@@ -15,6 +15,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { CareerSchema } from './helpers/validator'
 import * as ApplyService from '../../services/apply-to-career-service'
 import ModalMessage from '../../components/success-modal'
+import Spinner from '../../components/spinner';
 
 const initialValues= {
   first_name: '',
@@ -27,10 +28,6 @@ const initialValues= {
   lead_source: 'Website'
 }
 
-const spinner = keyframes`
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-`
 
 const ApplyToCareer = ({
   toggle,  
@@ -53,8 +50,26 @@ const ApplyToCareer = ({
         centered
         closeButtonText='Acept'
       />
-      <Modal isOpen={show} toggle={toggle} centered={true} size="lg">
-        <ModalHeader toggle={toggle}>JOIN OUR TALENT COMMUNITY</ModalHeader>
+      <Modal isOpen={show} toggle={toggle} centered={true} size="lg"
+        css={ css`
+          @media (max-height: 823px) {
+            top: 5%;
+          }
+
+          @media (max-height: 736px) {
+            top: 12%;
+          }
+
+          @media (max-height: 568px) {
+            top: 15%;
+          }
+        `}
+      >
+        <ModalHeader toggle={toggle}>
+          <Col md={12}>
+            JOIN OUR TALENT COMMUNITY
+          </Col>
+        </ModalHeader>
         <ModalBody>
           <Formik
             initialValues={initialValues}
@@ -158,7 +173,7 @@ const ApplyToCareer = ({
                       font-size: 14px;
                       margin-left: 10px;
                     `}
-                  >(pdf, zip, word, docx)</Label>
+                  >(.pdf, .zip, .docx)</Label>
                   <br/>
                   <Label
                     css={ css`
@@ -208,18 +223,7 @@ const ApplyToCareer = ({
                   <Button color="danger" type="submit" className="mt-4 px-5" disabled={isSubmitting}>
                     {
                       isSubmitting ?
-                        (<div 
-                          className="loader"
-                          css={ css`
-                            border: 3px solid #dcdcdc;
-                            border-top: 3px solid #ffffff;
-                            border-radius: 50%;
-                            width: 20px;
-                            height: 20px;
-                            animation: ${spinner} 2s linear infinite;
-                            margin-left: 5px;
-                          `}
-                        ></div>) : ('Submit application')
+                        (<Spinner />) : ('Submit application')
                     }
                   </Button>
                 </FormGroup>

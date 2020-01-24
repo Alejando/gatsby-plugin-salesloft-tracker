@@ -30,5 +30,5 @@ export const CareerSchema = Yup.object().shape({
   cv: Yup.mixed()
     .required('The CV is required')
     .test('fileType', "Unsupported file format", value => (typeof value === 'undefined' ? true : SUPPORTED_FORMATS.includes(value.type)) )
-    .test('fileSize', "File size is too large (Max 10MB)", value => value.size <= MAX_FILE_SIZE)
+    .test('fileSize', "File size is too large (Max 10MB)", value => (typeof value === 'undefined' ? true : value.size <= MAX_FILE_SIZE))
 })

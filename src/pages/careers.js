@@ -12,7 +12,7 @@ import hotFlame from '../images/hot-flame.png'
 import CareerOpportunity from '../services/career-opportunity'
 import { css } from 'emotion'
 import ApplyToCareer from '../components/careers/apply'
-
+import Spinner from '../components/spinner';
 import bannerImage from '../images/work_densitylabs.png'
 
 const siteMeta = {
@@ -32,14 +32,18 @@ class Careers extends Component {
     this.state = {
       careers: [],
       careerSlug: null,
-      showApplyModal: false
+      showApplyModal: false,
+      loading: true
     }
 
   }
 
   componentWillMount() {
     CareerOpportunity.getCareers().then((result) => {
-      this.setState({ careers: result.data });
+      this.setState({ 
+        careers: result.data,
+        loading: false
+      });
     });
   }
 
@@ -82,52 +86,71 @@ class Careers extends Component {
             Career opportunities
           </h1>
           {
-            
-            this.state.careers.map((career, i) => (
-            <div key={i} className="border-bottom pb-4 pt-3">
-              <div className="d-inline-flex border-bottom align-items-center w-100 pb-3 mb-3">
-                { 
-                  career.is_high_priority &&
-                  <img src={hotFlame} width={40} alt="hot flame" className="mr-4"/>
-                }
-                <h3 className="text-uppercase m-0 p-0">{ career.name }</h3>
+            this.state.loading ? 
+            (
+              <div
+                css={ css`
+                  width: 100%;
+                  text-align: center;
+                  display: flex;
+                  justify-content: center;
+                  margin-top: 40px;
+                `}
+              >
+                <Spinner
+                  color="#929497"
+                  size='30px'
+                />
               </div>
-              <div dangerouslySetInnerHTML={{ __html: career.description }} />
-              <br/>
-              <h3>
-                <FontAwesomeIcon icon={["fas", "check-circle"]} /> &nbsp;
-                Must-have
-              </h3>
-              <ul>
-                { career.must_have.map((requirement, i) => (<li key={i}>{requirement}</li>))}
-              </ul>
-              { career.nice_to_have.length > 0 &&
+            ) 
+            : 
+            (
+              this.state.careers.map((career, i) => (
+              <div key={i} className="border-bottom pb-4 pt-3">
+                <div className="d-inline-flex border-bottom align-items-center w-100 pb-3 mb-3">
+                  { 
+                    career.is_high_priority &&
+                    <img src={hotFlame} width={40} alt="hot flame" className="mr-4"/>
+                  }
+                  <h3 className="text-uppercase m-0 p-0">{ career.name }</h3>
+                </div>
+                <div dangerouslySetInnerHTML={{ __html: career.description }} />
+                <br/>
                 <h3>
-                  <FontAwesomeIcon icon={["fas", "thumbs-up"]} /> &nbsp;
-                  Nice to have
+                  <FontAwesomeIcon icon={["fas", "check-circle"]} /> &nbsp;
+                  Must-have
                 </h3>
-              }
-              <ul>
-                {  career.nice_to_have.map((requirement, i) => (<li key={i}>{requirement}</li>))
+                <ul>
+                  { career.must_have.map((requirement, i) => (<li key={i}>{requirement}</li>))}
+                </ul>
+                { career.nice_to_have.length > 0 &&
+                  <h3>
+                    <FontAwesomeIcon icon={["fas", "thumbs-up"]} /> &nbsp;
+                    Nice to have
+                  </h3>
                 }
-              </ul>
-              <Button  color="danger" onClick={() => this.handleApplyNow(career.slug)}>
-                <FontAwesomeIcon icon={["fas", "envelope"]} />
-                <span className="ml-2">Apply Now</span>
-              </Button>
-              <span className="m-3">or</span>
-              <Link to="/seeking-developers-who-love-to-code">
-                <Button color="danger" >
-                  <FontAwesomeIcon icon={["fas", "user-circle"]} />
-                  <span className="ml-2">Refer a friend</span>
+                <ul>
+                  {  career.nice_to_have.map((requirement, i) => (<li key={i}>{requirement}</li>))
+                  }
+                </ul>
+                <Button  color="danger" onClick={() => this.handleApplyNow(career.slug)}>
+                  <FontAwesomeIcon icon={["fas", "envelope"]} />
+                  <span className="ml-2">Apply Now</span>
                 </Button>
-              </Link>
-              {
-                career.referral_bonus > 0 &&
-                <p className="mt-3">REFER A FRIEND AND RECEIVE ${career.referral_bonus} DOLLARS!!</p>
-              }
-            </div>
-           ))
+                <span className="m-3">or</span>
+                <Link to="/seeking-developers-who-love-to-code">
+                  <Button color="danger" >
+                    <FontAwesomeIcon icon={["fas", "user-circle"]} />
+                    <span className="ml-2">Refer a friend</span>
+                  </Button>
+                </Link>
+                {
+                  career.referral_bonus > 0 &&
+                  <p className="mt-3">REFER A FRIEND AND RECEIVE ${career.referral_bonus} DOLLARS!!</p>
+                }
+              </div>
+             ))
+            )
         }
         </Container>
       </Layout>
