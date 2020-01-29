@@ -49,7 +49,7 @@ What about showing a shorter version of the repo status, removing verbose text 
 Let's add an alias for that, this alias is going to be called "st". Run the following command in the terminal:
 
 ```bash
-$ git config --global alias.st "status --short --branch
+$ git config --global alias.st "status --short --branch"
 ```
 
 Now when you want to check your repo's status you can call as git st and get a more concise status. Here is an example of how it should look:
