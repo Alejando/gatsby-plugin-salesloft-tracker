@@ -4,7 +4,7 @@ date: "2020-01-22"
 image: ./5-userful-tricks-you-didnt-know-for-git.jpg
 keywords: "git, Github, productivity, tips, terminal"
 author: Tonatiuh Núñez
-social_summary: "Here are some useful tricks for Git in the Terminal, that will help you to speed up sbashome tasks. Check them out!"
+social_summary: "Here are some useful tricks for Git in the Terminal, that will help you to speed up some tasks. Check them out!"
 tags:
   - git
   - github
