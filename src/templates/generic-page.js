@@ -24,7 +24,7 @@ const GenericPage = ({ data }) => {
           content={page.frontmatter.bannerDescription}
         />
       }
-      <Container className="pt-4">
+      <Container className="py-4">
         <div
           dangerouslySetInnerHTML={{ __html: page.html }}
           css={css`

@@ -77,7 +77,7 @@ const Careers = ({ data }) => {
               <span className="ml-2">Apply Now</span>
             </Button>
             <span className="m-3">or</span>
-            <Link to="/seeking-developers-who-love-to-code">
+            <Link to="/how-to-refer-a-friend">
               <Button color="danger" >
                 <FontAwesomeIcon icon={["fas", "user-circle"]} />
                 <span className="ml-2">Refer a friend</span>
