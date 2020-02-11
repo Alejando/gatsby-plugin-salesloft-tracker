@@ -2,7 +2,7 @@
 order: '4'
 title: Pricing
 icon: check
-circleBgColor: '828282'
+circleBgColor: 'dc3545'
 ---
 We believe in transparency.
 

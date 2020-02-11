@@ -2,7 +2,7 @@
 order: '2'
 title: We aim to create the happiest and highest performing teams
 icon: snowflake
-circleBgColor: ed1c24
+circleBgColor: 'dc3545'
 ---
 Multi-cultural team
 

@@ -1,11 +1,12 @@
 ---
 name: Peppaa
+logo: ./peppaa-logo.png
 images:
-  - ./logo-peppaa.jpg
-imageFooter: SaaS based virtual assistant application for busy working professionals with families to handle everything from planning doctor visits to a spin class.
+imageFooter: Peppaa is a virtual assistant application for busy working professionals with families to handle everything from planning doctor visits to a spin class.
 technology: Ruby on Rails Development
 place: 
 external_link:
+order: '4'
 ---
 SaaS based virtual assistant application for busy working professionals with families to handle everything from planning doctor visits to a spin class. The application gives families the ability to have and share a family calendar for planning everyone’s active lives.
 

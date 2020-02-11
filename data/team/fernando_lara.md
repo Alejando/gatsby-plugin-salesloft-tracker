@@ -1,8 +1,9 @@
 ---
 name: Fernando
-image: ./Fernando.jpg
+image: ./fernando.png
 title: Software Engineer
 type: Superstar
+position: 4
 ---
 I am a junior full-stack web developer. I see myself as a dedicated person.
  

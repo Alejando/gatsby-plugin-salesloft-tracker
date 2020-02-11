@@ -9,6 +9,7 @@ import {
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as ContactUsService from '../../services/contact-us-service'
 import * as Yup from 'yup'
+import { css } from 'emotion'
 
 const ContactUsSchema = Yup.object().shape({
   name: Yup.string()
@@ -97,6 +98,7 @@ const ContactUsForm = ({ success }) => {
                 tag={Field}
                 invalid={Boolean(touched.message && errors.message)}
                 aria-required
+                css={css`min-height:100px;`}
               />
               <ErrorMessage name="message" component={FormFeedback} />
             </FormGroup>

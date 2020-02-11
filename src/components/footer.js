@@ -25,7 +25,6 @@ const Footer = () => (
       <ul className="list-inline">
         {
           SocialData.map((socialDetails) => (
-            socialDetails.home && 
             <li className="list-inline-item" key={socialDetails.icon} >
               <SocialDataIcon socialDetails={socialDetails} />
             </li>

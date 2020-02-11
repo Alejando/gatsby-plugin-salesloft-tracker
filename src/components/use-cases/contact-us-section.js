@@ -11,8 +11,8 @@ const Section = styled.div`
   color: #fff;
   font-size: 15px; 
   &:hover{
-    background: #ed1c24;
-    transition: all 0.2s ease-in-out;
+    background: #dc3545;
+    transition: all .8s ease-in-out;
   }
 `;
 
@@ -40,7 +40,7 @@ class ContactUsSection extends Component {
       >
         <h2>{this.state.title}</h2>
         <Link to="/contact-us">
-          <Button outline color="light">                
+          <Button outline color="light">
             <span className="ml-2">Contact Us</span>
             <FontAwesomeIcon icon={["fas", "envelope"]} className="ml-3"/>
           </Button>

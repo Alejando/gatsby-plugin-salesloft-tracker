@@ -61,7 +61,7 @@ const createUseCasePages = async ({ graphql, actions }) => {
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: `work/${slugify(node.frontmatter.name)}`,
+      path: `use-cases/${slugify(node.frontmatter.name)}`,
       component: path.resolve(`./src/templates/use-case-detail.js`),
       context: {
         id: node.id,

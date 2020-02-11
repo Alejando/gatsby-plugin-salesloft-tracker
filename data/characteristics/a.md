@@ -2,7 +2,7 @@
 order: '1'
 title: We are a happy, dynamic and diverse company designed to meet the needs of tech start ups
 icon: gem
-circleBgColor: ed1c24
+circleBgColor: 'dc3545'
 ---
 2 Regions - 2 Countries - 2 time zones - 2 languages
 

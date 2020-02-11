@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { defaults } from 'lodash'
 import { withPrefix } from 'gatsby'
 
-import image from '../images/background-picture-banner.jpg'
+import image from '../images/main_banner.jpg'
 
 
 const favicon = withPrefix('/images/favicon.png')
@@ -12,7 +12,7 @@ const msIcon = withPrefix('/images/ms-icon.png')
 export const defaultMeta = {
   keywords: 'Densitylabs, density labs, development web apps, development mobile apps, software development companies in mexico, Software Development Company, web development company, mobile app development, startup project management, software development for startups, ruby on rails development, ruby on rails development company, ROR development services, ruby on rails web development company, Ruby on Rails Development Services, Ruby on Rails Software Development, software product development, software development company Mexico',
   openGraphTitle: 'Software Engineering Company | DensityLabs',
-  description: 'We build stunning web and mobile applications. Density Labs is a small team of elite engineers that builds successful web and mobile applications.',
+  description: 'We build stunning web and mobile applications. Density Labs is a software development firm serving organizations to accelerate web, mobile, and SaaS application development',
   image,
   msIcon,
   favicon,

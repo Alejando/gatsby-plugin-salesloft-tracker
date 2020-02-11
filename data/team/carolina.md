@@ -1,8 +1,10 @@
 ---
 name: Carolina
-image: ./Carolina.jpg
-title: QA Tester Engineer
+image: ./carolina.png
+title: QA Engineer
 type: Superstar
+category: qa
+position: 8
 ---
 I’m a QA engineer with 6 years of experience, 3 of them working with international clients. I’m passionate about quality processes in all kind of projects, not only those related to software development.
  

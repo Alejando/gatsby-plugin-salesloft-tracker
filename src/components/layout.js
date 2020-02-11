@@ -58,7 +58,6 @@ const Layout = ({ children, siteMeta }) => (
             styles={css`
               :root{
                 font-size   : 100%;
-
                 @media (max-width: 575.98px) {
                   font-size : 80%;
                 }
@@ -70,7 +69,7 @@ const Layout = ({ children, siteMeta }) => (
           />
           {children}
         </main>
-				<Footer/>
+        <Footer/>
       </>
     )}
   />

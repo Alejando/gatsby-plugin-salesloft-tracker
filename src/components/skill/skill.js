@@ -11,16 +11,12 @@ const Skill = ({
   subTitle,
   descriptionHtml,
 }) => (
-  <Jumbotron className="h-100 bg-white px-md-3 shadow border" css={css`&:hover{ box-shadow: 0 0 !important; }`}>
+  <Jumbotron className="h-100 bg-white px-md-3 shadow borders pb-0" css={css`&:hover{ box-shadow: 0 0 !important; }`}>
     <div className="text-center">
       <FeaturedIcon icon={icon} color="#ed1c24" size="2"/>
     </div>
-    <h2 className="text-uppercase border-bottom pb-3 text-center mt-3 border-bottom mt-4">{title}</h2>
-    <h3 className="text-center">{subTitle}</h3>
-    <div
-      className="text-center lead text-muted"
-      dangerouslySetInnerHTML={{ __html: descriptionHtml }}
-    />
+    <h4 className="text-uppercase border-bottom pb-3 text-center mt-3 border-bottom mt-4">{title}</h4>
+    <p className="text-center">{subTitle}</p>
   </Jumbotron>
 )
 

@@ -7,10 +7,12 @@ import {
 import Layout from '../components/layout'
 import Banner from '../components/banner'
 import { css } from 'emotion'
-import bannerImage from '../images/work_densitylabs.png'
+import bannerImage from '../images/midtown.png'
 import ContactUsForm from '../components/forms/contact-us-form'
 import LocationList from '../components/location/location-list'
 
+
+import logo from '../images/logo.svg'
 import locations from '../../data/locations.json'
 import { withPrefix, Link } from 'gatsby';
 import Modal from '../components/success-modal'
@@ -41,6 +43,7 @@ const [modal, setModal] = useState(false);
         image={bannerImage}
         title='Contact Us'
         content='Do you want to talk about an idea that you have? Just want to say hi? We are here for you!'
+        height={500}
       />
       <Container className="py-5">
         <Row>
@@ -57,9 +60,8 @@ const [modal, setModal] = useState(false);
             />
           </Col>
           <Col md="4">
-            <h3 css={css`font-family:'Sansation', sans-serif;`} className="border-bottom pb-3">
-              Density<span css={css`color: #D92635;`}>Labs</span>
-            </h3>
+            <img className="mb-0 p-0" css={css`width:50%; height:auto;`} src={logo} alt="Logo" />
+            <div className="border-bottom pb-3 mb-3"></div>
             <LocationList locations={locations} />
           </Col>
         </Row>

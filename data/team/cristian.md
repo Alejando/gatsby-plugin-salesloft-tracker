@@ -1,8 +1,9 @@
 ---
 name: Cristian
-image: ./Cristian.jpg
+image: ./cristian.png
 title: QA Engineer
 type: Superstar
+position: 9
 ---
 I have more than 8 years of experience as a manual tester working with different kind of hardware and software technologies. I also have 2+ years of experience with Agile and Scrum methodologies.
  

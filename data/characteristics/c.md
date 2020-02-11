@@ -2,7 +2,7 @@
 order: '3'
 title: Our journey has just started but we love to celebrate our client's success
 icon: globe
-circleBgColor: '828282'
+circleBgColor: 'dc3545'
 ---
 75% CAGR for the last 3 years
 
