@@ -11,8 +11,8 @@ import {
   ModalHeader, 
   ModalBody, 
   Button } from 'reactstrap';
-import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { CareerSchema } from './helpers/apply-validator'
+import { Formik, Form, Field, ErrorMessage, getIn } from 'formik'
+import { ReferSchema } from './helpers/refer-validator'
 import * as ApplyService from '../../services/apply-to-career-service'
 import ModalMessage from '../../components/success-modal'
 import Spinner from '../../components/spinner';
@@ -23,13 +23,16 @@ const initialValues= {
   email: '',
   phone: '',
   cv: '',
-  linkedin_url: '',
-  url: '',
-  lead_source: 'Website'
+  lead_source: 'Website',
+  referred_by: { 
+    first_name: '',
+    last_name: '',
+    email: ''
+  }
 }
 
 
-const ApplyToCareer = ({
+const ReferAFriend = ({
   toggle,  
   show,
   careerSlug,
@@ -67,16 +70,16 @@ const ApplyToCareer = ({
       >
         <ModalHeader toggle={toggle}>
           <Col md={12}>
-            JOIN OUR TALENT COMMUNITY
+            REFER A FRIEND
           </Col>
         </ModalHeader>
         <ModalBody>
           <Formik
             initialValues={initialValues}
-            validationSchema={CareerSchema}
+            validationSchema={ReferSchema}
             onSubmit={(values, { setSubmitting, resetForm }) => {
               values = { "contact": values }
-              ApplyService.apply(values, careerSlug)
+              ApplyService.referAFriend(values, careerSlug)
                 .then(
                   () => {
                     setSubmitting(false);
@@ -96,6 +99,66 @@ const ApplyToCareer = ({
           >
             {({ values, errors, isSubmitting, touched, setFieldValue, setFieldTouched }) => (
               <Form className="px-3 py-4">
+                <Row>
+                  <Col md={12}>
+                    <strong>YOUR DATA</strong>
+                  </Col>
+                </Row>
+                <br/>
+                <Row>
+                  <Col md={6}>
+                    <FormGroup>
+                      <Label for="referred_by_first_name" className="font-weight-bold">First Name: *</Label>
+                      <Input
+                        type="text"
+                        name="referred_by.first_name"
+                        id="referred_by_first_name"
+                        tag={Field}
+                        invalid={Boolean(getIn(errors, 'referred_by.first_name') && getIn(touched, 'referred_by.first_name'))}
+                        aria-required
+                      />
+                      <ErrorMessage name="referred_by.first_name" component={FormFeedback} />
+                    </FormGroup>
+                  </Col>
+                  <input type="hidden" value="testing" name="lead_source" />
+                  <Col md={6}>
+                    <FormGroup>
+                      <Label for="referred_by_last_name" className="font-weight-bold">Last name: *</Label>
+                      <Input
+                        type="text"
+                        name="referred_by.last_name"
+                        id="referred_by_last_name"
+                        tag={Field}
+                        invalid={Boolean(getIn(errors, 'referred_by.last_name') && getIn(touched, 'referred_by.last_name'))}
+                        aria-required
+                      />
+                      <ErrorMessage name="referred_by.last_name" component={FormFeedback} />
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md={12}>
+                    <FormGroup>
+                      <Label for="referred_by_email" className="font-weight-bold">Email: *</Label>
+                      <Input
+                        type="text"
+                        name="referred_by.email"
+                        id="referred_by_email"
+                        tag={Field}
+                        invalid={Boolean(getIn(errors, 'referred_by.email') && getIn(touched, 'referred_by.email'))}
+                        aria-required
+                      />
+                      <ErrorMessage name="referred_by.email" component={FormFeedback} />
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <hr/>
+                <Row>
+                  <Col md={12}>
+                    <strong>YOUR FRIEND'S DATA</strong>
+                  </Col>
+                </Row>
+                <br/>
                 <Row>
                   <Col md={6}>
                     <FormGroup>
@@ -167,7 +230,7 @@ const ApplyToCareer = ({
                       color: #dc3445;
                       cursor: pointer;
                     `}
-                  >Attach you CV</Label>
+                  >Attach your friend's CV</Label>
                   <Label
                     css={ css`
                       color: #7d7d7d;
@@ -194,37 +257,11 @@ const ApplyToCareer = ({
                   />
                   <ErrorMessage name="cv" component={FormFeedback} />
                 </FormGroup>
-                <hr/>
-                <br/>
-                <FormGroup>
-                  <Label for="linkedin_url" className="font-weight-bold">Linkedin url</Label>
-                  <Input
-                    type="text"
-                    name="linkedin_url"
-                    id="linkedin_url"
-                    tag={Field}
-                    invalid={Boolean(touched.linkedin_url && errors.linkedin_url)}
-                    aria-required
-                  />
-                  <ErrorMessage name="linkedin_url" component={FormFeedback} />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="url" className="font-weight-bold">Website url</Label>
-                  <Input
-                    type="text"
-                    name="url"
-                    id="url"
-                    tag={Field}
-                    invalid={Boolean(touched.url && errors.url)}
-                    aria-required
-                  />
-                  <ErrorMessage name="url" component={FormFeedback} />
-                </FormGroup>
                 <FormGroup className="text-right">
                   <Button color="danger" type="submit" className="mt-4 px-5" disabled={isSubmitting}>
                     {
                       isSubmitting ?
-                        (<Spinner />) : ('Submit application')
+                        (<Spinner />) : ('Submit referral')
                     }
                   </Button>
                 </FormGroup>
@@ -237,4 +274,4 @@ const ApplyToCareer = ({
   );
 }
 
-export default ApplyToCareer;
+export default ReferAFriend;

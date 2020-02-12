@@ -12,6 +12,7 @@ import hotFlame from '../images/hot-flame.png'
 import CareerOpportunity from '../services/career-opportunity'
 import { css } from 'emotion'
 import ApplyToCareer from '../components/careers/apply'
+import ReferAFriend from '../components/careers/refer'
 import Spinner from '../components/spinner';
 import bannerImage from '../images/work_densitylabs.png'
 
@@ -33,6 +34,7 @@ class Careers extends Component {
       careers: [],
       careerSlug: null,
       showApplyModal: false,
+      showReferModal: false,
       loading: true
     }
 
@@ -54,12 +56,24 @@ class Careers extends Component {
     })
   }
 
+  handleReferAFriend(careerSlug) {
+    this.setState({
+      showReferModal: true,
+      careerSlug: careerSlug
+    })
+  }
+
   render(){
     return(
       <Layout siteMeta={siteMeta}>
         <ApplyToCareer 
           show={this.state.showApplyModal}
           toggle={ (value) => this.setState({showApplyModal: !value}) }
+          careerSlug={this.state.careerSlug}
+        />
+        <ReferAFriend 
+          show={this.state.showReferModal}
+          toggle={ (value) => this.setState({showReferModal: !value}) }
           careerSlug={this.state.careerSlug}
         />
         <Banner
@@ -138,12 +152,10 @@ class Careers extends Component {
                   <span className="ml-2">Apply Now</span>
                 </Button>
                 <span className="m-3">or</span>
-                <Link to="/seeking-developers-who-love-to-code">
-                  <Button color="danger" >
-                    <FontAwesomeIcon icon={["fas", "user-circle"]} />
-                    <span className="ml-2">Refer a friend</span>
-                  </Button>
-                </Link>
+                <Button color="danger"  onClick={() => this.handleReferAFriend(career.slug)}>
+                  <FontAwesomeIcon icon={["fas", "user-circle"]} />
+                  <span className="ml-2">Refer a friend</span>
+                </Button>
                 {
                   career.referral_bonus > 0 &&
                   <p className="mt-3">REFER A FRIEND AND RECEIVE ${career.referral_bonus} DOLLARS!!</p>

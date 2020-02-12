@@ -1,14 +1,5 @@
 import * as Yup from 'yup'
-
-const SUPPORTED_FORMATS = [
-  "application/pdf",
-  "application/zip",
-  "application/word",
-  "application/html",
-  "application/docx"
-]
-
-const MAX_FILE_SIZE = 10000000;
+import {SUPPORTED_FORMATS, MAX_FILE_SIZE} from './files';
 
 export const CareerSchema = Yup.object().shape({
   first_name: Yup.string()
