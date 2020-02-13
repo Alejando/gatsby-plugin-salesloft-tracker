@@ -2,7 +2,7 @@ import axios from 'axios'
 import { formDataFrom }  from '../helpers/form-data-helper'
 
 export function apply(values, careerSlug) {
-  const endPoint = process.env.MYDL_API_URL + '/careers_opportunities/' + 
+  const endPoint = process.env.MYDL_API_URL + '/career_opportunities/' + 
               careerSlug + '/apply';
 
   return axios({
@@ -22,7 +22,7 @@ export function apply(values, careerSlug) {
 }
 
 export function referAFriend(values, careerSlug) {
-  const endPoint = process.env.MYDL_API_URL + '/careers_opportunities/' + 
+  const endPoint = process.env.MYDL_API_URL + '/career_opportunities/' + 
               careerSlug + '/refer';
 
   return axios({
