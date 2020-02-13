@@ -3,13 +3,14 @@ import { css } from 'emotion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-const LocationList = ({
+const LocationInfoList = ({
   locations = [],
 }) => {
+  console.log(locations)
   return (
     <div>
       {locations.map(location => (
-        <ul key={location.address}
+        <ul key={location.title}
           className="border-bottom pb-3 pl-0"
           css={css`
             list-style: none;
@@ -26,10 +27,6 @@ const LocationList = ({
         > 
           <li>
           <h4>{location.title}</h4>
-          </li>
-          <li>
-            <FontAwesomeIcon icon={["fas", "home"]} />
-            <div dangerouslySetInnerHTML={{ __html: location.address }} />
           </li>
           {
             location.phone &&
@@ -51,4 +48,4 @@ const LocationList = ({
   )
 }
 
-export default LocationList
+export default LocationInfoList

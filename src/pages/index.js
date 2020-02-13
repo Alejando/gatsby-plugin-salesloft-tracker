@@ -11,7 +11,6 @@ import Layout from '../components/layout'
 import { graphql } from 'gatsby';
 import { css } from 'emotion'
 import { Link } from 'gatsby'
-import Line from '../components/v2/line';
 
 import bgBanner1 from '../images/main_banner.jpg'
 
@@ -67,15 +66,14 @@ const Index = ({ data }) => (
         </Container>
       </div>
       <Container>
-        <Row className="justify-content-lg-end my-2 mt-4">
+        <Row className=" my-2 mt-4">
           {ourTechnologies(data)}
         </Row>
-        <Line align="left"/>
-        <Row className="my-2 justify-content-lg-end">
+        {banner2()}
+        <Row className="my-2 mt-5 ">
           {resourcesForHire()}
         </Row>
-        {banner2()}
-        <Row className="mt-5 mb-2">
+        <Row className="my-4">
           <Col md={12}>
             <h3 className="text-center my-3" 
               css={css`
@@ -90,37 +88,6 @@ const Index = ({ data }) => (
             </h3>
           </Col>
         </Row>
-        {/* <Row className="my-2">
-          <Col md={12} lg={10}>
-            <Line align="right"/>
-          </Col>
-          <Col lg={2} className="d-flex align-items-center justify-content-center">
-            <Link to="/contact-us">
-              <Button color="danger" size="lg" className="rounded-pill">
-                Let's Talk!
-              </Button>
-            </Link>
-          </Col>
-        </Row> */}
-        {/* <Row className="my-2">
-          <Col xs={12} className="mt-2">
-            <Line/>
-          </Col>
-        </Row> */}
-        {/* <Row  className="my-5">
-          {
-            dataToSkills(data).map(skill => (
-              <Col md="12" lg="4" key={skill.name} className="mb-4">
-                <Skill
-                  icon={skill.icon}
-                  title={skill.name}
-                  subTitle={skill.sub}
-                  descriptionHtml={skill.descriptionHtml}
-                />
-              </Col>
-            ))
-          }
-        </Row> */}
       </Container>
 
       <div className="text-white mt-4 p-5 text-center" css={css`background-color: #dc3545;`}>
@@ -154,32 +121,31 @@ export const pageQuery = graphql`
 export default Index
 
 const resourcesForHire = () => (
-  <Col  lg={10} 
+  <Col className="py-3" 
     css={css`
-      @media (min-width: 992px) {
-        margin-top: -60px;
-      }
+      background:#DADFE3;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+      &:hover{ box-shadow: 0 0 !important;}
     `}
   >
-    <Row className="d-block d-sm-flex justify-content-center w-100 align-items-center text-center" 
-      css={css`font-size:18px; color: gray;`}
-    >
-      <Col md={4} lg={"auto"} className="mr-3 mt-2 font-weight-bold ">Resources for Hire:</Col>
-      <Col className="mt-2 p-lg-0" > Software Developers | QA & Automation | DevOps | Project Management | UX/UI Design</Col>
-    </Row>
+    <h3 className="font-weight-bold mb-4 ">Resources for Hire:</h3>
+    <p >We’ve got the best talent to meet your team’s needs and get your product out the door. Our resources include: </p>
+    <h4 className="my-4" 
+      css={css`
+        & b { color: #dc3545; }
+      `}
+    > 
+      Software Developers <b className="px-2">|</b> 
+      QA & Automation <b className="px-2">|</b> 
+      DevOps <b className="px-2">|</b> 
+      Project Management <b className="px-2">|</b> 
+      UX/UI Design
+    </h4>
   </Col>
 )
 
 const ourTechnologies = (data) => (
-  <Col 
-    md={12}
-    lg={10}
-    css={css`
-      @media (min-width: 992px) {
-        margin-bottom: -60px;
-      }
-    `}
-  >
+  <Col>
     <Row>
       {
         dataToTechnologies(data).map(src => (

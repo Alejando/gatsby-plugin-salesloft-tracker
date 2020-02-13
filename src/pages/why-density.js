@@ -3,11 +3,13 @@ import {
   Container,
   Col,
   Row,
+  Button
 } from 'reactstrap';
 import Banner from '../components/banner'
 import Layout from '../components/layout'
 import {
-  graphql
+  graphql,
+  Link
  } from 'gatsby';
 import * as R from 'ramda'
 
@@ -18,15 +20,17 @@ const nodeCharacteristicMapper = ({
   frontmatter: {
     order,
     title,
-    icon,
-    circleBgColor,
+    titleColor,
+    bgColor,
+    textColor,
   },
   html,
 }) => ({
   order,
   title,
-  icon,
-  circleBgColor,
+  titleColor,
+  bgColor,
+  textColor,
   descriptionHtml: html,
 })
 
@@ -51,19 +55,28 @@ const WhyUs = ({ data }) => (
     <Container>
         <Row >
           <Col md="12" className="m-auto pt-5">
-            <Row className="mb-5">
+            <Row className="mb-4">
               {
                 dataToCharacteristics(data).map(characteristic => (
                   <Characteristic
                     key = { characteristic.order }
                     title = { characteristic.title }
-                    icon = { characteristic.icon }
-                    circleBgColor = { characteristic.circleBgColor }
+                    titleColor = { characteristic.titleColor }
+                    bgColor = { characteristic.bgColor }
+                    textColor = { characteristic.textColor }
                     descriptionHtml = { characteristic.descriptionHtml }
                   />
                 ))
               }
             </Row>
+          </Col>
+          <Col className="mb-5 text-center">
+            <h3 >Tell us about your project needs. We’re here to make you happy!</h3>
+            <div className="my-3">
+              <Link to="/contact-us">
+                <Button color="danger">Contact Us</Button>
+              </Link>
+            </div>
           </Col>
         </Row>
       </Container>
@@ -83,8 +96,9 @@ export const pageQuery = graphql`
           frontmatter {
             order
             title
-            icon
-            circleBgColor
+            titleColor
+            bgColor
+            textColor
           }
           html
         }

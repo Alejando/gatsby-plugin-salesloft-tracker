@@ -1,13 +1,11 @@
 ---
 order: '1'
-title: We are a happy, dynamic and diverse company designed to meet the needs of tech start ups
-icon: gem
-circleBgColor: 'dc3545'
+title: Our 4Cs of Success
+titleColor: 'FFFFFF'
+bgColor: 'DA3849'
+textColor: 'FFFFFF'
 ---
-2 Regions - 2 Countries - 2 time zones - 2 languages
-
-Highly skilled professional with more than 15 years on average work experience
-
-100+ years of cumulative product-development experience
-
-International & diverse firm: 40% female - 60% male
+- **Communication**. Fluent English to understanding professional and social nuances of your team workflow. 
+- **Culture**. Creating healthy and productive working relationships with your teams and active participation is where Density Labs really shines. 
+- **Capabilities**. Hard technical skills are imperative plus continual growth in relevant skill sets. 
+- **Collaboration**. We constantly work with our customers to measure the unmeasurable to guarantee that development work is optimal.

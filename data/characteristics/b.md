@@ -1,17 +1,10 @@
 ---
 order: '2'
-title: We aim to create the happiest and highest performing teams
-icon: snowflake
-circleBgColor: 'dc3545'
+title: Competitive Pricing
+titleColor: 'E7131A'
+bgColor: 'FFFFFF'
+textColor: '1C1C1B'
 ---
-Multi-cultural team
-
-Work anytime, anywhere
-
-Collaborative work culture
-
-Focused on deliverable results
-
-We embrace open source projects
-
-We encourage fun while working
+- We believe in transparency.
+- Our pricing is the same for when working offsite or onsite. 
+- We’re priced 40-60% less than a direct hire with an equal level of quality and performance.

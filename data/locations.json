@@ -1,29 +1,30 @@
-[
-  {
-    "title": "San Francisco",
-    "country": "US",
-    "address": "25 Taylor Street<br/>San Francisco, CA",
-    "phone": "+1 (415) 900-6806",
-    "email": "info@densitylabs.io",
-    "social": [],
-    "show_call_option": true
-  },
-  {
-    "title": "Guadalajara",
-    "country": "Mexico",
-    "address": "WeWork Midtown Piso 24, Oficina 108/119 <br/> Av Adolfo López Mateos Nte # 95 Col. Providencia<br/> CP 44648. Guadalajara, Jalisco. México",
-    "phone": "+52 (312) 550-1431",
-    "email": "info@densitylabs.io",
-    "social": [],
-    "show_call_option": true
-  },
-  {
-    "title": "Zapopan",
-    "country": "Mexico",
-    "address": "Claveles # 566 Col. Los Girasoles<br/> CP 45136. Zapopan, Jalisco. México",
-    "phone": "",
-    "email": "",
-    "social": [],
-    "show_call_option": false
-  }
-]
+{ "contact_info": [
+    { 
+      "title": "Careers",
+      "phone": "+52 (33) 2578 5569",
+      "email": "careers@densitylabs.io"
+    },
+    { 
+      "title": "Sales",
+      "phone": "+1 (650) 507-0050",
+      "email": "info@densitylabs.io"
+    }
+  ],
+  "addresses":[
+    {
+      "title": "San Francisco",
+      "country": "US",
+      "address": "25 Taylor Street<br/>San Francisco, CA"
+    },
+    {
+      "title": "Guadalajara",
+      "country": "Mexico",
+      "address": "WeWork Midtown Piso 24, Oficina 108/119 <br/> Av Adolfo López Mateos Nte # 95 Col. Providencia<br/> CP 44648. Guadalajara, Jalisco. México"
+    },
+    {
+      "title": "Zapopan",
+      "country": "Mexico",
+      "address": "Claveles # 566 Col. Los Girasoles<br/> CP 45136. Zapopan, Jalisco. México"
+    }
+  ]
+}

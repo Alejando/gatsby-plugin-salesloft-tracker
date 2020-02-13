@@ -10,7 +10,7 @@ import { css } from 'emotion'
 import bannerImage from '../images/midtown.png'
 import ContactUsForm from '../components/forms/contact-us-form'
 import LocationList from '../components/location/location-list'
-
+import LocationInfoList from '../components/location/location-info-list'
 
 import logo from '../images/logo.svg'
 import locations from '../../data/locations.json'
@@ -35,8 +35,9 @@ const successMessage = () => {
 }
 
 const ContactUs = () => {
-const [modal, setModal] = useState(false);
-
+  const [modal, setModal] = useState(false);
+  const addresses = locations["addresses"]
+  const contactInfo = locations["contact_info"]
   return (
     <Layout siteMeta={siteMeta}>
       <Banner
@@ -62,7 +63,8 @@ const [modal, setModal] = useState(false);
           <Col md="4">
             <img className="mb-0 p-0" css={css`width:50%; height:auto;`} src={logo} alt="Logo" />
             <div className="border-bottom pb-3 mb-3"></div>
-            <LocationList locations={locations} />
+            <LocationInfoList locations={contactInfo} />
+            <LocationList locations={addresses} />
           </Col>
         </Row>
       </Container>

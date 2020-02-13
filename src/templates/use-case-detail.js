@@ -7,6 +7,15 @@ import ImageGallery from '../components/media/image-gallery';
 import { slugify } from '../lib/url-utils';
 import { css } from 'emotion'
 
+const backButton = () =>(
+  <Link to='/use-cases' >
+    <Button color="secondary" className="mt-4">
+      <FontAwesomeIcon className="mr-2" icon="arrow-left"/>
+      Back
+    </Button>
+  </Link>
+);
+
 const UseCaseDetail = ({ data }) => {
   const useCase = data.markdownRemark
 
@@ -43,13 +52,8 @@ const UseCaseDetail = ({ data }) => {
               }
             </div>
             <div dangerouslySetInnerHTML={{ __html: useCase.html }} />
-            <div>
-            <Link to='/use-cases' >
-                <Button color="secondary" className="mt-4">
-                  <FontAwesomeIcon className="mr-2" icon="arrow-left"/>
-                  Back
-                </Button>
-              </Link>
+            <div className="d-none d-md-block">
+              {backButton()}
             </div>
           </Col>
           <Col md="4">
@@ -65,21 +69,26 @@ const UseCaseDetail = ({ data }) => {
                 <dt>Place</dt>
                 <dd>{useCase.frontmatter.place}</dd>
               </dl>
-              {
-                useCase.frontmatter.external_link &&
-                <a
-                href={useCase.frontmatter.external_link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-danger text-white"
-              >
-                External Link <FontAwesomeIcon className="ml-2" icon="external-link-alt" />
-              </a>
-              }
+              <div className="d-flex justify-content-between align-items-end">
+                <div className="d-md-none ">
+                  {backButton()}
+                </div>
+                {
+                  useCase.frontmatter.external_link &&
+                  <div>
+                    <a
+                      href={useCase.frontmatter.external_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-danger text-white"
+                    >
+                      External Link <FontAwesomeIcon className="ml-2" icon="external-link-alt" />
+                    </a>
+                  </div>
+                }
+              </div>
             </aside>
-          </Col>
-          <Col>
-          
+            
           </Col>
         </Row>
       </Container>
