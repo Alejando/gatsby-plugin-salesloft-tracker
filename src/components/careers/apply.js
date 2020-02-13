@@ -80,7 +80,7 @@ const ApplyToCareer = ({
                 .then(
                   () => {
                     setSubmitting(false);
-                    setResultMessage('Your data has been registered successfully. ')
+                    setResultMessage('Thank you for applying to this great opportunity, one of our recruiters will contact you in the following 24 hours. ')
                     setResultTitle('Success!')
                     setModal(true)
                     resetForm(initialValues);
