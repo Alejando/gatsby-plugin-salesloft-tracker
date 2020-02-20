@@ -74,6 +74,12 @@ const ReferAFriend = ({
           </Col>
         </ModalHeader>
         <ModalBody>
+          <div className="col-12">
+            <label>
+              Your referral must fully comply with Density Labs’ requirements and successfully pass our recruitment process. 
+            </label>
+            <a href="/how-to-refer-a-friend">How it works</a>
+          </div>
           <Formik
             initialValues={initialValues}
             validationSchema={ReferSchema}

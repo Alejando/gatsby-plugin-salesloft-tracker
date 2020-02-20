@@ -149,12 +149,12 @@ class Careers extends Component {
                 </ul>
                 <Button  color="danger" onClick={() => this.handleApplyNow(career.slug)}>
                   <FontAwesomeIcon icon={["fas", "envelope"]} />
-                  <span className="ml-2">Apply Now</span>
+                  <span className="ml-2">Join our team as a {career.name}</span>
                 </Button>
                 <span className="m-3">or</span>
                 <Button color="danger"  onClick={() => this.handleReferAFriend(career.slug)}>
                   <FontAwesomeIcon icon={["fas", "user-circle"]} />
-                  <span className="ml-2">Refer a friend</span>
+                  <span className="ml-2">Refer a friend for {career.name}</span>
                 </Button>
                 {
                   career.referral_bonus > 0 &&
