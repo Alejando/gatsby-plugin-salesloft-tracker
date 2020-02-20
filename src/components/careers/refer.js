@@ -36,6 +36,7 @@ const ReferAFriend = ({
   toggle,  
   show,
   careerSlug,
+  careerName,
   success 
 }) => {
 
@@ -70,7 +71,7 @@ const ReferAFriend = ({
       >
         <ModalHeader toggle={toggle}>
           <Col md={12}>
-            REFER A FRIEND
+            REFER A FRIEND FOR {careerName}
           </Col>
         </ModalHeader>
         <ModalBody>
@@ -78,7 +79,15 @@ const ReferAFriend = ({
             <label>
               Your referral must fully comply with Density Labs’ requirements and successfully pass our recruitment process. 
             </label>
-            <a href="/how-to-refer-a-friend">How it works</a>
+            <a href="/how-to-refer-a-friend" css={css`
+              color: #000000;
+              text-decoration: underline;
+              &:hover{
+                color: #dc3545;
+              }
+            `}>
+              How it works
+            </a>
           </div>
           <Formik
             initialValues={initialValues}
