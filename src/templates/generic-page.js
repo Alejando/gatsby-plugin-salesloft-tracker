@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import { Container, Button } from 'reactstrap'
 import { css } from '@emotion/core'
@@ -33,12 +33,13 @@ const GenericPage = ({ data }) => {
           `}
         />
         <div className="d-flex justify-content-center py-5">
-          <Button 
-            color={page.frontmatter.buttonType}  
-            href={page.buttonLink}
-          >
-            {page.frontmatter.buttonName}
-          </Button>
+          <Link to={page.frontmatter.buttonLink}>
+            <Button 
+              color={page.frontmatter.buttonType}  
+            >
+              {page.frontmatter.buttonName}
+            </Button>
+          </Link>
         </div>
       </Container>
     </Layout>
