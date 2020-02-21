@@ -33,6 +33,7 @@ const ApplyToCareer = ({
   toggle,  
   show,
   careerSlug,
+  careerName,
   success 
 }) => {
 
@@ -67,7 +68,7 @@ const ApplyToCareer = ({
       >
         <ModalHeader toggle={toggle}>
           <Col md={12}>
-            JOIN OUR TALENT COMMUNITY
+            JOIN OUR TEAM AS A {careerName}
           </Col>
         </ModalHeader>
         <ModalBody>

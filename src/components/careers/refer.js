@@ -36,6 +36,7 @@ const ReferAFriend = ({
   toggle,  
   show,
   careerSlug,
+  careerName,
   success 
 }) => {
 
@@ -45,7 +46,7 @@ const ReferAFriend = ({
 
   return (
     <div>
-      <ModalMessage 
+      <ModalMessage
         show={ modal }
         toggle={ (value) => setModal(!value) }
         title={resultTitle}
@@ -55,8 +56,11 @@ const ReferAFriend = ({
       />
       <Modal isOpen={show} toggle={toggle} centered={true} size="lg"
         css={ css`
-          @media (max-height: 823px) {
+          @media (max-height: 1000px) {
             top: 5%;
+          }
+          @media (max-height: 823px) {
+            top: 10%;
           }
 
           @media (max-height: 736px) {
@@ -70,10 +74,24 @@ const ReferAFriend = ({
       >
         <ModalHeader toggle={toggle}>
           <Col md={12}>
-            REFER A FRIEND
+            REFER A FRIEND FOR {careerName}
           </Col>
         </ModalHeader>
         <ModalBody>
+          <div className="col-12">
+            <label>
+              Your referral must fully comply with Density Labs’ requirements and successfully pass our recruitment process. 
+            </label>
+            <a href="/how-to-refer-a-friend" css={css`
+              color: #000000;
+              text-decoration: underline;
+              &:hover{
+                color: #dc3545;
+              }
+            `}>
+              How it works
+            </a>
+          </div>
           <Formik
             initialValues={initialValues}
             validationSchema={ReferSchema}

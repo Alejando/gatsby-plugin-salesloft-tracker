@@ -49,17 +49,19 @@ class Careers extends Component {
     });
   }
 
-  handleApplyNow(careerSlug) {
+  handleApplyNow(careerSlug, careerName) {
     this.setState({
       showApplyModal: true,
-      careerSlug: careerSlug
+      careerSlug: careerSlug,
+      careerName: careerName
     })
   }
 
-  handleReferAFriend(careerSlug) {
+  handleReferAFriend(careerSlug, careerName) {
     this.setState({
       showReferModal: true,
-      careerSlug: careerSlug
+      careerSlug: careerSlug,
+      careerName: careerName
     })
   }
 
@@ -70,11 +72,13 @@ class Careers extends Component {
           show={this.state.showApplyModal}
           toggle={ (value) => this.setState({showApplyModal: !value}) }
           careerSlug={this.state.careerSlug}
+          careerName={this.state.careerName}
         />
         <ReferAFriend 
           show={this.state.showReferModal}
           toggle={ (value) => this.setState({showReferModal: !value}) }
           careerSlug={this.state.careerSlug}
+          careerName={this.state.careerName}
         />
         <Banner
           image={bannerImage}
@@ -147,12 +151,12 @@ class Careers extends Component {
                   {  career.nice_to_have.map((requirement, i) => (<li key={i}>{requirement}</li>))
                   }
                 </ul>
-                <Button  color="danger" onClick={() => this.handleApplyNow(career.slug)}>
+                <Button  color="danger" onClick={() => this.handleApplyNow(career.slug, career.name)}>
                   <FontAwesomeIcon icon={["fas", "envelope"]} />
                   <span className="ml-2">Apply Now</span>
                 </Button>
                 <span className="m-3">or</span>
-                <Button color="danger"  onClick={() => this.handleReferAFriend(career.slug)}>
+                <Button color="danger"  onClick={() => this.handleReferAFriend(career.slug, career.name)}>
                   <FontAwesomeIcon icon={["fas", "user-circle"]} />
                   <span className="ml-2">Refer a friend</span>
                 </Button>
