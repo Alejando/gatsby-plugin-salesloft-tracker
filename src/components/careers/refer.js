@@ -46,7 +46,7 @@ const ReferAFriend = ({
 
   return (
     <div>
-      <ModalMessage 
+      <ModalMessage
         show={ modal }
         toggle={ (value) => setModal(!value) }
         title={resultTitle}
@@ -56,8 +56,11 @@ const ReferAFriend = ({
       />
       <Modal isOpen={show} toggle={toggle} centered={true} size="lg"
         css={ css`
-          @media (max-height: 823px) {
+          @media (max-height: 1000px) {
             top: 5%;
+          }
+          @media (max-height: 823px) {
+            top: 10%;
           }
 
           @media (max-height: 736px) {
