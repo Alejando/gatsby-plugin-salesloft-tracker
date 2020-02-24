@@ -12,12 +12,20 @@ export const ReferSchema = Yup.object().shape({
     .email('Please enter a valid email address e.g. name@domain.com')
     .required("We need your friend's email address to contact him"),
   phone: Yup.number()
-    .typeError("That doesn't look like a phone number")
-    .required("We need your friend's phone number to contact you"),
+    .typeError("That doesn't look like a phone number"),
   cv: Yup.mixed()
-    .required('The CV is required')
     .test('fileType', "Unsupported file format", value => (typeof value === 'undefined' ? true : SUPPORTED_FORMATS.includes(value.type)) )
     .test('fileSize', "File size is too large (Max 10MB)", value => (typeof value === 'undefined' ? true : value.size <= MAX_FILE_SIZE)),
+  linkedin_url: Yup.string()
+    .url("That doesn't look like a url")
+    .matches(/(linkedin\.com\/)((in\/[^/]+\/?)|(pub\/[^/]+\/((\w|\d)+\/?){3}))$/,
+      "That does't look like a LinkedIn url valid")
+    .when('cv',(cv, schema) =>{
+      return cv === undefined ? 
+        schema.required("Please attach your friend's CV or add his Linkedin url")
+      :
+      schema.notRequired()
+    }),
   referred_by: Yup.object().shape({
     first_name: Yup.string()
       .min(2, 'Your name must be longer than 2 characters')

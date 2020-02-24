@@ -198,7 +198,7 @@ const ApplyToCareer = ({
                 <hr/>
                 <br/>
                 <FormGroup>
-                  <Label for="linkedin_url" className="font-weight-bold">Linkedin url</Label>
+                  <Label for="linkedin_url" className="font-weight-bold">LinkedIn url</Label>
                   <Input
                     type="text"
                     name="linkedin_url"

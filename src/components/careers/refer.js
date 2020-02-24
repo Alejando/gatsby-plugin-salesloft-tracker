@@ -24,11 +24,13 @@ const initialValues= {
   phone: '',
   cv: '',
   lead_source: 'Website',
+  linkedin_url: '',
   referred_by: { 
     first_name: '',
     last_name: '',
     email: ''
   }
+  
 }
 
 
@@ -101,7 +103,7 @@ const ReferAFriend = ({
                 .then(
                   () => {
                     setSubmitting(false);
-                    setResultMessage('Thank you for referring your friend to this great opportunity, one of our recruiters will contact you in the following 24 hours.')
+                    setResultMessage(`Thank you for referring ${values.first_name} to this great opportunity, one of our recruiters will contact you in the following 24 hours.`)
                     setResultTitle('Success!')
                     setModal(true)
                     resetForm(initialValues);
@@ -225,7 +227,7 @@ const ReferAFriend = ({
                   </Col>
                   <Col md={6}>
                     <FormGroup>
-                      <Label for="phone" className="font-weight-bold"> Phone: *</Label>
+                      <Label for="phone" className="font-weight-bold"> Phone: </Label>
                       <Input
                         type="text"
                         name="phone"
@@ -240,7 +242,7 @@ const ReferAFriend = ({
                 </Row>
                 <br/>
                 <FormGroup>
-                  <Label className="font-weight-bold"> Resume/CV: *</Label>
+                  <Label className="font-weight-bold"> Resume/CV: </Label>
                   <Label 
                     for="cv"
                     css={ css`
@@ -274,6 +276,18 @@ const ReferAFriend = ({
                     hidden
                   />
                   <ErrorMessage name="cv" component={FormFeedback} />
+                </FormGroup>
+                <FormGroup>
+                  <Label for="linkedin_url" className="font-weight-bold">LinkedIn url</Label>
+                  <Input
+                    type="text"
+                    name="linkedin_url"
+                    id="linkedin_url"
+                    tag={Field}
+                    invalid={Boolean(touched.linkedin_url && errors.linkedin_url)}
+                    aria-required
+                  />
+                  <ErrorMessage name="linkedin_url" component={FormFeedback} />
                 </FormGroup>
                 <FormGroup className="text-right">
                   <Button color="danger" type="submit" className="mt-4 px-5" disabled={isSubmitting}>
