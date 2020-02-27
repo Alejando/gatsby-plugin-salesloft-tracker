@@ -16,6 +16,7 @@ import { CareerSchema } from './helpers/apply-validator'
 import * as ApplyService from '../../services/apply-to-career-service'
 import ModalMessage from '../../components/success-modal'
 import Spinner from '../../components/spinner';
+import { get } from 'lodash';
 
 const initialValues= {
   first_name: '',
@@ -181,7 +182,7 @@ const ApplyToCareer = ({
                     css={ css`
                       color: #7d7d7d;
                     `}
-                  >{values.cv['name']}</Label>
+                  >{get(values, "cv['name']", '')}</Label>
                   <Input 
                     id="cv" 
                     name="cv" 

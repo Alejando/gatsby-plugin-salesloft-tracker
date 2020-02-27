@@ -16,6 +16,7 @@ import { ReferSchema } from './helpers/refer-validator'
 import * as ApplyService from '../../services/apply-to-career-service'
 import ModalMessage from '../../components/success-modal'
 import Spinner from '../../components/spinner';
+import { get } from 'lodash';
 
 const initialValues= {
   first_name: '',
@@ -263,10 +264,10 @@ const ReferAFriend = ({
                     css={ css`
                       color: #7d7d7d;
                     `}
-                  >{values.cv['name']}</Label>
-                  <Input 
-                    id="cv" 
-                    name="cv" 
+                  >{get(values, "cv['name']", '')}</Label>
+                  <Input
+                    id="cv"
+                    name="cv"
                     type="file"
                     invalid={Boolean(touched.cv && errors.cv)}
                     onChange={(event) => {
