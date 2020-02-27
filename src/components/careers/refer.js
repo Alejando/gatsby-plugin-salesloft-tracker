@@ -77,7 +77,7 @@ const ReferAFriend = ({
       >
         <ModalHeader toggle={toggle}>
           <Col md={12} className="text-uppercase text-muted">
-            REFER A FRIEND FOR <span className="font-weight-bold text-dark">{careerName}</span>
+            REFER A FRIEND AS A <span className="font-weight-bold text-dark">{careerName}</span>
           </Col>
         </ModalHeader>
         <ModalBody>
@@ -106,7 +106,7 @@ const ReferAFriend = ({
                 .then(
                   () => {
                     setSubmitting(false);
-                    setResultMessage(`Thank you for referring ${values.first_name} to this great opportunity, one of our recruiters will contact you in the following 24 hours.`)
+                    setResultMessage(`Thank you for referring ${values.contact.first_name} to this great opportunity, one of our recruiters will contact you in the following 24 hours.`)
                     setResultTitle('Success!')
                     setModal(true)
                     resetForm(initialValues);
