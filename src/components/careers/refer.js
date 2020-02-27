@@ -76,24 +76,26 @@ const ReferAFriend = ({
         `}
       >
         <ModalHeader toggle={toggle}>
-          <Col md={12}>
-            REFER A FRIEND FOR {careerName}
+          <Col md={12} className="text-uppercase text-muted">
+            REFER A FRIEND FOR <span className="font-weight-bold text-dark">{careerName}</span>
           </Col>
         </ModalHeader>
         <ModalBody>
           <div className="col-12">
-            <label>
+            <p>
               Your referral must fully comply with Density Labs’ requirements and successfully pass our recruitment process. 
-            </label>
-            <a href="/how-to-refer-a-friend" css={css`
-              color: #000000;
-              text-decoration: underline;
-              &:hover{
-                color: #dc3545;
-              }
-            `}>
-              How it works
-            </a>
+            
+              <a href="/how-to-refer-a-friend" css={css`
+                color: #000000;
+                text-decoration: underline;
+                margin-left: 10px;
+                &:hover{
+                  color: #dc3545;
+                }
+              `}>
+                How it works
+              </a>
+            </p>
           </div>
           <Formik
             initialValues={initialValues}
@@ -119,7 +121,7 @@ const ReferAFriend = ({
             }}
           >
             {({ values, errors, isSubmitting, touched, setFieldValue, setFieldTouched }) => (
-              <Form className="px-3 py-4">
+              <Form className="px-3 pb-4 px-2">
                 <Row>
                   <Col md={12}>
                     <strong>YOUR DATA</strong>

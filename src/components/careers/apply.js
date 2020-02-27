@@ -68,8 +68,8 @@ const ApplyToCareer = ({
         `}
       >
         <ModalHeader toggle={toggle}>
-          <Col md={12}>
-            JOIN OUR TEAM AS A {careerName}
+          <Col md={12} className="text-uppercase text-muted">
+            Join our team as a <span className="font-weight-bold text-dark">{careerName}</span>
           </Col>
         </ModalHeader>
         <ModalBody>
