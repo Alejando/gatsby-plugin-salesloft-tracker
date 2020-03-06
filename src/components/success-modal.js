@@ -8,7 +8,6 @@ import {
   Button } from 'reactstrap';
 
 const SuccessModal = ({toggle, title, body, show, centered=false, closeButtonText}) => {
-  debugger;
   return (
     <div>
       <Modal isOpen={show} toggle={toggle} centered={centered}>
