@@ -12,6 +12,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Service from '../../services/digital-tech-fest-service'
 import { Schema } from './helpers/digital-tech-fest-validator'
 import Select from 'react-select';
+import { get } from 'lodash';
 
 const workAsOptions = [
   { value: '.Net Developer', label: '.Net Developer' },
@@ -162,7 +163,7 @@ const CustomForm = ({ success }) => {
               <Label for="work_as" className="font-weight-bold">Mi área de especialidad es: *</Label>
               <Select
                 styles={customStyles(Boolean(touched.work_as && errors.work_as))}
-                classNamePrefix='posadev-1'
+                classNamePrefix='digital-tech-fest-1'
                 placeholder="Elige una opción (Máximo 3)"
                 name="work_as"
                 id="work_as"
@@ -185,13 +186,13 @@ const CustomForm = ({ success }) => {
               <Label for="experience" className="font-weight-bold">Años de experiencia en la industria: *</Label>
               <Select
                 styles={customStyles(Boolean(touched.experience && errors.experience))}
-                classNamePrefix='posadev-2'
+                classNamePrefix='digital-tech-fest-2'
                 placeholder="Elige una opción"
                 name="experience"
                 id="experience"
                 options={ExperinceOptions}
                 value={values.experience}
-                onChange={(selected) => setFieldValue('experience', selected.value? selected : [])} 
+                onChange={(selected) => setFieldValue('experience', get(selected, 'value', null) ? selected : [])}
                 onBlur={(value) => setFieldTouched('experience', value)}
                 menuPlacement="auto"
                 isClearable
