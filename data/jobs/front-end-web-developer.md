@@ -20,6 +20,6 @@ job_requirements:
   - Good spoken and written communication skills.
   - Willing to be relocated or live in Guadalajara.
   - Willing to travel to US (California). US Visa desirable.
-job_referral_bonus: 1000
+job_referral_bonus:
 ---
 We are looking for a talented professional to join our team as a FRONT-END WEB DEVELOPER based in Guadalajara. In a fast startup environment like this, you will collaborate with the customers to build awesome apps, by getting and transforming their requirements into apps where frontend and backend code is required.

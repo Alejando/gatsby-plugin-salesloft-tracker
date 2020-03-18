@@ -1,5 +1,5 @@
 ---
-name: Senior Full-Stack Web Developer
+name: Sr. Full-Stack Web Developer
 date: "2020-02-02"
 job_benefits:
   - Competitive remuneration
@@ -20,6 +20,6 @@ job_requirements:
   - Speak Fluent English (business and technical)
   - Willing to be relocated or live in Guadalajara.
   - Willing to travel to US (California). US Visa desirable.
-job_referral_bonus: 1000
+job_referral_bonus:
 ---
-We are looking for a talented professional to join our team as SENIOR FULL-STACK WEB DEVELOPER based in Guadalajara. In a fast startup environment like this, you will collaborate with the customers to build awesome apps, by getting and transforming their requirements into apps where frontend and backend code is required.
+We are looking for a talented professional to join our team as SR. FULL-STACK WEB DEVELOPER based in Guadalajara. In a fast startup environment like this, you will collaborate with the customers to build awesome apps, by getting and transforming their requirements into apps where frontend and backend code is required.
