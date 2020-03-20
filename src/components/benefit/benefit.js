@@ -5,14 +5,14 @@ import { css } from 'emotion'
 import roundBackground from '../../images/round-small.png'
 
 const Benefit = ({ icon, text }) => (
-  <Col md="4" className="mb-3">
-    <div css={ css` 
-      display: flex; 
+  <Col xs="6" sm="6" md="3">
+    <div css={ css`
+      display: flex;
       flex-direction: column;
       justify-content: flex-start;
       padding: 20px;
       align-items: center;
-      min-height: 264px;
+      min-height: 188px;
     `}>
       <div css={ css `
         background-image: url(${roundBackground});
@@ -22,22 +22,21 @@ const Benefit = ({ icon, text }) => (
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        height: 142px;
-        background-size: 142px;
+        height: 80px;
+        background-size: 80px;
       `}>
-        <FontAwesomeIcon 
-          icon={icon} 
-          color="#E5818D" 
+        <FontAwesomeIcon
+          icon={icon}
+          color="#E5818D"
           css={ css `
-            font-size: 116px;
+            font-size: 58px;
             margin-top: 13px;
           `}
         />
       </div>
       <div css={ css `
-        font-weight: bold; 
-        margin-top: 20px; 
-        font-size: 1.3rem;
+        margin-top: 20px;
+        font-size: 1rem;
         text-align: center;
       `}>
         {text}
