@@ -13,6 +13,7 @@ import hotFlame from '../images/hot-flame.png'
 import CareerOpportunity from '../services/career-opportunity'
 import { css } from 'emotion'
 import ApplyToCareer from '../components/careers/apply'
+import ApplyContainer from '../components/careers/apply-container'
 import ReferAFriend from '../components/careers/refer'
 import Spinner from '../components/spinner';
 import bannerImage from '../images/work_densitylabs.png'
@@ -76,6 +77,7 @@ class Careers extends Component {
   }
 
   render(){
+    const successMessage = 'Thank you for applying to this great opportunity, one of our recruiters will contact you in the following 24 hours. ';
     return(
       <Layout siteMeta={siteMeta}>
         <ApplyToCareer 
@@ -83,6 +85,7 @@ class Careers extends Component {
           toggle={ (value) => this.setState({showApplyModal: !value}) }
           careerSlug={this.state.careerSlug}
           careerName={this.state.careerName}
+          successMessage={successMessage}
         />
         <ReferAFriend 
           show={this.state.showReferModal}
@@ -126,7 +129,7 @@ class Careers extends Component {
             : 
             (
               this.state.careers.map((career, i) => (
-              <div key={i} className="border-bottom pb-4 pt-3">
+              <div key={i} className={`${i === this.state.careers.length -1 ? "" : "border-bottom"} pb-4 pt-3`}>
                 <div className="d-inline-flex border-bottom align-items-center w-100 pb-3 mb-3"css={css`cursor: pointer;`} onClick={() => this.handleColapse(career, i)}>
                   { 
                     career.is_high_priority &&
@@ -173,6 +176,9 @@ class Careers extends Component {
              ))
             )
         }
+          <div className="pt-5 mt-5">
+            <ApplyContainer careerSlug="no-career" successMessage={successMessage} />
+          </div>
         </Container>
       </Layout>
     )
