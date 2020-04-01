@@ -26,7 +26,7 @@ const ApplyContainer = ({
       closeButtonText='Acept'
     />
     <Row>
-      <Col lg={{ size:8, offset:2}} md={12} sm={12} xs={12}>
+      <Col lg={{ size:8, offset:2}} md={12} sm={12} xs={12} className="bg-white p-5 shadow">
         <h3 className="text-center">Don’t see the position you’re interest in? Send us your contact info!</h3>
         <ApplyForm 
           careerSlug={careerSlug} 
@@ -34,6 +34,7 @@ const ApplyContainer = ({
           setModal={(modalStatus) => {setModal(modalStatus)}} 
           setResultMessage={(message) => {setResultMessage(message)}} 
           successMessage={successMessage}
+          noCareer={true}
           setResultTitle={(title) => {setResultTitle(title)}}/>
       </Col>
     </Row>

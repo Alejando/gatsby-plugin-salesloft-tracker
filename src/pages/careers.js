@@ -176,7 +176,7 @@ class Careers extends Component {
              ))
             )
         }
-          <div className="pt-5 mt-5">
+          <div className="my-5">
             <ApplyContainer careerSlug="no-career" successMessage={successMessage} />
           </div>
         </Container>

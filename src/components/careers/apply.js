@@ -52,7 +52,15 @@ const ApplyToCareer = ({
           </Col>
         </ModalHeader>
         <ModalBody>
-          <ApplyForm careerSlug={careerSlug} success={success} setModal={(modalStatus) => {setModal(modalStatus)}} setResultMessage={(message) => {setResultMessage(message)}} setResultTitle={(title) => {setResultTitle(title)}} successMessage={successMessage}/>
+          <ApplyForm
+            careerSlug={careerSlug}
+            success={success}
+            setModal={(modalStatus) => {setModal(modalStatus)}}
+            setResultMessage={(message) => {setResultMessage(message)}}
+            setResultTitle={(title) => {setResultTitle(title)}}
+            successMessage={successMessage}
+            noCareer={false}
+          />
         </ModalBody>
       </Modal>
     </div>

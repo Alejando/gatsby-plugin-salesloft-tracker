@@ -11,33 +11,42 @@ import {
   Button } from 'reactstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { CareerSchema } from './helpers/apply-validator'
+import { ApplyWithoutCareerSchema } from './helpers/apply-without-career-validator'
 import * as ApplyService from '../../services/apply-to-career-service'
 import Spinner from '../../components/spinner';
 import { get } from 'lodash';
 
-const initialValues= {
-  first_name: '',
-  last_name: '',
-  email: '',
-  phone: '',
-  cv: '',
-  linkedin_url: '',
-  url: '',
-  lead_source: 'Website'
-}
 class ApplyForm extends React.Component {
   constructor(props) {
     super(props);
+    const cvField = props.noCareer ? 'contact_cv' : 'cv'
+    this.state = {
+      initialValues: {
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: '',
+        [cvField]: '',
+        linkedin_url: '',
+        url: '',
+        lead_source: 'Website'
+      }
+    }
   }
 
   render() {
+    const cvFieldName = this.props.noCareer ? 'contact_cv': 'cv';
+    const cvFieldValue = this.props.noCareer ? "contact_cv['name']": "cv['name']";
     return(
       <div>
         <Formik
-          initialValues={initialValues}
-          validationSchema={CareerSchema}
+          initialValues={this.state.initialValues}
+          validationSchema={this.props.noCareer? ApplyWithoutCareerSchema : CareerSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             values = { "contact": values }
+            if(values.contact.contact_cv){
+              values.contact.cv = values.contact.contact_cv
+            }
             ApplyService.apply(values, this.props.careerSlug)
               .then(
                 () => {
@@ -45,7 +54,7 @@ class ApplyForm extends React.Component {
                   this.props.setResultMessage(this.props.successMessage)
                   this.props.setResultTitle('Success!')
                   this.props.setModal(true)
-                  resetForm(initialValues);
+                  resetForm(this.state.initialValues);
                 },
                 err => {
                   this.props.setResultMessage(err.message)
@@ -123,8 +132,8 @@ class ApplyForm extends React.Component {
               <br/>
               <FormGroup>
                 <Label className="font-weight-bold"> Resume/CV: *</Label>
-                <Label 
-                  for="cv"
+                <Label
+                  for={cvFieldName}
                   css={ css`
                     margin-left: 10px;
                     color: #dc3445;
@@ -143,19 +152,19 @@ class ApplyForm extends React.Component {
                   css={ css`
                     color: #7d7d7d;
                   `}
-                >{get(values, "cv['name']", '')}</Label>
-                <Input 
-                  id="cv" 
-                  name="cv" 
+                >{get(values, cvFieldValue, '')}</Label>
+                <Input
+                  id={cvFieldName}
+                  name="cv"
                   type="file"
                   invalid={Boolean(touched.cv && errors.cv)}
                   onChange={(event) => {
-                      setFieldValue("cv", event.currentTarget.files[0]);
+                      setFieldValue(cvFieldName, event.currentTarget.files[0]);
                     }
                   }
                   hidden
                 />
-                <ErrorMessage name="cv" component={FormFeedback} />
+                <ErrorMessage name={cvFieldName} component={FormFeedback} />
               </FormGroup>
               <hr/>
               <br/>
