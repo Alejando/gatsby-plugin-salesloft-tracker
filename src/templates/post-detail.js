@@ -17,6 +17,7 @@ import { DiscussionEmbed } from 'disqus-react'
 
 const PostDetail = ({ data, location }) => {
   const post = data.markdownRemark
+  const socialImage = post.frontmatter.social_media_image || post.frontmatter.image
 
   const siteMeta = {
     path: `/blog/${slugify(post.frontmatter.name)}`,
@@ -24,7 +25,7 @@ const PostDetail = ({ data, location }) => {
     openGraphTitle: post.frontmatter.name,
     keywords: post.frontmatter.keywords || (post.frontmatter.tags || []).join(', '),
     description: post.frontmatter.social_summary || post.frontmatter.description ,
-    image: withPrefix(post.frontmatter.image.childImageSharp.original.src),
+    image: withPrefix(socialImage.childImageSharp.original.src),
     type: 'article'
   }
 
@@ -125,6 +126,13 @@ query($id: String!) {
       name
       date
       image{
+        childImageSharp {
+          original {
+            src
+          }
+        }
+      }
+      social_media_image{
         childImageSharp {
           original {
             src
