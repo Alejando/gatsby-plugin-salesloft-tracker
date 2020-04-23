@@ -1,7 +1,7 @@
 ---
 name: Integrating Zoom in my Rails Application
 date: "2019-01-11"
-image: ./rails_intergrate_zoom.png
+image: ./integrating-zoom-in-my-rails-application.jpg
 keywords: densitylabs, densitylabs Software Development Company, density labs, blogging, densitylabs blog post, ruby on rails development, software development for startups
 description: Given all the features that Zoom provides we want to integrate it to our own Rails app to benefit from this amazing app
 author: Luis Fer Cuevas
