@@ -5,6 +5,10 @@ image: ./integrating-zoom-in-my-rails-application.jpg
 keywords: densitylabs, densitylabs Software Development Company, density labs, blogging, densitylabs blog post, ruby on rails development, software development for startups
 description: Given all the features that Zoom provides we want to integrate it to our own Rails app to benefit from this amazing app
 author: Luis Fer Cuevas
+tags:
+  - ruby-on-rails
+  - zoom
+  - api
 social_summary: Given all the features that Zoom provides we want to integrate it to our own Rails app to benefit from this amazing app, this is our experience.
 ---
 Zoom is a communication app that allows us to have meetings through the internet. It comes with a collection of tools such as video-conferencing, screen sharing, meeting management, and more, while being easy to use.

@@ -1,7 +1,7 @@
 ---
 name: "How Ruby-On-Rails Is Transforming The Web Development World By Innovating Programming And Software Development"
 date: "2019-05-01"
-image: ./ruby-on-rails.png
+image: ./how-ruby-on-rails-is-transforming-the-web-development-world-by-innovating-programming-and-software-development.jpg
 keywords: ruby-on-rails, PROGRAMMING AND SOFTWARE DEVELOPMENT PROCESS, programming and software development, software development., programming, softwaredevelopment
 description: The programming and software development world is ever evolving, and when it comes to developing a new innovation, your toolbox is large. There’s a multitude of languages and frameworks at your disposal, and although many of them are flexible enough that they can be used to tackle many of the same projects, every project is unique, and requires the right tools for the job.
 author: Adela Barreto

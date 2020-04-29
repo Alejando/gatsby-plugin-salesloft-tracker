@@ -1,7 +1,7 @@
 ---
 name: These are the highlights of why you should read The Lean Startup
 date: "2016-10-17"
-image: ./the-lean-startup.png
+image: ./highlights-of-why-you-should-read-the-lean-startup.jpg
 description: If you are an entrepreneur and you failed then you really need to read it... You are not alone.
 tags:
   - businesses

@@ -1,7 +1,7 @@
 ---
 name: Benefits of WordPress + Docker in a production environment + troubleshooting guide.
 date: "2016-05-13"
-image: ./dockers.png
+image: ./benefits-of-wordpress-and-docker-in-a-production-environment.jpg
 description: We love Rails, but WordPress provides a robust solution for our blogging needs. And lately, we have been experimenting with Docker + WordPress.
 tags:
   - ruby

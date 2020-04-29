@@ -1,7 +1,7 @@
 ---
 name: How To Use Neo4j With Rails
 date: "2017-09-12"
-image: ./how-to-use-neo4j-with-rails-picture.png
+image: "./how-to-use-neo4j-with-rails.jpg"
 description: This data model allows you to avoid performance issues when you need to join multiple tables. Instead of rows you can use a more expressive and natural data model. Also the queries are faster to execute and easier to build on complex data relationships
 tags:
   - neo4j

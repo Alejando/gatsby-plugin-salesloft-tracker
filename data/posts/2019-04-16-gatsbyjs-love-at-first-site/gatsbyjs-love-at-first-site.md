@@ -1,7 +1,7 @@
 ---
 name: "GatsbyJS: Love at First Site"
 date: "2019-04-16"
-image: ./home.png
+image: ./gatsbyjs-love-at-first-site.jpg
 keywords: GatsbyJS, Gatsby, Density labs, ReactJS, Javascript
 description: GatsbyJS is a powerful creator of static websites that implements innovative technologies. It's more than just a new creator of static websites, it gives the opportunity to get information from different sources through the power of GraphQL and use the data with ReactJS to build amazing websites.
 author: Alejandro Prado

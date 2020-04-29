@@ -1,7 +1,7 @@
 ---
 name: Getting Started with High Level TensorFlow
 date: "2019-03-27"
-image: ./home.png
+image: ./getting-started-with-high-level-tensorflow.jpg
 keywords: Agile team, software development process
 description: TensorFlow is one of the main tools used in the industry to perform Machine Learning (ML), either using it at a low-level for graph computation, or at a high-level to create models using pre-defined building-blocks.
 author: Fernando Gomez
