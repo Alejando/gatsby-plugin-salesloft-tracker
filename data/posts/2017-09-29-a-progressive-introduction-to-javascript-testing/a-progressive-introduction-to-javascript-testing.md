@@ -1,7 +1,7 @@
 ---
 name: A Progressive Introduction to Javascript Testing
 date: "2017-09-29"
-image: ./Blog-JS-Testing1.jpg
+image: ./a-progressive-introduction-to-javascript-testing.jpg
 description: In this series we will learn how unit, integration, and end to end testing help us not only to improve the reliability of our code, but also, with the appropriate application of these techniques, we can improve the overall quality of our code, allowing us to simplify the overall complexity of our modules and the relationships between them.
 tags:
   - javascript

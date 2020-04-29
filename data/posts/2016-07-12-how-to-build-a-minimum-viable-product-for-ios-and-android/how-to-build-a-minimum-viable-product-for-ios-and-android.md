@@ -1,7 +1,7 @@
 ---
 name: How to build a Minimum Viable Product for iOS and android
 date: "2016-07-12"
-image: ./how-to-build-a-minimum-viable-product-for-ios-and-android-full.png
+image: ./how-to-build-a-minimum-viable-product-for-ios-and-android.jpg
 description: Building a MVP mobile app is challenging. First, there is the approval process to publish and update the app on the stores. Second, you have to build two applications or build for one platform. And that's a tough call.
 tags:
   - ios

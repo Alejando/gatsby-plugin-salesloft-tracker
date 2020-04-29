@@ -1,7 +1,7 @@
 ---
 name: Recipes for Testing Redux Actions and Reducers
 date: "2017-11-14"
-image: ./Blog-Redux-Testing-Actions-Reducers.jpg
+image: ./recipes-for-testing-redux-actions-and-reducers.jpg
 description: I’d like to share my knowledge and personal approach to testing when building a Redux app. While there are many ways of doing this, if you are trying to figure out how to start testing your common Redux actions and reducers for your upcoming projects, this post is for you.
 tags:
   - react

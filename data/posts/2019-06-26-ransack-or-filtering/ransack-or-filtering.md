@@ -1,7 +1,7 @@
 ---
 name: 'How to: Advanced Filtering with Ransack and "OR" Groupings'
 date: "2019-06-26"
-image: ./ransack-or-filtering.png
+image: ./ransack-or-filtering.jpg
 keywords: Ruby, Rails, Ruby on Rails, Ransack, Filtering, ruby-on-rails, Densitylabs, Density, Labs
 author: Zian Aguirre
 social_summary: A while ago, I was working on a CMS-like project that needed a custom filter for its User model; the filter was supposed to be a select-like component displaying all the available roles and the user should be able to pick more than one role and the filter should pick up any user with the selected roles. So I decided to Ransack it

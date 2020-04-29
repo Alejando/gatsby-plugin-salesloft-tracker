@@ -1,7 +1,7 @@
 ---
 name: "Automatic browser reload after Ruby-on-Rails deployment"
 date: "2019-06-10"
-image: "./ruby.png"
+image: "./automatic-browser-reload-after-ruby-on-rails-deployment.jpg"
 keywords: ruby-on-rails, rails, ruby, rails-5, action-cable, web-sockets
 description: Ruby-on-Rails has integrated WebSockets in a very efficient way with Action Cable into Rails version 5. We can take advantage of this feature to transmit data from our server to the client side and so we can identify when there is a change in our application’s version.
 author: Yan Carlos Marin

@@ -1,7 +1,7 @@
 ---
 name: Adding authentication to your react native app
 date: "2017-04-21"
-image: ./Adding_authentication_to_your_react_native_app.jpg
+image: ./adding-authentication-to-your-react-native-app.jpg
 description: I’ve been working recently on creating mobile applications using React Native. Few days ago I had to add an authentication login form to the application I’m working on, easy peasy. When I implemented that by first time I had no idea how to do it on the React Native way. I did some research on the subject, but at the end I didn’t find what I was looking for at that time; by trial and error I was able to implement a solution.
 tags:
   - react-native
