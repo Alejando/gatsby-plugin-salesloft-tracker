@@ -1,7 +1,7 @@
 ---
 name: Agile team can jumpstart your software development process
 date: "2019-02-14"
-image: ./home.jpg
+image: ./agile-team-can-jumpstart-your-software-development-process.jpg
 keywords: Agile team, software development process
 description: With the agile methodology the software development team will undertake the next major goal or milestone for a two week period, work toward that goal and then reevaluate the priorities at the end of that timeframe. This enables your team to establish what’s working well and what’s not, to reconsider goals and methods, and to implement different approaches and iterations according to market fluctuations.
 author: Andrea Silva

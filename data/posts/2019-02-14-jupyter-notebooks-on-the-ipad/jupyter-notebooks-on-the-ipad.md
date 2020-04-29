@@ -1,7 +1,7 @@
 ---
 name: Jupyter Notebooks on the iPad
 date: "2019-02-14"
-image: ./jupyter.png
+image: ./jupyter-notebooks-on-the-ipad.jpg
 keywords: jupyter, notebooks, ipad, jupyter notebooks on the ipad
 description: A very common tool to perform Data Science experiments is the live-coding Jupyter Notebooks app.
 author: Fernando Gomez

@@ -1,7 +1,6 @@
 ---
 name: "Why You Should Avoid Using Redux for Your Forms"
 date: "2019-12-19"
-social_media_image: ./why-you-should-avoid-using-redux-for-your-forms_social_media.jpg
 image: ./why-you-should-avoid-using-redux-for-your-forms.jpg
 keywords: "Redux, react, web, react and redux, redux forms, forms, redux state, react state, boilerplate code, code, contact form"
 author: Javier Ponce

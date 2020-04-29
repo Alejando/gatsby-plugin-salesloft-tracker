@@ -1,7 +1,8 @@
 ---
 name: How to better analyze Google Analytics data using R
 date: "2017-09-12"
-image: ./Blog-AnalyticsR.jpg
+image: ./how-to-better-analyze-google.jpg
+description: Google Analytics has very friendly interfaces through which we can have a first approximation of the behavior of users.
 author: Susana Ramallo
 social_summary: Google Analytics has very friendly interfaces through which we can have a first approximation of the behavior of users.
 ---
@@ -121,4 +122,4 @@ If you are interested in knowing more about this, we are at your disposal! We ca
 R Core Team (2016). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria.
 URL <https://www.R-project.org/>   
   
-  [Check us out!] (https://densitylabs.io/)
+  [Check us out!](https://densitylabs.io/)

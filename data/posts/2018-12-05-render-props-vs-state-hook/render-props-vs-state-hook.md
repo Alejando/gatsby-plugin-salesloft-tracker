@@ -1,7 +1,7 @@
 ---
 name: Render Props vs State Hook
 date: "2018-12-05"
-image: ./render-props-vs-state-hook-picture.png
+image: ./render-props-vs-state-hook.jpg
 description: Render prop refers to a technique used for sharing code between React components using a prop whose value is a function.
 tags:
   - react

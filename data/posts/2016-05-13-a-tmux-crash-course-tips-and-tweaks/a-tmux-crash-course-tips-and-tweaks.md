@@ -1,7 +1,7 @@
 ---
 name: A Tmux crash course tips and tweaks
 date: "2016-05-13"
-image: ./a-tmux-crash-course-tips-and-tweaks.png
+image: ./a-tmux-crash-course-tips-and-tweaks.jpg
 description: If you are one of those devs who uses the terminal a lot and ends up with way too many tabs open, or practices pair programming, then this post is for you. During the last months, I’ve started using Tmux a lot. Since I’ve found it to be very useful, I thought I would write a post where I share a few recommendations and pro-tips.
 tags:
   - tmux

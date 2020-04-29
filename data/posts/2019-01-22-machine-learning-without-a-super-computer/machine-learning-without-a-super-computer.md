@@ -1,7 +1,7 @@
 ---
 name: Machine Learning without a super computer
 date: "2019-01-22"
-image: ./machine_learning.jpg
+image: "./machine-learning-without-a-super-computer.jpg"
 keywords: densitylabs, densitylabs Software Development Company, density labs, blogging, densitylabs blog post, free, GPU, TPU, Machine Learning, Deep Learning
 description: Nowadays, Machine Learning is one of the most popular areas in Artificial Intelligence. Although there are a lot of resources online to learn about it
 author: Fernando Gomez

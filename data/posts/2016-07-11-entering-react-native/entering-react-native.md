@@ -1,7 +1,7 @@
 ---
 name: Entering React Native
 date: "2016-07-11"
-image: ./entering_react_native.png
+image: "./entering-react-native.jpg"
 tags:
   - react
   - react-native
