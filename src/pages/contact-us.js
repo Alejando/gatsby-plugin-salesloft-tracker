@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Container,
   Row,
@@ -15,7 +15,7 @@ import LocationInfoList from '../components/location/location-info-list'
 import logo from '../images/logo.svg'
 import locations from '../../data/locations.json'
 import { withPrefix, Link } from 'gatsby';
-import Modal from '../components/success-modal'
+import { ContactUsForm } from 'dynamic-forms-react'
 
 const siteMeta = {
   subtitle: 'Contact Us',
@@ -50,14 +50,10 @@ const ContactUs = () => {
         <Row>
           <Col md="8" className="mb-5">
             <legend className="mb-3">Let's build something amazing!</legend>
-            <ContactUsForm success={() => setModal(true)} />
-            <Modal 
-              show={ modal }
-              toggle={ (value) => setModal(!value) }
-              title='Success'
-              body={ successMessage() }
-              centered
-              closeButtonText='Close'
+            <ContactUsForm 
+              endPoint={process.env.CONTACT_US_FORM_URL}
+              onSuccess={{'title': 'Success', 'body': successMessage() }}
+              onError={{'title': 'Error', 'body': 'An error has ocurred.'}}
             />
           </Col>
           <Col md="4">

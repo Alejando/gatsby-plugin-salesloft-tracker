@@ -1,7 +1,7 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
-import { Container } from 'reactstrap'
+import { Container, Button } from 'reactstrap'
 import { css } from '@emotion/core'
 import Banner from '../components/banner';
 
@@ -32,6 +32,15 @@ const GenericPage = ({ data }) => {
             a { color: red;  }
           `}
         />
+        <div className="d-flex justify-content-center py-5">
+          <Link to={page.frontmatter.buttonLink}>
+            <Button 
+              color={page.frontmatter.buttonType}  
+            >
+              {page.frontmatter.buttonName}
+            </Button>
+          </Link>
+        </div>
       </Container>
     </Layout>
   )
@@ -47,6 +56,9 @@ query($id: String!) {
       slug
       name
       bannerDescription
+      buttonName
+      buttonLink
+      buttonType
     }
     excerpt(pruneLength: 140)
     html

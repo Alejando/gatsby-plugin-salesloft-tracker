@@ -1,0 +1,10 @@
+[
+  {"icon": "wallet", "text": "Competitive Salary"},
+  {"icon": "hospital", "text": "Major Medical Expense Insurance"},
+  {"icon": "hand-holding-heart", "text": "Life Insurance"},
+  {"icon": "id-badge", "text": "Annual Attendance Conference Budget"},
+  {"icon": "chart-line", "text": "Productivity Bonus"},
+  {"icon": "suitcase-rolling", "text": "Paid Time Off"},
+  {"icon": "balance-scale", "text": "Work From Monday to Friday"},
+  {"icon": "business-time", "text": "Flexible Hours"}
+]
