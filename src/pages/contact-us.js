@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Container,
   Row,
@@ -8,13 +8,14 @@ import Layout from '../components/layout'
 import Banner from '../components/banner'
 import { css } from 'emotion'
 import bannerImage from '../images/midtown.png'
+import ContactUsForm from '../components/forms/contact-us-form'
 import LocationList from '../components/location/location-list'
 import LocationInfoList from '../components/location/location-info-list'
 
 import logo from '../images/logo.svg'
 import locations from '../../data/locations.json'
 import { withPrefix, Link } from 'gatsby';
-import { ContactUsForm } from 'dynamic-forms-react'
+import Modal from '../components/success-modal'
 
 const siteMeta = {
   subtitle: 'Contact Us',
@@ -34,6 +35,7 @@ const successMessage = () => {
 }
 
 const ContactUs = () => {
+  const [modal, setModal] = useState(false);
   const addresses = locations["addresses"]
   const contactInfo = locations["contact_info"]
   return (
@@ -48,10 +50,14 @@ const ContactUs = () => {
         <Row>
           <Col md="8" className="mb-5">
             <legend className="mb-3">Let's build something amazing!</legend>
-            <ContactUsForm 
-              endPoint={process.env.CONTACT_US_FORM_URL}
-              onSuccess={{'title': 'Success', 'body': successMessage() }}
-              onError={{'title': 'Error', 'body': 'An error has ocurred.'}}
+            <ContactUsForm success={() => setModal(true)} />
+            <Modal 
+              show={ modal }
+              toggle={ (value) => setModal(!value) }
+              title='Success'
+              body={ successMessage() }
+              centered
+              closeButtonText='Close'
             />
           </Col>
           <Col md="4">
