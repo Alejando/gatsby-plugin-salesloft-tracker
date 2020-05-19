@@ -22,7 +22,7 @@ class HomeSlider extends React.Component {
       slidesToScroll: 1,
       arrows: true,
       autoplay: true,
-      className: 'mb-5',
+      className: 'mb-2',
       adaptiveHeight: true,
       autoplaySpeed: 5000,
       prevArrow: <SliderArrow to="prev" />,

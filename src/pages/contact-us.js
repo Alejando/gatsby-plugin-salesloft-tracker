@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Container,
   Row,
@@ -7,12 +7,15 @@ import {
 import Layout from '../components/layout'
 import Banner from '../components/banner'
 import { css } from 'emotion'
-import bannerImage from '../images/work_densitylabs.png'
+import bannerImage from '../images/midtown.png'
+import ContactUsForm from '../components/forms/contact-us-form'
 import LocationList from '../components/location/location-list'
+import LocationInfoList from '../components/location/location-info-list'
 
+import logo from '../images/logo.svg'
 import locations from '../../data/locations.json'
 import { withPrefix, Link } from 'gatsby';
-import { ContactUsForm } from 'dynamic-forms-react'
+import Modal from '../components/success-modal'
 
 const siteMeta = {
   subtitle: 'Contact Us',
@@ -32,28 +35,36 @@ const successMessage = () => {
 }
 
 const ContactUs = () => {
+  const [modal, setModal] = useState(false);
+  const addresses = locations["addresses"]
+  const contactInfo = locations["contact_info"]
   return (
     <Layout siteMeta={siteMeta}>
       <Banner
         image={bannerImage}
         title='Contact Us'
         content='Do you want to talk about an idea that you have? Just want to say hi? We are here for you!'
+        height={500}
       />
       <Container className="py-5">
         <Row>
           <Col md="8" className="mb-5">
             <legend className="mb-3">Let's build something amazing!</legend>
-            <ContactUsForm 
-              endPoint={process.env.CONTACT_US_FORM_URL}
-              onSuccess={{'title': 'Success', 'body': successMessage() }}
-              onError={{'title': 'Error', 'body': 'An error has ocurred.'}}
+            <ContactUsForm success={() => setModal(true)} />
+            <Modal 
+              show={ modal }
+              toggle={ (value) => setModal(!value) }
+              title='Success'
+              body={ successMessage() }
+              centered
+              closeButtonText='Close'
             />
           </Col>
           <Col md="4">
-            <h3 css={css`font-family:'Sansation', sans-serif;`} className="border-bottom pb-3">
-              Density<span css={css`color: #D92635;`}>Labs</span>
-            </h3>
-            <LocationList locations={locations} />
+            <img className="mb-0 p-0" css={css`width:50%; height:auto;`} src={logo} alt="Logo" />
+            <div className="border-bottom pb-3 mb-3"></div>
+            <LocationInfoList locations={contactInfo} />
+            <LocationList locations={addresses} />
           </Col>
         </Row>
       </Container>

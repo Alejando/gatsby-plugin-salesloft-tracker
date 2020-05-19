@@ -1,13 +1,15 @@
 ---
 order: '3'
-title: Our journey has just started but we love to celebrate our client's success
-icon: globe
-circleBgColor: '828282'
+title: High-Performing Teams
+titleColor: 'E7131A'
+bgColor: 'FFFFFF'
+textColor: 'E7131A'
 ---
-75% CAGR for the last 3 years
 
-20 product releases in last 3 years
+<p class="text-dark">A high performance team is critical to our success which is why we strive to keep them happy.</p>
 
-10 product releases expected in the next 6 months
-
-100% customer satisfaction and retention rate
+- Work anytime, anywhere.
+- Collaborative work culture.
+- Focused on deliverable results.
+- We embrace Open Source projects.
+- We encourage fun while working.

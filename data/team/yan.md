@@ -1,8 +1,9 @@
 ---
 name: Yan
-image: ./Yan.jpg
+image: ./yan.png
 title: Software Engineer
 type: Superstar
+position: 7
 ---
 I'm an enthusiastic Colombian software engineer with experience in developing mobile and web applications. Although I am still learning, I love to share my knowledge and experience with the team and others. 
  

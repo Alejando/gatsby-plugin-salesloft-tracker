@@ -1,13 +1,15 @@
 ---
 order: '4'
-title: Pricing
-icon: check
-circleBgColor: '828282'
+title: Great Talent Pool
+titleColor: 'FFFFFF'
+bgColor: '6F7780'
+textColor: 'FFFFFF'
 ---
-We believe in transparency.
 
-Our pricing is the same for when working offsite or onsite.
+We’ve got the best talent at the ready to augment your team and accelerate your growth to get that product put the door. We have people in all the important areas your team needs: 
 
-We are priced 40-60% less than a direct hire, and strive to provide a compelling value in not only pricing but level of quality and performance.
-
-Talk with us about your needs - we will strive to make you a happy customer.
+- Software Developers.
+- QA & Automation.
+- DevOps.
+- Project Management.
+- UI/UX Design.

@@ -1,8 +1,9 @@
 ---
 name: Sofía
-image: ./Sofia.jpg
-title: Digital Marketing Jr
+image: ./sofia.png
+title: Marketing Coordinator
 type: Superstar
+position: 13
 ---
 I am a creative and enthusiastic digital marketer, panda lover, self-taught designer and passionate about marketing research.
  

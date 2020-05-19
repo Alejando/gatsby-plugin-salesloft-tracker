@@ -60,9 +60,9 @@ const HomeSliderContent = ({
       </Link>
     </div>
     <div>
-      <Link to="/who-we-are">
+      <Link to="/team">
         <Button outline color="light">
-          <div className="m-0 mr-2 d-inline-block"> Who we are </div>
+          <div className="m-0 mr-2 d-inline-block"> Team</div>
           <FontAwesomeIcon icon={["fas", "user"]} />
         </Button>
       </Link>
