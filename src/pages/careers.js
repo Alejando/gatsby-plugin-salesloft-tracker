@@ -1,30 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   Container,
   Button,
+  Collapse
 } from 'reactstrap';
 import Layout from '../components/layout'
-import { graphql, withPrefix } from 'gatsby'
+import { withPrefix } from 'gatsby'
 import Banner from '../components/banner'
+import Benefits from '../components/benefits/benefits'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'gatsby'
-
+import hotFlame from '../images/hot-flame.png'
+import CareerOpportunity from '../services/career-opportunity'
+import { css } from 'emotion'
+import ApplyToCareer from '../components/careers/apply'
+import ApplyContainer from '../components/careers/apply-container'
+import ReferAFriend from '../components/careers/refer'
+import Spinner from '../components/spinner';
 import bannerImage from '../images/work_densitylabs.png'
-const careersEmailAddress = 'careers@densitylabs.io'
-
-const dataToJobs = data => {
-  const edges = data.allMarkdownRemark.edges
-  return edges.map(edge => {
-    return {
-      id: edge.node.id,
-      name: edge.node.frontmatter.name,
-      requirements: edge.node.frontmatter.job_requirements,
-      benefits: edge.node.frontmatter.job_benefits,
-      referralBonus: edge.node.frontmatter.job_referral_bonus,
-      contentHtml: edge.node.html,
-    }
-  });
-};
 
 const siteMeta = {
   subtitle: 'Careers',
@@ -36,86 +28,161 @@ const siteMeta = {
   type: 'website'
 }
 
-const Careers = ({ data }) => {
-  const jobs = dataToJobs(data)
+class Careers extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <Layout siteMeta={siteMeta}>
-      <Banner
-        image={bannerImage}
-        title='Join Our Team'
-        content='Density Labs has a workplace where you can grow, learn and get professional development opportunities. We have a highly collaborative environment and we are focused on delivering the best products possible for our clients. We like to keep our team happy while we work in a relaxed and educational environment to develop excellent products for our clients so you can work from home.'
-      />
-      <Container className="py-5">
-        <h1
-          className="border-bottom pb-3 text-uppercase"
-        >
-          JOBS AVAILABLE
-        </h1>
-        {
-        jobs.map((job, i) => (
-          <div key={i} className="border-bottom py-4">
-            <h2 className="border-bottom pb-3 text-uppercase">{ job.name }</h2>
-            <div dangerouslySetInnerHTML={{ __html: job.contentHtml }} />
-            <h3>
-              <FontAwesomeIcon icon={["fas", "users"]} /> &nbsp;
-              What we offer
-            </h3>
-            <p>Some of the benefits that we offer for our {job.name}</p>
-            <ul>
-              {job.benefits.map((benefit, i) => (<li key={i}>{benefit}</li>))}
-            </ul>
-            <h3>
-              <FontAwesomeIcon icon={["fas", "thumbs-up"]} /> &nbsp;
-              Requirements
-            </h3>
-            <ul>
-              {job.requirements.map((requirement, i) => (<li key={i}>{requirement}</li>))}
-            </ul>
-            <Button  color="danger" href={`mailto:${careersEmailAddress}`}>
-              <FontAwesomeIcon icon={["fas", "envelope"]} />
-              <span className="ml-2">Apply Now</span>
-            </Button>
-            <span className="m-3">or</span>
-            <Link to="/how-to-refer-a-friend">
-              <Button color="danger" >
-                <FontAwesomeIcon icon={["fas", "user-circle"]} />
-                <span className="ml-2">Refer a friend</span>
-              </Button>
-            </Link>
-            {
-              job.referralBonus &&
-              <p className="mt-3">REFER A FRIEND AND RECEIVE ${job.referralBonus} DOLLARS!!</p>
-            }
-          </div>
-        ))
-      }
-      </Container>
-    </Layout>
-  )
-}
-
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "//(jobs)/.*.md$/"}}
-      sort: {fields: [frontmatter___date], order: DESC}
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            name
-            date
-            job_requirements
-            job_benefits
-            job_referral_bonus
-          }
-          html
-        }
-      }
+    this.state = {
+      careers: [],
+      careerSlug: null,
+      showApplyModal: false,
+      showReferModal: false,
+      loading: true,
     }
+
   }
-`
+
+  componentWillMount() {
+    CareerOpportunity.getCareers().then((result) => {
+      const data = result.data.map((data) => {
+        data.isOpen = result.data.length <= 3
+        return data;
+      })
+      this.setState({ 
+        careers: data,
+        loading: false,
+      });
+    });
+  }
+
+  handleApplyNow(careerSlug, careerName) {
+    this.setState({
+      showApplyModal: true,
+      careerSlug: careerSlug,
+      careerName: careerName
+    })
+  }
+
+  handleReferAFriend(careerSlug, careerName) {
+    this.setState({
+      showReferModal: true,
+      careerSlug: careerSlug,
+      careerName: careerName
+    })
+  }
+
+  handleColapse(career, i) {
+    career.isOpen = !career.isOpen;
+    this.setState({careers: [...this.state.careers.slice(0, i), career, ...this.state.careers.slice(i+1, this.state.careers.length)]});
+  }
+
+  render(){
+    const successMessage = 'Thank you for applying to this great opportunity, one of our recruiters will contact you in the following 24 hours. ';
+    return(
+      <Layout siteMeta={siteMeta}>
+        <ApplyToCareer 
+          show={this.state.showApplyModal}
+          toggle={ (value) => this.setState({showApplyModal: !value}) }
+          careerSlug={this.state.careerSlug}
+          careerName={this.state.careerName}
+          successMessage={successMessage}
+        />
+        <ReferAFriend 
+          show={this.state.showReferModal}
+          toggle={ (value) => this.setState({showReferModal: !value}) }
+          careerSlug={this.state.careerSlug}
+          careerName={this.state.careerName}
+        />
+        <Banner
+          image={bannerImage}
+          title='Join Our Team'
+          content='Density Labs has a workplace where you can grow, learn and get professional development opportunities. We have a highly collaborative environment and we are focused on delivering the best products possible for our clients. We like to keep our people happy and to maintain a relaxed work environment. We are in constant growth, always in search of more collaborators.<br/><br/>Be part of our team!'
+          textAlign= 'left'
+        />
+        {
+          <Benefits  opportunitiesLength={this.state.careers.length}/>
+        }
+        <Container className="py-5">
+          <h1
+            className="border-bottom pb-5 text-uppercase m-0 text-center"
+          >
+            Career opportunities
+          </h1>
+          {
+            this.state.loading ? 
+            (
+              <div
+                css={ css`
+                  width: 100%;
+                  text-align: center;
+                  display: flex;
+                  justify-content: center;
+                  margin-top: 40px;
+                `}
+              >
+                <Spinner
+                  color="#929497"
+                  size='30px'
+                />
+              </div>
+            ) 
+            : 
+            (
+              this.state.careers.map((career, i) => (
+              <div key={i} className={`${i === this.state.careers.length -1 ? "" : "border-bottom"} pb-4 pt-3`}>
+                <div className="d-inline-flex border-bottom align-items-center w-100 pb-3 mb-3"css={css`cursor: pointer;`} onClick={() => this.handleColapse(career, i)}>
+                  { 
+                    career.is_high_priority &&
+                    <img src={hotFlame} width={40} alt="hot flame" className="mr-4"/>
+                  }
+                  <h3 className="text-uppercase m-0 p-0">{ career.name }</h3>
+                  <FontAwesomeIcon className="ml-auto mr-2" icon={["fas", career.isOpen ? "angle-up" : "angle-down"] }  />
+                </div>
+                <Collapse isOpen={career.isOpen}>
+                  <div dangerouslySetInnerHTML={{ __html: career.description }} />
+                  <br/>
+                  <h3>
+                    <FontAwesomeIcon icon={["fas", "check-circle"]} /> &nbsp;
+                    Must-have
+                  </h3>
+                  <ul>
+                    { career.must_have.map((requirement, i) => (<li key={i}>{requirement}</li>))}
+                  </ul>
+                  { career.nice_to_have.length > 0 &&
+                    <h3>
+                      <FontAwesomeIcon icon={["fas", "thumbs-up"]} /> &nbsp;
+                      Nice to have
+                    </h3>
+                  }
+                  <ul>
+                    {  career.nice_to_have.map((requirement, i) => (<li key={i}>{requirement}</li>))
+                    }
+                  </ul>
+                  <Button  color="danger" onClick={() => this.handleApplyNow(career.slug, career.name)}>
+                    <FontAwesomeIcon icon={["fas", "envelope"]} />
+                    <span className="ml-2">Apply Now</span>
+                  </Button>
+                  <span className="m-3">or</span>
+                  <Button color="danger"  onClick={() => this.handleReferAFriend(career.slug, career.name)}>
+                    <FontAwesomeIcon icon={["fas", "user-circle"]} />
+                    <span className="ml-2">Refer a friend</span>
+                  </Button>
+                  {
+                    career.referral_bonus > 0 &&
+                    <p className="mt-3">REFER A FRIEND AND RECEIVE ${career.referral_bonus} DOLLARS!!</p>
+                  }
+                </Collapse>
+              </div>
+             ))
+            )
+        }
+          <div className="my-5">
+            <ApplyContainer careerSlug="no-career" successMessage={successMessage} />
+          </div>
+        </Container>
+      </Layout>
+    )
+  }
+}
 
 export default Careers
