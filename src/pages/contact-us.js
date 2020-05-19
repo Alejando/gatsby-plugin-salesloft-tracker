@@ -8,7 +8,6 @@ import Layout from '../components/layout'
 import Banner from '../components/banner'
 import { css } from 'emotion'
 import bannerImage from '../images/midtown.png'
-import ContactUsForm from '../components/forms/contact-us-form'
 import LocationList from '../components/location/location-list'
 import LocationInfoList from '../components/location/location-info-list'
 
@@ -35,7 +34,6 @@ const successMessage = () => {
 }
 
 const ContactUs = () => {
-  const [modal, setModal] = useState(false);
   const addresses = locations["addresses"]
   const contactInfo = locations["contact_info"]
   return (
