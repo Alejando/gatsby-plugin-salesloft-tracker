@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+import React from 'react';  
 import { 
   Modal, 
   ModalHeader, 
@@ -12,7 +11,7 @@ const SuccessModal = ({toggle, title, body, show, centered=false, closeButtonTex
     <div>
       <Modal isOpen={show} toggle={toggle} centered={centered}>
         <ModalHeader toggle={toggle}>{title} </ModalHeader>
-        <ModalBody dangerouslySetInnerHTML={{ __html: ReactDOMServer.renderToString(body) }}>
+        <ModalBody dangerouslySetInnerHTML={{ __html: body }}>
         </ModalBody>
         <ModalFooter>
           <Button color="danger" onClick={toggle}>{closeButtonText}</Button>
