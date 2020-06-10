@@ -40,11 +40,11 @@ src/
   index.html
 ```
 ## Electron
-Installing Electron is the easiest task, all what you need is to install the dependency and add it to your package.json
+Installing Electron is the easiest task, all what you need is to install the dependency and add it to your **package.json**
 ```
 yarn add electron -D
 ```
-You can corroborate that Electron was installed correctly by creating a Hello World, just create a new file index.js
+You can corroborate that Electron was installed correctly by creating a **Hello World**, just create a new file **index.js**
 ```
 const { app } = require('electron')
 
@@ -62,7 +62,7 @@ In order to setup TypeScript all what you need is just to install the dependenci
 yarn add typescript -D
  ```
 
-After that you need to write your tsconfig.json. This worked like a charm for me
+After that you need to write your **tsconfig.json**. This worked like a charm for me
 ```
 {
   "compilerOptions": {
@@ -95,7 +95,7 @@ This may change depending on your folder structure, I like to put all my code in
 ```
 import Component from '.../.../../../component';
 ```
-so I just declared an absolute path
+So I just declared an absolute path
 ```
 ....
   "paths": {
@@ -107,11 +107,11 @@ so I just declared an absolute path
 ```
 yarn add react react-dom
 ```
-Given that you already installed TypeScript, you might want to install @types/react as well
+Given that you already installed TypeScript, you might want to install **@types/react** as well
 ```
 yarn add @types/react @types/react-dom -D
 ```
-You may noticed that you didn’t used the -D when you added react and react-dom, this is due to all your JSX is converted to a syntax similar to React.createElement and hence you would require your app to have React during run time as well.
+You may noticed that you didn’t used the **-D** when you added **react** and **react-dom**, this is due to all your JSX is converted to a syntax similar to React.createElement and hence you would require your app to have React during run time as well.
 
 
 ## Webpack
@@ -121,7 +121,7 @@ You just need to install a “few” dependencies, you probably won’t need som
 ```
 yarn add webpack webpack-cli copy-webpack-plugin css-loader file-loader postcss-loader sass-loader style-loader ts-loader url-loader html-webpack-plugin precss autoprefixer -D
 ```
-Then you must configure Webpack, this is the  webpack.config.js that worked for me but it might change depending on your project folder structure.
+Then you must configure Webpack, this is the  **webpack.config.js** that worked for me but it might change depending on your project folder structure.
 ```
 const webpack = require('webpack');
 const path = require('path');
@@ -234,30 +234,30 @@ module.exports = [
   },
 ]
 ```
-If you are familiarized with Electron, you might know that it has a main and render process, so I decided that the best would be writing a configuration for each process.
+If you are familiarized with Electron, you might know that it has a **main** and **render process**, so I decided that the best would be writing a configuration for each process.
 
 We need to specify an entry point and a target for each process.
 
-main process
+**Main process**
 ```
     entry: {
       electron: path.resolve('./src/electron.ts'),
     },
     target: 'electron-main',
 ```
-render process
+**Render process**
 ```
     entry: {
       index: path.resolve('./src/index.tsx'),
     },
     target: 'electron-renderer',
 ```
-Thats it!!! You should be able to compile your TypeScript code and execute your Electron application by just running:
+That's it!!! You should be able to compile your TypeScript code and execute your Electron application by just running:
 ```
 ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js
 electron ./build/electron.js"
 ```
-The best would be write this as scripts in the package.json
+The best would be write this as **scripts** in the **package.json**
 
 ## Conclusions
 Setting up a development environment is not easy, it always depends on what you need. There is always the option to look for a boilerplate application and modify according to your needs. I have found that this small configuration worked perfect to me but you will need to add/remove some dependencies if you don’t need them.
