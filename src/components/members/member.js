@@ -33,7 +33,7 @@ const Member = ({
         flex: 0 0 30.2% !important;
       }
       @media (min-width: 1200px) {
-        flex: 0 0 ${executive ? '30.7':'22.3'}% !important;
+        flex: 0 0 ${executive ? '47.3':'22.3'}% !important;
       }
       box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
       &:hover{ box-shadow: 0 0 !important; }
