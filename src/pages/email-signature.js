@@ -20,12 +20,39 @@ const EmailSignature = () => {
   const [name, setName] = useState('NAME LASTNAME');
   const [position, setPosition] = useState('POSITION');
   const [email, setEmail] = useState('MY_EMAIL@densitylabs.io');
+  const [copiedComponent, setCopiedComponent] = useState(false);
   const signatureCode = () => {
     return baseCode[0] + name + baseCode[1] + position + baseCode[2] + email + baseCode[3] + email + baseCode[4]
   };
   const [isCopied, setCopied] = useClipboard(signatureCode(), {
     successDuration: 2000
   });
+  const CopyToClipboard = (element) => {
+
+		var doc = document
+		, text = doc.getElementById(element)
+		, range, selection;
+    
+	if (doc.body.createTextRange)
+    {
+		range = doc.body.createTextRange();
+		range.moveToElementText(text);
+		range.select();
+	} 
+    
+    else if (window.getSelection)
+    {
+		selection = window.getSelection();        
+		range = doc.createRange();
+		range.selectNodeContents(text);
+		selection.removeAllRanges();
+		selection.addRange(range);
+ 	}
+	document.execCommand('copy');
+	window.getSelection().removeAllRanges();
+  setCopiedComponent(true);
+  setTimeout(function(){  setCopiedComponent(false); }, 2000);
+}
   return (
     <SimpleLayout>
      <Container className="py-5">
@@ -66,10 +93,13 @@ const EmailSignature = () => {
             </FormGroup>
           </Col>
           <Col md={7}>
-            <div className="shadow" dangerouslySetInnerHTML={{ __html: signatureCode() }}/>
-            <div className='d-flex justify-content-center mt-5'>
-              <Button onClick={setCopied} color={isCopied ? 'success' : 'primary'}>
-                {isCopied ? 'Copied ✔️ ' : 'Copy code'}
+            <div className="shadow" id="email-signature-preview" dangerouslySetInnerHTML={{ __html: signatureCode() }}/>
+            <div className='d-flex justify-content-center mt-5' >
+              <Button onClick={setCopied} color={isCopied ? 'success' : 'primary'} className="mr-2">
+                {isCopied ? 'Copied ✔️ ' : 'Copy HTML'}
+              </Button>
+              <Button onClick={() => CopyToClipboard('email-signature-preview')} color={copiedComponent ? 'success' : 'primary'}>
+              {copiedComponent ? 'Copied ✔️ ' : 'Copy Signature'}
               </Button>
             </div>
           </Col>
