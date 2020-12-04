@@ -80,7 +80,7 @@ const initialValues={
  */
 export function generateRandomCode (prefix) {
   let triviaId = Math.random().toString(36).substring(8);
-  const cleanedPrefix = cleanChar(prefix)
+  const cleanedPrefix = cleanChar(prefix).replace(' ', '_')
   return `${cleanedPrefix}_${triviaId}`
 }
 
