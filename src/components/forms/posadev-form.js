@@ -13,6 +13,7 @@ import * as Service from '../../services/stand-form-service'
 import { Schema } from './helpers/posadev-validator'
 import Select from 'react-select';
 import { css } from '@emotion/core'
+import cleanChar from 'cleanchar'
 
 const workAsOptions = [
   { value: 'Administrative', label: 'Administrative' },
@@ -23,15 +24,18 @@ const workAsOptions = [
   { value: 'JavaScript Full Stack Developer', label: 'JavaScript Full Stack Developer' },
   { value: 'Marketing & Content', label: 'Marketing & Content' },
   { value: 'Project Manager', label: 'Project Manager' },
+  { value: 'Product Owner', label: 'Product Owner' },
+  { value: 'Product Designer', label: 'Product Designer' },
   { value: 'QA Automation Engineer', label: 'QA Automation Engineer' },
   { value: 'QA Manual Engineer', label: 'QA Manual Engineer' },
   { value: 'React Developer', label: 'React Developer' },
+  { value: 'React Full Stack', label: 'React Full Stack' },
   { value: 'Ruby Developer', label: 'Ruby Developer' },
+  { value: '.Net', label: '.Net' },
   { value: 'Sales', label: 'Sales' },
   { value: 'Trainee Fullstack Developer', label: 'Trainee Fullstack Developer' },
-  { value: 'UI/ UX Engineer', label: 'UI/ UX Engineer' },
+  { value: 'UI/UX Engineer', label: 'UI/UX Engineer' },
   { value: 'Other', label: 'Other' },
-
 ]
 
 const ExperinceOptions = [
@@ -57,7 +61,7 @@ const customStyles = (error) => (
           border: '0 !important'
         }
     })
-    
+
   }
 );
 
@@ -70,6 +74,16 @@ const initialValues={
   trivia_id: ''
 }
 
+/**
+ * @param {string} prefix
+ * @return {string}
+ */
+export function generateRandomCode (prefix) {
+  let triviaId = Math.random().toString(36).substring(8);
+  const cleanedPrefix = cleanChar(prefix).replace(' ', '_')
+  return `${cleanedPrefix}_${triviaId}`
+}
+
 const CustomForm = ({ success }) => {
   return (
     <div>
@@ -77,8 +91,7 @@ const CustomForm = ({ success }) => {
         initialValues={initialValues}
         validationSchema={Schema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
-          let triviaId = Math.random().toString(36).substring(8);
-          values['trivia_id'] = `posadev_${triviaId}`;
+          values['trivia_id'] = generateRandomCode(values.first_name) // Agregar nombre de persona en lugar de posadev
           Service.sendForm(values, process.env.TRIVIA_POSADEV_FORM_URL)
             .then(
               () => {
@@ -126,8 +139,8 @@ const CustomForm = ({ success }) => {
               </Col>
             </Row>
             <FormGroup>
-              <Label for="email" className="font-weight-bold">Correo electrónico: * 
-                <span 
+              <Label for="email" className="font-weight-bold">Correo electrónico: *
+                <span
                   className="font-weight-light text-muted ml-2"
                   css={css`
                     font-size:11px;
@@ -142,7 +155,7 @@ const CustomForm = ({ success }) => {
                 id="email"
                 tag={Field}
                 invalid={Boolean(touched.email && errors.email)}
-                aria-required 
+                aria-required
               />
               <ErrorMessage name="email" component={FormFeedback} />
             </FormGroup>
@@ -156,7 +169,7 @@ const CustomForm = ({ success }) => {
                 id="experience"
                 options={ExperinceOptions}
                 value={values.experience}
-                onChange={(selected) => setFieldValue('experience', selected.value? selected : [])} 
+                onChange={(selected) => setFieldValue('experience', selected.value? selected : [])}
                 onBlur={(value) => setFieldTouched('experience', value)}
                 menuPlacement="auto"
                 isClearable
@@ -178,7 +191,7 @@ const CustomForm = ({ success }) => {
                 id="work_as"
                 options={workAsOptions}
                 value={values.work_as}
-                onChange={(selected) => setFieldValue('work_as', selected? selected : [])} 
+                onChange={(selected) => setFieldValue('work_as', selected? selected : [])}
                 onBlur={(value) => setFieldTouched('work_as',value)}
                 isMulti
                 menuPlacement="auto"

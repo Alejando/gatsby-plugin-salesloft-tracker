@@ -16,7 +16,7 @@ import { navigate } from "gatsby"
 const TriviaPosadevForm = () => {
   return (
     <SimpleLayout>
-      <div 
+      <div
         className="position-relative w-100 py-md-5 p-0"
         css={css`
           background-color: #d9d9d9;
@@ -25,19 +25,19 @@ const TriviaPosadevForm = () => {
         <div className=" d-flex justify-content-center align-items-center w-100 h-100">
           <Col sm={10} md={8} lg={6} xl={5} className="rounded bg-white p-5 m-auto">
               <Row>
-                <Col md={6} className="d-flex justify-content-center justify-content-md-start p-0 mt-2"> 
+                <Col md={6} className="d-flex justify-content-center justify-content-md-start p-0 mt-2">
                   <img src={logo} alt="Logo" width={200} />
                 </Col>
-                <Col md={6} className="d-flex justify-content-center justify-content-md-end p-0 mt-3"> 
+                <Col md={6} className="d-flex justify-content-center justify-content-md-end p-0 mt-3">
                   <img src={logoPosadev} alt="Posadev" css={ css`width:200px; heigth: auto;`} />
                 </Col>
-                <Col md={12}> 
+                <Col md={12}>
                   <div className="d-flex justify-content-between mt-4" >
                     <figure className="d-flex align-items-center">
                       <img  src={snowflake} alt="snowflake" width={45}/>
                     </figure>
                     <h2 className="text-center ">
-                      ¡Importante! 
+                      ¡Importante!
                     </h2>
                     <figure className="d-flex align-items-center">
                       <img  src={snowflake} alt="snowflake" width={45}/>
@@ -45,7 +45,7 @@ const TriviaPosadevForm = () => {
                   </div>
                   <ul>
                     <li className="font-weight-bold">Se generará un ID de participante</li>
-                    <li>Las trivias serán en nuestro stand, revisa los horarios en las redes sociales (habrá 5 trivias durante el evento)</li>
+                    <li>Las trivias serán en linea, revisa los horarios en las redes sociales (habrá 5 trivias durante el evento)</li>
                     <li>La premiación será durante la clausura del evento.</li>
                   </ul>
                 </Col>
@@ -53,7 +53,7 @@ const TriviaPosadevForm = () => {
                   <StandForm success={(triviaId) => navigate("/trivia-confirmacion",{ state: { triviaId: triviaId }, replace: true}) }/>
                 </Col>
                 <Col md={12}>
-                  <p className="text-center text-md-right" >Para mayor información acude a nuestro stand.</p>
+                  <p className="text-center text-md-right" >Para mayor información escribenos a nuestras redes sociales.</p>
                 </Col>
               </Row>
           </Col>
