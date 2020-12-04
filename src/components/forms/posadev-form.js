@@ -91,7 +91,7 @@ const CustomForm = ({ success }) => {
         initialValues={initialValues}
         validationSchema={Schema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
-          values['trivia_id'] = generateRandomCode() // Agregar nombre de persona en lugar de posadev
+          values['trivia_id'] = generateRandomCode(values.first_name) // Agregar nombre de persona en lugar de posadev
           Service.sendForm(values, process.env.TRIVIA_POSADEV_FORM_URL)
             .then(
               () => {
