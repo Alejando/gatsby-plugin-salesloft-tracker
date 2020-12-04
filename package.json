@@ -14,6 +14,7 @@
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "4.2.1",
+    "cleanchar": "^1.0.0",
     "disqus-react": "^1.0.5",
     "dotenv": "^6.2.0",
     "dynamic-forms-react": "https://github.com/densitylabs/dynamic-forms-react",

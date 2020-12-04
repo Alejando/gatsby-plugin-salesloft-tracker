@@ -13,6 +13,7 @@ import * as Service from '../../services/stand-form-service'
 import { Schema } from './helpers/posadev-validator'
 import Select from 'react-select';
 import { css } from '@emotion/core'
+import cleanChar from 'cleanchar'
 
 const workAsOptions = [
   { value: 'Administrative', label: 'Administrative' },
@@ -79,7 +80,8 @@ const initialValues={
  */
 export function generateRandomCode (prefix) {
   let triviaId = Math.random().toString(36).substring(8);
-  return `${prefix}_${triviaId}`;
+  const cleanedPrefix = cleanChar(prefix)
+  return `${cleanedPrefix}_${triviaId}`
 }
 
 const CustomForm = ({ success }) => {

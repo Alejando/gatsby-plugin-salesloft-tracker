@@ -4180,6 +4180,13 @@ classnames@^2.2.3, classnames@^2.2.5:
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
+cleanchar@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cleanchar/-/cleanchar-1.0.0.tgz#79f47eca31d8da2ba5cf18b6d3c569e2aeb6bd14"
+  integrity sha512-g27gIF1mayoldufAjLxkPSjVb+HILlOOhTdAL/MuUpEyT+BUHq/7tXgdksqKPV0BkMjYTZreEQlF2HGSBarnvQ==
+  dependencies:
+    tck "^1.2.0"
+
 cli-boxes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
@@ -15480,6 +15487,11 @@ tar@^4, tar@^4.4.8:
     mkdirp "^0.5.0"
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
+
+tck@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tck/-/tck-1.2.0.tgz#0c2ed07faff78c92c71f8471c8acd7ba969287f8"
+  integrity sha512-A4IRXTHuVivQyA47FCmB3m8vQDW1CJ6w9Yqr6+ciXm0Ft8ywQ2YEmTjI8HVAZM1NoHflXiiXbKkNtW/+CZ0Oew==
 
 temp-dir@^1.0.0:
   version "1.0.0"

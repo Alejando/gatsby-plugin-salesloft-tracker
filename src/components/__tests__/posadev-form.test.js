@@ -1,4 +1,4 @@
-import { generateRandomCode } from '../../components/forms/posadev-form'
+import { generateRandomCode } from '../forms/posadev-form'
 
 describe('trivia-posadev-form', () => {
   it('code should have same prefix', () => {
@@ -9,5 +9,9 @@ describe('trivia-posadev-form', () => {
     const code1 = generateRandomCode('prefix')
     const code2 = generateRandomCode('prefix')
     expect(code1).not.toBe(code2)
+  })
+  it('prefix should be cleand', () => {
+    const code = generateRandomCode('víctor')
+    expect(code).toContain('victor')
   })
 })
