@@ -64,12 +64,15 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest"
   },
   "devDependencies": {
     "babel-jest": "^26.6.3",
+    "babel-preset-gatsby": "^0.8.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
-    "prettier": "^1.14.2"
+    "prettier": "^1.14.2",
+    "react-test-renderer": "^17.0.1"
   },
   "resolutions": {
     "sharp": "0.22.1"
