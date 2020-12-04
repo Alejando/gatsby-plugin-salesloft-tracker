@@ -2,7 +2,6 @@ on:
   push:
     branches:
       - integration
-      - feature/DL-146
 
 name: Deploy to Integration
 
