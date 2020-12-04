@@ -1,0 +1,9 @@
+[Unit]
+Description=website Rebuild for Production
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -l /home/website_prod/app/deploy/rebuild.sh
+
+[Install]
+WantedBy=multi-user.target
