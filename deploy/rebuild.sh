@@ -2,6 +2,8 @@
 set -e
 cd ~/app
 cp .env.local .env.production
+source .env.local
+
 #npm install
 #gatsby clean # ensure we wipe out the .cache to avoid issues
 
