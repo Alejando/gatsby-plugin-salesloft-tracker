@@ -15,7 +15,7 @@ import { navigate } from "gatsby"
 
 const TriviaPosadevForm = () => {
   return (
-    <div>
+    <SimpleLayout>
       <div
         className="position-relative w-100 py-md-5 p-0"
         css={css`
@@ -59,7 +59,7 @@ const TriviaPosadevForm = () => {
           </Col>
         </div>
       </div>
-    </div>
+    </SimpleLayout>
   );
 }
 
