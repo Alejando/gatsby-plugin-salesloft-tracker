@@ -11,7 +11,7 @@ describe('trivia-posadev-form', () => {
     expect(code1).not.toBe(code2)
   })
   it('prefix should be cleand', () => {
-    const code = generateRandomCode('Víctor')
-    expect(code).toContain('victor')
+    const code = generateRandomCode('Víctor diaz')
+    expect(code).toContain('victor_diaz ')
   })
 })
