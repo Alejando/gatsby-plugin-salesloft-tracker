@@ -31,9 +31,9 @@ const TriviaPosadev = () => {
                   </p>
                   <div className="d-flex justify-content-between">
                     <ul className="my-3">
-                      <li>1 Nuevo Echo Dot (4ta Gen) - Bocina inteligente con Alexa - Gris</li>
-                      <li>1 E-reader Kindle, ahora con una luz frontal, color Negro, 10ª generación</li>
-                      <li>1 Xbox Series X 1 TB ó PlayStation 5 Edición digital (El ganador podrá elegir alguna de las 2 opciones)</li>
+                      <li>1 Nuevo Echo Dot (4ta Gen)</li>
+                      <li>1 E-reader Kindle (10ª generación)</li>
+                      <li>1 Xbox Series X ó PlayStation 5 (El ganador podrá elegir alguna de las 2 opciones)</li>
                     </ul>
                     <figure className="d-flex align-items-center">
                       <img  src={parrot} alt="christmas parrot"/>
