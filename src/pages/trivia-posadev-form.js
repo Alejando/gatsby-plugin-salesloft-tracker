@@ -45,7 +45,7 @@ const TriviaPosadevForm = () => {
                   </div>
                   <ul>
                     <li className="font-weight-bold">Se generará un ID de participante</li>
-                    <li>Las trivias serán en linea, revisa los horarios en las redes sociales (habrá 5 trivias durante el evento)</li>
+                    <li>Las trivias serán en linea, revisa los horarios en las redes sociales (habrá 3 trivias durante el evento)</li>
                     <li>La premiación será durante la clausura del evento.</li>
                   </ul>
                 </Col>
