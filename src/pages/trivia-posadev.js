@@ -22,7 +22,7 @@ const TriviaPosadev = () => {
         <div className=" d-flex justify-content-center align-items-center w-100 h-100">
           <Col sm={10} md={8} lg={6} xl={5} className="rounded bg-white m-auto">
             <Row>
-              <img src={posadevBanner} alt="welcome banner" className='w-100' />
+              <img src={posadevBanner} alt="welcome banner" className='w-100 h-100' />
             </Row>
             <Row className='p-5'>
                 <Col>
