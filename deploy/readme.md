@@ -4,16 +4,16 @@ First install systemd scripts
 
 ```
 mkdir -p ~/.config/systemd/user/
-cp deploy/systemd/website_master.service ~/.config/systemd/user/
+cp deploy/systemd/website_production.service ~/.config/systemd/user/
 
-systemctl --user enable ~/.config/systemd/user/website_master.service
+systemctl --user enable ~/.config/systemd/user/website_production.service
 
 systemctl --user daemon-reload
 ```
 
 Start the service
 ```
-systemctl --user start website_master.service
+systemctl --user start website_production.service
 ```
 
 check the logs
