@@ -1,4 +1,16 @@
+# as sudo
+
+```
+apt install libvips-dev
+```
+
 # Install website production
+
+Add .bin to path
+
+```
+export PATH=./node_modules/.bin:$PATH
+```
 
 First install systemd scripts
 
