@@ -78,7 +78,7 @@
     "react-test-renderer": "^17.0.1"
   },
   "resolutions": {
-    "sharp": "0.22.1"
+    "sharp": "0.29.1"
   },
   "repository": {
     "type": "git",
