@@ -78,7 +78,8 @@
     "react-test-renderer": "^17.0.1"
   },
   "resolutions": {
-    "sharp": "0.29.1"
+    "sharp": "0.29.1",
+    "caniuse-lite": "^1.0.30001291"
   },
   "repository": {
     "type": "git",
