@@ -6,7 +6,7 @@ on:
 name: Deploy to Production
 
 env:
-  DEPLOY_USER: website_prod
+  DEPLOY_USER: website_production
 
 jobs:
   deploy:
@@ -29,9 +29,7 @@ jobs:
 
       - name: Deploy with ssh
         run: |
-          echo $SSH_KEY_PATH
-          ls -al ~/.ssh
-          ssh -i $SSH_KEY_PATH $DEPLOY_USER@aragorn.densitylabs.io -p 222 "/bin/bash -l app/deploy/deploy.sh"
+          ssh -i $SSH_KEY_PATH $DEPLOY_USER@huan.densitylabs.io -p 222 "/bin/bash -l app/deploy/deploy.sh"
         shell: bash
         env:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
