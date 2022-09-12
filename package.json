@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-salesloft-tracker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gatsby Plugin to add Salesloft tracker Id to your site.",
   "main": "index.js",
   "scripts": {
