@@ -95,6 +95,12 @@ module.exports = {
         metricoolId: process.env.METRICOOL_ID,
       },
     },
+    {
+      resolve: 'gatsby-plugin-salesloft-tracker',
+      options: {
+        salesloftTrackerId: process.env.SALESLOFT_TRACKER_ID,
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-offline',

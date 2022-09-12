@@ -7202,6 +7202,11 @@ gatsby-plugin-robots-txt@^1.3.0:
     "@babel/runtime" "^7.3.1"
     generate-robotstxt "^6.0.0"
 
+gatsby-plugin-salesloft-tracker@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-salesloft-tracker/-/gatsby-plugin-salesloft-tracker-1.0.0.tgz#a21944a61679903c74cf05cc70ed55e67853d4fc"
+  integrity sha512-3nkeDe852daHOaS3ltkA+2ZxIX6ey2uplW1vxUBAals/VY+TXq9521E6zPS1IEYoeP+9XO2Yss3AVMwQ89ziIw==
+
 gatsby-plugin-sharp@^2.0.18:
   version "2.0.35"
   resolved "https://registry.npmjs.org/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.35.tgz"
